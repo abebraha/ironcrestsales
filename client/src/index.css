@@ -24,7 +24,7 @@
   --input: hsl(220, 13%, 91%);
   --ring: hsl(221, 83%, 33%);
   --radius: 8px;
-  --gold-accent: hsl(38, 92%, 50%);
+  --gold-accent: hsl(38, 92%, 50%); /* #F59E0B exact match */
   --font-sans: 'Open Sans', sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
 }
@@ -68,6 +68,17 @@
 
 .hero-gradient {
   background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+}
+
+.nav-background {
+  background-color: hsl(221, 83%, 33%);
+  backdrop-filter: blur(4px);
+}
+
+.nav-background.scrolled {
+  background-color: hsl(221, 83%, 33%);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
 }
 
 .shield-icon {

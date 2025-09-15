@@ -25,8 +25,8 @@ export default function Navigation() {
 
   return (
     <nav 
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-sm' : 'bg-transparent'
+      className={`fixed w-full top-0 z-50 transition-all duration-300 nav-background ${
+        isScrolled ? 'scrolled border-b border-white/20 shadow-sm' : ''
       }`}
       data-testid="navigation"
     >
@@ -34,7 +34,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">
             <ShieldLogo size="nav" />
-            <span className="text-xl font-montserrat font-bold text-primary">
+            <span className="text-xl font-montserrat font-bold text-white">
               IronCrest Sales
             </span>
           </div>
@@ -42,28 +42,28 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-white/80 hover:text-gold-accent transition-colors"
               data-testid="nav-home"
             >
               Home
             </button>
             <button 
               onClick={() => scrollToSection('services')}
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-white/80 hover:text-gold-accent transition-colors"
               data-testid="nav-services"
             >
               Services
             </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-white/80 hover:text-gold-accent transition-colors"
               data-testid="nav-about"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+              className="bg-gold-accent text-white px-6 py-2 rounded-lg hover:bg-gold-accent/90 transition-colors"
               data-testid="nav-contact"
             >
               Contact Us
@@ -71,7 +71,7 @@ export default function Navigation() {
           </div>
           
           <button 
-            className="md:hidden text-primary"
+            className="md:hidden text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             data-testid="mobile-menu-toggle"
           >
@@ -81,32 +81,32 @@ export default function Navigation() {
         
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-background border-t border-border" data-testid="mobile-menu">
+          <div className="md:hidden bg-primary/95 backdrop-blur-md border-t border-white/20" data-testid="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <button 
                 onClick={() => scrollToSection('home')}
-                className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
+                className="block w-full text-left px-3 py-2 text-white/80 hover:text-gold-accent transition-colors"
                 data-testid="mobile-nav-home"
               >
                 Home
               </button>
               <button 
                 onClick={() => scrollToSection('services')}
-                className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
+                className="block w-full text-left px-3 py-2 text-white/80 hover:text-gold-accent transition-colors"
                 data-testid="mobile-nav-services"
               >
                 Services
               </button>
               <button 
                 onClick={() => scrollToSection('about')}
-                className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
+                className="block w-full text-left px-3 py-2 text-white/80 hover:text-gold-accent transition-colors"
                 data-testid="mobile-nav-about"
               >
                 About
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="block w-full text-left px-3 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+                className="block w-full text-left px-3 py-2 bg-gold-accent text-white rounded-lg hover:bg-gold-accent/90 transition-colors"
                 data-testid="mobile-nav-contact"
               >
                 Contact Us

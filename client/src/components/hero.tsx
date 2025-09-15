@@ -59,7 +59,7 @@ export default function Hero() {
           >
             <button 
               onClick={scrollToContact}
-              className="bg-yellow-500 text-black px-8 py-4 rounded-lg font-montserrat font-semibold text-lg hover:bg-yellow-400 transition-colors"
+              className="bg-gold-accent text-white px-8 py-4 rounded-lg font-montserrat font-semibold text-lg hover:bg-gold-accent/90 transition-colors"
               data-testid="button-schedule-consultation"
             >
               Schedule Consultation
