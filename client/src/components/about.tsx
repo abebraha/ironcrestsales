@@ -62,20 +62,20 @@ export default function About() {
           >
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center" data-testid="stat-experience">
-                <div className="text-3xl font-montserrat font-bold text-primary mb-2">25+</div>
+                <div className="text-3xl font-montserrat font-bold text-primary mb-2">15+</div>
                 <div className="text-muted-foreground text-sm">Years Combined Experience</div>
               </div>
               <div className="text-center" data-testid="stat-companies">
-                <div className="text-3xl font-montserrat font-bold text-accent mb-2">200+</div>
-                <div className="text-muted-foreground text-sm">Companies Served</div>
+                <div className="text-3xl font-montserrat font-bold text-accent mb-2">Growth</div>
+                <div className="text-muted-foreground text-sm">Focused Approach</div>
               </div>
               <div className="text-center" data-testid="stat-industries">
-                <div className="text-3xl font-montserrat font-bold text-gold-accent mb-2">15+</div>
-                <div className="text-muted-foreground text-sm">Industries Covered</div>
+                <div className="text-3xl font-montserrat font-bold text-gold-accent mb-2">B2B</div>
+                <div className="text-muted-foreground text-sm">Specialization</div>
               </div>
               <div className="text-center" data-testid="stat-success">
-                <div className="text-3xl font-montserrat font-bold text-secondary mb-2">98%</div>
-                <div className="text-muted-foreground text-sm">Success Rate</div>
+                <div className="text-3xl font-montserrat font-bold text-secondary mb-2">Results</div>
+                <div className="text-muted-foreground text-sm">Driven Process</div>
               </div>
             </div>
             

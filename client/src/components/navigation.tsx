@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import ShieldLogo from "./shield-logo";
+import Logo from "./logo";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +33,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">
-            <ShieldLogo size="nav" />
+            <Logo size="nav" />
             <span className="text-xl font-montserrat font-bold text-white">
               IronCrest Sales
             </span>

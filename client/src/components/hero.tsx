@@ -84,16 +84,16 @@ export default function Hero() {
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6" data-testid="stat-professionals">
-            <div className="text-3xl font-montserrat font-bold text-yellow-300 mb-2">500+</div>
-            <div className="text-blue-100">Sales Professionals Placed</div>
+            <div className="text-3xl font-montserrat font-bold text-gold-accent mb-2">15+</div>
+            <div className="text-blue-100">Years of Experience</div>
           </div>
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6" data-testid="stat-revenue">
-            <div className="text-3xl font-montserrat font-bold text-yellow-300 mb-2">$50M+</div>
-            <div className="text-blue-100">Revenue Generated</div>
+            <div className="text-3xl font-montserrat font-bold text-gold-accent mb-2">Multiple</div>
+            <div className="text-blue-100">Industries Served</div>
           </div>
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6" data-testid="stat-retention">
-            <div className="text-3xl font-montserrat font-bold text-yellow-300 mb-2">95%</div>
-            <div className="text-blue-100">Client Retention Rate</div>
+            <div className="text-3xl font-montserrat font-bold text-gold-accent mb-2">Proven</div>
+            <div className="text-blue-100">Track Record</div>
           </div>
         </div>
       </motion.div>
