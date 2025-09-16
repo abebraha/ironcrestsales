@@ -79,18 +79,18 @@ export default function About() {
               </div>
             </div>
             
-            <div className="mt-8 p-6 bg-white rounded-xl border border-border" data-testid="testimonial">
+            <div className="mt-8 p-6 bg-white dark:bg-card rounded-xl border border-border" data-testid="testimonial">
               <div className="flex items-center space-x-4 mb-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                   <Quote className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <div className="font-montserrat font-semibold">Sarah Chen</div>
-                  <div className="text-sm text-muted-foreground">CEO, TechStart Solutions</div>
+                  <div className="font-montserrat font-semibold">Mike Rodriguez</div>
+                  <div className="text-sm text-muted-foreground">VP Sales, Manufacturing Solutions Inc.</div>
                 </div>
               </div>
               <p className="text-muted-foreground italic">
-                "IronCrest Sales transformed our approach to growth. Within 6 months, we had a scalable sales system and increased our revenue by 300%. Their team became our strategic partners."
+                "IronCrest Sales helped us build a systematic approach to our sales process. Their coaching and strategic guidance transformed how our team engages with prospects and closes deals."
               </p>
             </div>
           </motion.div>

@@ -49,6 +49,7 @@
   --border: hsl(220, 13%, 20%);
   --input: hsl(220, 13%, 20%);
   --ring: hsl(217, 91%, 60%);
+  --gold-accent: hsl(43, 96%, 56%); /* Gold accent for dark mode */
 }
 
 @layer base {
