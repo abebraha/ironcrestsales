@@ -5,16 +5,20 @@ interface ShieldLogoProps {
 
 export default function ShieldLogo({ size = 'medium', className = '' }: ShieldLogoProps) {
   const sizeClasses = {
-    small: 'shield-small',
-    medium: 'shield-icon',
-    large: 'shield-icon',
-    nav: 'shield-nav'
+    small: 'w-12 h-12',
+    medium: 'w-20 h-20',
+    large: 'w-32 h-32',
+    nav: 'w-8 h-8'
   };
 
   return (
-    <div 
-      className={`${sizeClasses[size]} ${className}`}
-      data-testid="shield-logo"
-    />
+    <div className={`flex items-center justify-center ${className}`}>
+      <img 
+        src="/logo.png"
+        alt="IronCrest Sales Shield"
+        className={`${sizeClasses[size]} object-contain drop-shadow-lg`}
+        data-testid="shield-logo"
+      />
+    </div>
   );
 }

@@ -38,7 +38,7 @@ export default function Hero() {
             data-testid="hero-title"
           >
             Scale Your Sales Department<br />
-            <span className="text-yellow-300">Without the Risk</span>
+            <span className="text-gold-accent">Without the Risk</span>
           </motion.h1>
           
           <motion.p 
