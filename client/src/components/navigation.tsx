@@ -32,11 +32,8 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center">
             <Logo size="nav" />
-            <span className="text-xl font-montserrat font-bold text-white">
-              IronCrest Sales
-            </span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">

@@ -8,14 +8,15 @@ export default function Logo({ size = 'medium', className = '' }: LogoProps) {
     small: 'w-8 h-8',
     medium: 'w-16 h-16',
     large: 'w-20 h-20',
-    nav: 'w-8 h-8'
+    nav: 'w-10 h-10'
   };
 
   return (
     <img 
-      src="/logo.png"
+      src="/ironcrest-logo.png"
       alt="IronCrest Sales Logo"
       className={`${sizeClasses[size]} ${className} object-contain`}
+      style={{ background: 'transparent' }}
       data-testid="logo"
     />
   );
