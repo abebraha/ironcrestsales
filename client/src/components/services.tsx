@@ -40,145 +40,139 @@ export default function Services() {
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {/* Primary Services */}
-          <div className="space-y-8">
-            <motion.div 
-              className="bg-card rounded-xl p-8 border border-border shadow-lg"
-              variants={itemVariants}
-              data-testid="service-professionals"
-            >
-              <div className="flex items-start space-x-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <Bus className="w-6 h-6 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-montserrat font-bold text-foreground mb-3">Expert Sales Professionals</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Seasoned sales experts who integrate directly with your team, bringing proven methodologies and immediate impact to your revenue pipeline.
-                  </p>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                      Experienced B2B sales professionals
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                      Industry-specific expertise
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                      Immediate integration and impact
-                    </li>
-                  </ul>
-                </div>
+          <motion.div 
+            className="bg-card rounded-xl p-8 border border-border shadow-lg h-full flex flex-col"
+            variants={itemVariants}
+            data-testid="service-professionals"
+          >
+            <div className="flex items-start space-x-4 flex-1">
+              <div className="bg-primary/10 p-3 rounded-lg">
+                <Bus className="w-6 h-6 text-primary" />
               </div>
-            </motion.div>
+              <div className="flex-1 flex flex-col">
+                <h3 className="text-2xl font-montserrat font-bold text-foreground mb-3">Expert Sales Professionals</h3>
+                <p className="text-muted-foreground mb-4 flex-1">
+                  Seasoned sales experts who integrate directly with your team, bringing proven methodologies and immediate impact to your revenue pipeline.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Experienced B2B sales professionals
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Industry-specific expertise
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Immediate integration and impact
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
 
-            <motion.div 
-              className="bg-card rounded-xl p-8 border border-border shadow-lg"
-              variants={itemVariants}
-              data-testid="service-systems"
-            >
-              <div className="flex items-start space-x-4">
-                <div className="bg-accent/10 p-3 rounded-lg">
-                  <Settings className="w-6 h-6 text-accent" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-montserrat font-bold text-foreground mb-3">Sales System Development</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Build robust, scalable sales processes that grow with your business and create predictable revenue streams.
-                  </p>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-accent mr-2" />
-                      Custom CRM implementation
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-accent mr-2" />
-                      Lead generation systems
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-accent mr-2" />
-                      Performance tracking and analytics
-                    </li>
-                  </ul>
-                </div>
+          <motion.div 
+            className="bg-card rounded-xl p-8 border border-border shadow-lg h-full flex flex-col"
+            variants={itemVariants}
+            data-testid="service-hiring"
+          >
+            <div className="flex items-start space-x-4 flex-1">
+              <div className="bg-yellow-500/10 p-3 rounded-lg">
+                <Users className="w-6 h-6 text-gold-accent" />
               </div>
-            </motion.div>
-          </div>
+              <div className="flex-1 flex flex-col">
+                <h3 className="text-2xl font-montserrat font-bold text-foreground mb-3">Strategic Hiring & Scaling</h3>
+                <p className="text-muted-foreground mb-4 flex-1">
+                  Build your internal sales team with our proven hiring methodology and ongoing support for sustainable growth.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-gold-accent mr-2" />
+                    Sales team recruitment
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-gold-accent mr-2" />
+                    Training and onboarding
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-gold-accent mr-2" />
+                    Performance management systems
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
 
-          {/* Secondary Services */}
-          <div className="space-y-8">
-            <motion.div 
-              className="bg-card rounded-xl p-8 border border-border shadow-lg"
-              variants={itemVariants}
-              data-testid="service-hiring"
-            >
-              <div className="flex items-start space-x-4">
-                <div className="bg-yellow-500/10 p-3 rounded-lg">
-                  <Users className="w-6 h-6 text-gold-accent" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-montserrat font-bold text-foreground mb-3">Strategic Hiring & Scaling</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Build your internal sales team with our proven hiring methodology and ongoing support for sustainable growth.
-                  </p>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-gold-accent mr-2" />
-                      Sales team recruitment
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-gold-accent mr-2" />
-                      Training and onboarding
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-gold-accent mr-2" />
-                      Performance management systems
-                    </li>
-                  </ul>
-                </div>
+          <motion.div 
+            className="bg-card rounded-xl p-8 border border-border shadow-lg h-full flex flex-col"
+            variants={itemVariants}
+            data-testid="service-systems"
+          >
+            <div className="flex items-start space-x-4 flex-1">
+              <div className="bg-accent/10 p-3 rounded-lg">
+                <Settings className="w-6 h-6 text-accent" />
               </div>
-            </motion.div>
+              <div className="flex-1 flex flex-col">
+                <h3 className="text-2xl font-montserrat font-bold text-foreground mb-3">Sales System Development</h3>
+                <p className="text-muted-foreground mb-4 flex-1">
+                  Build robust, scalable sales processes that grow with your business and create predictable revenue streams.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-accent mr-2" />
+                    Custom CRM implementation
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-accent mr-2" />
+                    Lead generation systems
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-accent mr-2" />
+                    Performance tracking and analytics
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
 
-            <motion.div 
-              className="bg-card rounded-xl p-8 border border-border shadow-lg"
-              variants={itemVariants}
-              data-testid="service-optimization"
-            >
-              <div className="flex items-start space-x-4">
-                <div className="bg-secondary/10 p-3 rounded-lg">
-                  <TrendingUp className="w-6 h-6 text-secondary" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-montserrat font-bold text-foreground mb-3">Revenue Optimization</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Maximize your existing sales potential through data-driven insights and proven optimization strategies.
-                  </p>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-secondary mr-2" />
-                      Sales process audits
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-secondary mr-2" />
-                      Conversion rate optimization
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-secondary mr-2" />
-                      Pipeline management improvement
-                    </li>
-                  </ul>
-                </div>
+          <motion.div 
+            className="bg-card rounded-xl p-8 border border-border shadow-lg h-full flex flex-col"
+            variants={itemVariants}
+            data-testid="service-optimization"
+          >
+            <div className="flex items-start space-x-4 flex-1">
+              <div className="bg-secondary/10 p-3 rounded-lg">
+                <TrendingUp className="w-6 h-6 text-secondary" />
               </div>
-            </motion.div>
-          </div>
+              <div className="flex-1 flex flex-col">
+                <h3 className="text-2xl font-montserrat font-bold text-foreground mb-3">Revenue Optimization</h3>
+                <p className="text-muted-foreground mb-4 flex-1">
+                  Maximize your existing sales potential through data-driven insights and proven optimization strategies.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-secondary mr-2" />
+                    Sales process audits
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-secondary mr-2" />
+                    Conversion rate optimization
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-secondary mr-2" />
+                    Pipeline management improvement
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Process Section */}
