@@ -14,7 +14,7 @@ export default function ShieldLogo({ size = 'medium', className = '' }: ShieldLo
   return (
     <div className={`flex items-center justify-center ${className}`}>
       <img 
-        src="/logo.png"
+        src="/shield-logo.png"
         alt="IronCrest Sales Shield"
         className={`${sizeClasses[size]} object-contain drop-shadow-lg`}
         data-testid="shield-logo"
