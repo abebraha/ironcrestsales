@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
+import { useEffect, useState, useRef, useMemo } from "react";
 
 interface ParticleProps {
   index: number;
@@ -82,40 +82,348 @@ const FloatingShape = ({ index }: FloatingShapeProps) => {
   );
 };
 
-export const AnimatedBackground = () => {
+// Animated Blob Shape Component
+const AnimatedBlob = ({ index }: { index: number }) => {
+  const randomDelay = Math.random() * 10;
+  const randomDuration = 20 + Math.random() * 20;
+  const colors = [
+    'hsla(240, 59%, 35%, 0.15)',
+    'hsla(43, 96%, 56%, 0.1)',
+    'hsla(240, 45%, 25%, 0.15)',
+    'hsla(217, 91%, 60%, 0.1)'
+  ];
+  
+  return (
+    <motion.div
+      className="absolute rounded-full filter blur-3xl"
+      style={{
+        background: colors[index % colors.length],
+        width: `${300 + index * 50}px`,
+        height: `${300 + index * 50}px`,
+        left: `${index * 25}%`,
+        top: `${index * 20}%`,
+      }}
+      animate={{
+        x: [0, 100, -50, 0],
+        y: [0, -100, 50, 0],
+        scale: [1, 1.2, 0.9, 1],
+        rotate: [0, 90, 180, 360],
+      }}
+      transition={{
+        duration: randomDuration,
+        repeat: Infinity,
+        delay: randomDelay,
+        ease: "linear",
+      }}
+    />
+  );
+};
+
+// Aurora Borealis Effect Component
+const AuroraEffect = () => {
+  return (
+    <motion.div className="absolute inset-0 opacity-30 pointer-events-none">
+      <motion.div
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(45deg, transparent, hsla(280, 100%, 60%, 0.3), transparent)',
+          filter: 'blur(100px)',
+        }}
+        animate={{
+          x: ['-100%', '200%'],
+          y: ['-50%', '50%'],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          repeatType: 'reverse',
+          ease: 'easeInOut',
+        }}
+      />
+      <motion.div
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(-45deg, transparent, hsla(180, 100%, 50%, 0.3), hsla(120, 100%, 50%, 0.2), transparent)',
+          filter: 'blur(80px)',
+        }}
+        animate={{
+          x: ['100%', '-200%'],
+          y: ['50%', '-50%'],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          repeatType: 'reverse',
+          ease: 'easeInOut',
+        }}
+      />
+      <motion.div
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(90deg, transparent, hsla(340, 100%, 50%, 0.2), hsla(60, 100%, 50%, 0.2), transparent)',
+          filter: 'blur(120px)',
+        }}
+        animate={{
+          x: ['-50%', '150%'],
+          opacity: [0.2, 0.5, 0.2],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: 'linear',
+        }}
+      />
+    </motion.div>
+  );
+};
+
+// Wave Pattern Component
+const WavePattern = () => {
+  return (
+    <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="wave" width="200" height="200" patternUnits="userSpaceOnUse">
+          <motion.path
+            d="M0,100 Q50,50 100,100 T200,100"
+            fill="none"
+            stroke="hsla(43, 96%, 56%, 0.3)"
+            strokeWidth="2"
+            animate={{
+              d: [
+                "M0,100 Q50,50 100,100 T200,100",
+                "M0,100 Q50,150 100,100 T200,100",
+                "M0,100 Q50,50 100,100 T200,100",
+              ],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#wave)" />
+    </svg>
+  );
+};
+
+// Dot Matrix Pattern
+const DotMatrix = () => {
+  return (
+    <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
+          <motion.circle
+            cx="15"
+            cy="15"
+            r="2"
+            fill="hsla(240, 59%, 50%, 0.3)"
+            animate={{
+              r: [2, 4, 2],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dots)" />
+    </svg>
+  );
+};
+
+// Circuit Board Pattern
+const CircuitPattern = () => {
+  return (
+    <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="circuit" width="100" height="100" patternUnits="userSpaceOnUse">
+          <motion.g
+            animate={{
+              opacity: [0.1, 0.3, 0.1],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <path d="M10,10 L40,10 L40,40 M60,10 L90,10 L90,40 L60,40 L60,60 L90,60 M10,60 L40,60 L40,90 L10,90" 
+                  fill="none" stroke="hsla(217, 91%, 60%, 0.3)" strokeWidth="1"/>
+            <circle cx="10" cy="10" r="3" fill="hsla(43, 96%, 56%, 0.5)"/>
+            <circle cx="40" cy="40" r="3" fill="hsla(43, 96%, 56%, 0.5)"/>
+            <circle cx="90" cy="60" r="3" fill="hsla(43, 96%, 56%, 0.5)"/>
+          </motion.g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#circuit)" />
+    </svg>
+  );
+};
+
+// Hexagon Pattern
+const HexagonPattern = () => {
+  return (
+    <svg className="absolute inset-0 w-full h-full opacity-15" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="hexagons" width="60" height="52" patternUnits="userSpaceOnUse">
+          <motion.polygon
+            points="30,0 45,8.66 45,26 30,34.64 15,26 15,8.66"
+            fill="none"
+            stroke="hsla(240, 59%, 35%, 0.3)"
+            strokeWidth="1"
+            animate={{
+              strokeDasharray: ["0, 150", "150, 0", "0, 150"],
+              rotate: [0, 60, 0],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hexagons)" />
+    </svg>
+  );
+};
+
+export const AnimatedBackground = ({ variant = 'default' }: { variant?: 'default' | 'services' | 'about' | 'contact' }) => {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, -100]);
   const y2 = useTransform(scrollY, [0, 500], [0, -50]);
+  const y3 = useTransform(scrollY, [0, 500], [0, -30]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0.3]);
   
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springX = useSpring(mouseX, { stiffness: 100, damping: 30 });
+  const springY = useSpring(mouseY, { stiffness: 100, damping: 30 });
   
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      mouseX.set((e.clientX - window.innerWidth / 2) / 50);
+      mouseY.set((e.clientY - window.innerHeight / 2) / 50);
     };
     
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [mouseX, mouseY]);
   
-  const mouseX = useTransform(() => (mousePosition.x - window.innerWidth / 2) / 50);
-  const mouseY = useTransform(() => (mousePosition.y - window.innerHeight / 2) / 50);
+  // Select pattern based on variant
+  const renderPattern = () => {
+    switch(variant) {
+      case 'services':
+        return (
+          <>
+            <DotMatrix />
+            <CircuitPattern />
+          </>
+        );
+      case 'about':
+        return (
+          <>
+            <WavePattern />
+            <HexagonPattern />
+          </>
+        );
+      case 'contact':
+        return (
+          <>
+            <HexagonPattern />
+            <DotMatrix />
+          </>
+        );
+      default:
+        return (
+          <>
+            <WavePattern />
+            <CircuitPattern />
+          </>
+        );
+    }
+  };
+  
+  // Gradient variations based on section
+  const gradientAnimation = useMemo(() => {
+    const gradients = {
+      default: [
+        'linear-gradient(135deg, hsl(240, 59%, 20%) 0%, hsl(240, 59%, 35%) 50%, hsl(217, 91%, 30%) 100%)',
+        'linear-gradient(135deg, hsl(240, 59%, 25%) 0%, hsl(240, 59%, 40%) 50%, hsl(217, 91%, 35%) 100%)',
+        'linear-gradient(135deg, hsl(240, 59%, 20%) 0%, hsl(240, 59%, 35%) 50%, hsl(217, 91%, 30%) 100%)',
+      ],
+      services: [
+        'linear-gradient(45deg, hsl(240, 59%, 15%) 0%, hsl(217, 91%, 25%) 50%, hsl(240, 59%, 20%) 100%)',
+        'linear-gradient(45deg, hsl(240, 59%, 20%) 0%, hsl(217, 91%, 30%) 50%, hsl(240, 59%, 25%) 100%)',
+        'linear-gradient(45deg, hsl(240, 59%, 15%) 0%, hsl(217, 91%, 25%) 50%, hsl(240, 59%, 20%) 100%)',
+      ],
+      about: [
+        'linear-gradient(90deg, hsl(240, 45%, 15%) 0%, hsl(43, 96%, 25%) 50%, hsl(240, 59%, 20%) 100%)',
+        'linear-gradient(90deg, hsl(240, 45%, 20%) 0%, hsl(43, 96%, 30%) 50%, hsl(240, 59%, 25%) 100%)',
+        'linear-gradient(90deg, hsl(240, 45%, 15%) 0%, hsl(43, 96%, 25%) 50%, hsl(240, 59%, 20%) 100%)',
+      ],
+      contact: [
+        'linear-gradient(180deg, hsl(240, 59%, 20%) 0%, hsl(240, 45%, 25%) 50%, hsl(217, 91%, 30%) 100%)',
+        'linear-gradient(180deg, hsl(240, 59%, 25%) 0%, hsl(240, 45%, 30%) 50%, hsl(217, 91%, 35%) 100%)',
+        'linear-gradient(180deg, hsl(240, 59%, 20%) 0%, hsl(240, 45%, 25%) 50%, hsl(217, 91%, 30%) 100%)',
+      ],
+    };
+    return gradients[variant] || gradients.default;
+  }, [variant]);
   
   return (
     <>
-      {/* Animated gradient background */}
+      {/* Multi-layer animated gradient background */}
       <motion.div 
         className="absolute inset-0"
         animate={{
-          background: [
-            'linear-gradient(135deg, hsl(240, 59%, 20%) 0%, hsl(240, 59%, 35%) 100%)',
-            'linear-gradient(135deg, hsl(240, 59%, 25%) 0%, hsl(240, 59%, 40%) 100%)',
-            'linear-gradient(135deg, hsl(240, 59%, 20%) 0%, hsl(240, 59%, 35%) 100%)',
-          ],
+          background: gradientAnimation,
         }}
         transition={{
-          duration: 10,
+          duration: 15,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      
+      {/* Mesh gradient overlay */}
+      <motion.div
+        className="absolute inset-0 opacity-30"
+        style={{
+          background: `radial-gradient(circle at ${50 + springX.get()}% ${50 + springY.get()}%, hsla(43, 96%, 56%, 0.2) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, hsla(217, 91%, 60%, 0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 20% 80%, hsla(240, 59%, 40%, 0.15) 0%, transparent 50%)`,
+        }}
+      />
+      
+      {/* Aurora effect for hero section */}
+      {variant === 'default' && <AuroraEffect />}
+      
+      {/* Animated blob shapes */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(4)].map((_, i) => (
+          <AnimatedBlob key={`blob-${i}`} index={i} />
+        ))}
+      </div>
+      
+      {/* Noise/grain texture */}
+      <motion.div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E")`,
+        }}
+        animate={{
+          opacity: [0.03, 0.05, 0.03],
+        }}
+        transition={{
+          duration: 8,
           repeat: Infinity,
           ease: "easeInOut",
         }}
@@ -163,6 +471,9 @@ export const AnimatedBackground = () => {
         />
       </motion.div>
       
+      {/* Pattern overlays based on variant */}
+      {renderPattern()}
+      
       {/* Animated mesh gradient overlay */}
       <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -185,6 +496,23 @@ export const AnimatedBackground = () => {
         </defs>
         <rect width="100%" height="100%" fill="url(#grid)" />
       </svg>
+      
+      {/* Glassmorphism layer */}
+      <motion.div
+        className="absolute inset-0 backdrop-blur-[1px] pointer-events-none"
+        animate={{
+          backdropFilter: [
+            'blur(1px)',
+            'blur(2px)',
+            'blur(1px)',
+          ],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
     </>
   );
 };

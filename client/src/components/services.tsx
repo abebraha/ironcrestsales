@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bus, Settings, Users, TrendingUp, Sparkles, Target, Zap, Award } from "lucide-react";
 import ServiceCard3D from "./service-card-3d";
+import { AnimatedBackground } from "./animated-background";
 
 export default function Services() {
   const [activeStep, setActiveStep] = useState<number | null>(null);
@@ -97,36 +98,9 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-20 bg-muted/30 overflow-hidden relative">
-      {/* Background animated elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, 30, 0],
-            scale: [1, 1.2, 1]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
-          animate={{
-            x: [0, -50, 0],
-            y: [0, -30, 0],
-            scale: [1, 1.3, 1]
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-      </div>
+    <section id="services" className="py-20 overflow-hidden relative gpu-accelerated gradient-animated">
+      {/* Animated background with services variant */}
+      <AnimatedBackground variant="services" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Animated title section */}

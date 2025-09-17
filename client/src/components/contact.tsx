@@ -12,6 +12,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { insertContactSubmissionSchema, type InsertContactSubmission } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
+import { AnimatedBackground } from "./animated-background";
 
 // Floating Label Input Component
 const FloatingLabelInput = ({ 
@@ -392,35 +393,10 @@ export default function Contact() {
   }, [form.formState.errors]);
 
   return (
-    <section id="contact" className="py-20 bg-muted/30 relative overflow-hidden">
+    <section id="contact" className="py-20 relative overflow-hidden noise-texture gpu-accelerated">
+      {/* Animated background with contact variant */}
+      <AnimatedBackground variant="contact" />
       <Confetti active={showConfetti} />
-      
-      {/* Animated background elements */}
-      <motion.div
-        className="absolute top-10 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      <motion.div
-        className="absolute bottom-10 right-10 w-32 h-32 bg-accent/10 rounded-full blur-xl"
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1
-        }}
-      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div 

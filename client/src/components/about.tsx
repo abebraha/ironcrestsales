@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform, useInView, useAnimation, useMotionValu
 import { Award, Handshake, TrendingUp, Quote, Users, Target, Rocket, Shield, ChevronRight, Star, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { AnimatedBackground } from "./animated-background";
 
 // Counter component for animated numbers
 function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: number; suffix?: string; prefix?: string }) {
@@ -155,38 +156,9 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden" ref={containerRef}>
-      {/* Animated background shapes */}
-      <motion.div 
-        className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-3xl"
-        style={{ x: springX, y: springY }}
-      />
-      <motion.div 
-        className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-gold-accent/10 to-primary/10 rounded-full blur-3xl"
-        style={{ x: springX, y: parallaxY }}
-      />
-      
-      {/* Floating decorative elements */}
-      <motion.div
-        className="absolute top-20 left-1/4 text-gold-accent/20"
-        animate={{ 
-          y: [0, -20, 0],
-          rotate: [0, 180, 360]
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-      >
-        <Sparkles className="w-8 h-8" />
-      </motion.div>
-      <motion.div
-        className="absolute bottom-40 right-1/3 text-primary/20"
-        animate={{ 
-          y: [0, 20, 0],
-          rotate: [360, 180, 0]
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-      >
-        <Star className="w-6 h-6" />
-      </motion.div>
+    <section id="about" className="py-20 relative overflow-hidden gradient-mesh gpu-accelerated" ref={containerRef}>
+      {/* Animated background with about variant */}
+      <AnimatedBackground variant="about" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Hero Section with Typewriter */}
