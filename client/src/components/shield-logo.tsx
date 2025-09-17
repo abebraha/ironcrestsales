@@ -5,10 +5,10 @@ interface ShieldLogoProps {
 
 export default function ShieldLogo({ size = 'medium', className = '' }: ShieldLogoProps) {
   const sizeClasses = {
-    small: 'w-12 h-12',
-    medium: 'w-20 h-20',
-    large: 'w-32 h-32',
-    nav: 'w-8 h-8'
+    small: 'w-16 h-16',
+    medium: 'w-28 h-28',
+    large: 'w-48 h-48',
+    nav: 'w-12 h-12'
   };
 
   return (
