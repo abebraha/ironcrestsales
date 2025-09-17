@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 interface LogoProps {
   size?: 'small' | 'medium' | 'large' | 'nav';
   className?: string;
@@ -11,12 +13,64 @@ export default function Logo({ size = 'medium', className = '' }: LogoProps) {
     nav: 'w-32 h-20'
   };
 
+  // Morph animation based on size
+  const morphVariants = {
+    small: {
+      scale: 0.8,
+      filter: "brightness(1.1) saturate(1.2)",
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        stiffness: 200,
+        damping: 20
+      }
+    },
+    medium: {
+      scale: 1,
+      filter: "brightness(1) saturate(1)",
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        stiffness: 200,
+        damping: 20
+      }
+    },
+    large: {
+      scale: 1.1,
+      filter: "brightness(1.05) saturate(1.1)",
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        stiffness: 200,
+        damping: 20
+      }
+    },
+    nav: {
+      scale: 1,
+      filter: "brightness(1) saturate(1)",
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        stiffness: 200,
+        damping: 20
+      }
+    }
+  };
+
   return (
-    <img 
+    <motion.img 
       src="/ironcrest-logo.png"
       alt="IronCrest Sales Logo"
-      className={`${sizeClasses[size]} ${className} object-contain`}
+      className={`${sizeClasses[size]} ${className} object-contain transition-all duration-500`}
       data-testid="logo"
+      variants={morphVariants}
+      animate={size}
+      whileHover={{
+        scale: 1.05,
+        filter: "brightness(1.1) saturate(1.2) drop-shadow(0 0 20px rgba(251, 193, 18, 0.3))",
+        transition: { duration: 0.3 }
+      }}
+      whileTap={{ scale: 0.95 }}
     />
   );
 }
