@@ -8,7 +8,7 @@ export default function Logo({ size = 'medium', className = '' }: LogoProps) {
     small: 'w-8 h-8',
     medium: 'w-16 h-16',
     large: 'w-20 h-20',
-    nav: 'w-10 h-10'
+    nav: 'w-24 h-16'
   };
 
   return (
@@ -16,7 +16,10 @@ export default function Logo({ size = 'medium', className = '' }: LogoProps) {
       src="/ironcrest-logo.png"
       alt="IronCrest Sales Logo"
       className={`${sizeClasses[size]} ${className} object-contain`}
-      style={{ background: 'transparent' }}
+      style={{ 
+        mixBlendMode: 'multiply',
+        filter: 'brightness(1.2) contrast(1.1)'
+      }}
       data-testid="logo"
     />
   );
