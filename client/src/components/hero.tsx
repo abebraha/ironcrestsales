@@ -70,6 +70,9 @@ export default function Hero() {
       {/* Animated background layers */}
       <AnimatedBackground />
       
+      {/* Scrim overlay for better text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/60 z-[5]" />
+      
       {/* Main hero content with parallax */}
       <motion.div 
         className="relative z-10 pt-24 pb-20"
@@ -139,7 +142,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.8 }}
             >
               <p 
-                className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed"
+                className="text-xl md:text-2xl text-white/85 mb-8 max-w-3xl mx-auto leading-relaxed"
                 data-testid="hero-subtitle"
               >
                 <TextReveal delay={1} stagger={0.01} type="word">
@@ -157,7 +160,7 @@ export default function Hero() {
             >
               <motion.button 
                 onClick={scrollToContact}
-                className="relative bg-gold-accent text-white px-8 py-4 rounded-lg font-montserrat font-semibold text-lg overflow-hidden group"
+                className="relative bg-gold-accent text-primary px-8 py-4 rounded-lg font-montserrat font-bold text-lg overflow-hidden group"
                 data-testid="button-schedule-consultation"
                 onMouseEnter={() => setIsHovered('schedule')}
                 onMouseLeave={() => setIsHovered(null)}
@@ -276,7 +279,7 @@ export default function Hero() {
               >
                 {stat.value}
               </motion.div>
-              <div className="relative text-blue-100">{stat.label}</div>
+              <div className="relative text-white/85">{stat.label}</div>
             </motion.div>
           ))}
         </div>

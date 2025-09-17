@@ -10,7 +10,7 @@
   --card-foreground: hsl(220, 13%, 9%);
   --popover: hsl(0, 0%, 100%);
   --popover-foreground: hsl(220, 13%, 9%);
-  --primary: hsl(240, 59%, 20%); /* Darker navy blue */
+  --primary: hsl(240, 59%, 20%); /* Brand navy */
   --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(240, 45%, 15%); /* Darker secondary */
   --secondary-foreground: hsl(0, 0%, 100%);
@@ -24,7 +24,14 @@
   --input: hsl(220, 13%, 91%);
   --ring: hsl(240, 59%, 20%);
   --radius: 8px;
-  --gold-accent: hsl(43, 96%, 56%); /* More golden color to match logo */
+  --gold-accent: hsl(43, 96%, 56%); /* Brand gold */
+  --brand-navy: hsl(240, 59%, 20%); /* Primary brand navy */
+  --brand-navy-2: hsl(240, 50%, 14%); /* Deeper navy for surfaces */
+  --brand-gold: hsl(43, 96%, 56%); /* Primary brand gold */
+  --gold-foreground: hsl(225, 30%, 10%); /* Dark text on gold backgrounds */
+  --on-dark-strong: hsl(0, 0%, 100%); /* Primary text on dark */
+  --on-dark-subtle: hsl(0, 0%, 85%); /* Secondary text on dark */
+  --scrim-strong: hsla(220, 60%, 10%, 0.65); /* Text background overlay */
   --font-sans: 'Open Sans', sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
 }
@@ -50,6 +57,13 @@
   --input: hsl(220, 13%, 20%);
   --ring: hsl(217, 91%, 60%);
   --gold-accent: hsl(43, 96%, 56%); /* Gold accent for dark mode */
+  --brand-navy: hsl(240, 59%, 20%);
+  --brand-navy-2: hsl(240, 50%, 14%);
+  --brand-gold: hsl(43, 96%, 56%);
+  --gold-foreground: hsl(225, 30%, 10%);
+  --on-dark-strong: hsl(0, 0%, 100%);
+  --on-dark-subtle: hsl(0, 0%, 85%);
+  --scrim-strong: hsla(220, 60%, 10%, 0.65);
 }
 
 @layer base {

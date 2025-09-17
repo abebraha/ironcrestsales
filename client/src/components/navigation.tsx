@@ -170,7 +170,7 @@ export default function Navigation() {
                   handleRippleEffect(e);
                   scrollToSection('contact');
                 }}
-                className="bg-gold-accent text-white px-6 py-2 rounded-lg hover:bg-gold-accent/90 transition-all duration-300 hover:shadow-lg hover:shadow-gold-accent/30"
+                className="bg-gold-accent text-primary px-6 py-2 rounded-lg hover:bg-gold-accent/90 transition-all duration-300 hover:shadow-lg hover:shadow-gold-accent/30 font-semibold"
                 data-testid="nav-contact"
               >
                 Contact Us
@@ -260,8 +260,8 @@ export default function Navigation() {
                     }}
                     className={`block w-full text-left px-3 py-2 rounded-lg transition-colors relative overflow-hidden ${
                       section === 'contact' 
-                        ? 'bg-gold-accent text-white hover:bg-gold-accent/90' 
-                        : 'text-white/80 hover:text-gold-accent hover:bg-white/5'
+                        ? 'bg-gold-accent text-primary hover:bg-gold-accent/90 font-semibold' 
+                        : 'text-white/90 hover:text-gold-accent hover:bg-white/5'
                     }`}
                     data-testid={`mobile-nav-${section}`}
                     initial={{ x: -50, opacity: 0 }}
@@ -323,7 +323,7 @@ function NavItem({
   return (
     <motion.button
       onClick={onClick}
-      className="relative text-white/80 hover:text-gold-accent transition-colors py-2 overflow-hidden"
+      className="relative text-white/90 hover:text-gold-accent transition-colors py-2 overflow-hidden"
       data-testid={`nav-${section}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}

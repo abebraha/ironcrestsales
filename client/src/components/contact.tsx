@@ -55,12 +55,12 @@ const FloatingLabelInput = ({
         className={`absolute left-3 transition-all duration-200 pointer-events-none ${
           field.value || isFocused 
             ? 'top-1 text-xs text-primary font-semibold' 
-            : 'top-4 text-sm text-muted-foreground'
+            : 'top-4 text-sm text-foreground/70'
         }`}
         animate={{
           y: field.value || isFocused ? -8 : 0,
           scale: field.value || isFocused ? 0.85 : 1,
-          color: field.value || isFocused ? 'var(--primary)' : 'var(--muted-foreground)'
+          color: field.value || isFocused ? 'var(--primary)' : 'var(--foreground)'
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
@@ -124,12 +124,12 @@ const FloatingLabelTextarea = ({ field, label, testId, isValid = false }: any) =
         className={`absolute left-3 transition-all duration-200 pointer-events-none ${
           field.value || isFocused 
             ? 'top-1 text-xs text-primary font-semibold' 
-            : 'top-4 text-sm text-muted-foreground'
+            : 'top-4 text-sm text-foreground/70'
         }`}
         animate={{
           y: field.value || isFocused ? -8 : 0,
           scale: field.value || isFocused ? 0.85 : 1,
-          color: field.value || isFocused ? 'var(--primary)' : 'var(--muted-foreground)'
+          color: field.value || isFocused ? 'var(--primary)' : 'var(--foreground)'
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
@@ -275,7 +275,7 @@ const FormProgressBar = ({ progress }: { progress: number }) => {
   return (
     <motion.div className="mb-6">
       <div className="flex justify-between items-center mb-2">
-        <span className="text-sm text-muted-foreground">Form Completion</span>
+        <span className="text-sm text-foreground/70">Form Completion</span>
         <motion.span 
           className="text-sm font-semibold text-primary"
           key={progress}
@@ -417,7 +417,7 @@ export default function Contact() {
           <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-primary mb-6" data-testid="contact-title">
             Ready to Scale Your Sales?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Schedule a consultation with our sales experts to discuss your growth goals and how we can help you achieve them.
           </p>
         </motion.div>
@@ -458,7 +458,7 @@ export default function Contact() {
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
                 </motion.div>
                 <h4 className="text-xl font-montserrat font-semibold text-foreground mb-2">Thank You!</h4>
-                <p className="text-muted-foreground">We've received your inquiry and will be in touch within 24 hours.</p>
+                <p className="text-foreground/80">We've received your inquiry and will be in touch within 24 hours.</p>
               </motion.div>
             ) : (
               <>
@@ -730,8 +730,8 @@ export default function Contact() {
                   </motion.div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Phone</h4>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                    <p className="text-sm text-muted-foreground">Mon-Fri 9AM-6PM EST</p>
+                    <p className="text-foreground/80">+1 (555) 123-4567</p>
+                    <p className="text-sm text-foreground/70">Mon-Fri 9AM-6PM EST</p>
                   </div>
                 </motion.div>
                 
@@ -750,8 +750,8 @@ export default function Contact() {
                   </motion.div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Email</h4>
-                    <p className="text-muted-foreground">info@ironcretsales.com</p>
-                    <p className="text-sm text-muted-foreground">Response within 24 hours</p>
+                    <p className="text-foreground/80">info@ironcretsales.com</p>
+                    <p className="text-sm text-foreground/70">Response within 24 hours</p>
                   </div>
                 </motion.div>
                 
@@ -770,8 +770,8 @@ export default function Contact() {
                   </motion.div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Headquarters</h4>
-                    <p className="text-muted-foreground">New York, NY</p>
-                    <p className="text-sm text-muted-foreground">Serving clients nationwide</p>
+                    <p className="text-foreground/80">New York, NY</p>
+                    <p className="text-sm text-foreground/70">Serving clients nationwide</p>
                   </div>
                 </motion.div>
               </div>

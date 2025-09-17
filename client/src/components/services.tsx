@@ -157,7 +157,7 @@ export default function Services() {
           </h2>
           
           <motion.p 
-            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+            className="text-xl text-foreground/80 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
@@ -316,7 +316,7 @@ export default function Services() {
                   </motion.h4>
                   
                   <motion.p 
-                    className="text-sm text-muted-foreground"
+                    className="text-sm text-foreground/70"
                     animate={{
                       scale: isActive ? 1.05 : 1
                     }}

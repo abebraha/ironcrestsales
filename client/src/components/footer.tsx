@@ -155,7 +155,7 @@ const FooterLink = ({ href, children, delay = 0 }: { href: string; children: Rea
         onMouseLeave={() => setIsHovered(false)}
         data-testid={`footer-link-${children?.toString().toLowerCase().replace(/\s+/g, '-')}`}
       >
-        <span className="relative z-10 text-secondary-foreground/80 group-hover:text-yellow-300 transition-colors duration-300">
+        <span className="relative z-10 text-secondary-foreground/90 group-hover:text-yellow-300 transition-colors duration-300">
           {children}
         </span>
         
@@ -303,7 +303,7 @@ export default function Footer() {
               </span>
             </motion.div>
             
-            <p className="text-secondary-foreground/80 mb-6 max-w-md leading-relaxed">
+            <p className="text-secondary-foreground/90 mb-6 max-w-md leading-relaxed">
               Expert outsourced sales solutions that help businesses build scalable revenue departments through strategic talent and proven systems.
             </p>
             
@@ -430,14 +430,14 @@ export default function Footer() {
           variants={itemVariants}
         >
           <motion.p 
-            className="text-secondary-foreground/60 mb-2"
+            className="text-secondary-foreground/80 mb-2"
             animate={{ opacity: [0.6, 1, 0.6] }}
             transition={{ duration: 3, repeat: Infinity }}
             data-testid="footer-copyright"
           >
             Made with <Heart className="w-4 h-4 inline text-red-400 animate-pulse" /> by IronCrest Sales
           </motion.p>
-          <p className="text-secondary-foreground/60 text-sm">
+          <p className="text-secondary-foreground/80 text-sm">
             &copy; 2024 IronCrest Sales. All rights reserved. | 
             <a href="#" className="hover:text-yellow-300 transition-colors mx-1">Privacy Policy</a> | 
             <a href="#" className="hover:text-yellow-300 transition-colors mx-1">Terms of Service</a>
