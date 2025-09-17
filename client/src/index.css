@@ -512,3 +512,272 @@ html {
 .animate-shake {
   animation: shake 0.5s ease-in-out;
 }
+
+/* Footer specific animations */
+@keyframes footer-glow {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px hsla(43, 96%, 56%, 0.3),
+      0 0 40px hsla(43, 96%, 56%, 0.2),
+      0 0 60px hsla(43, 96%, 56%, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px hsla(43, 96%, 56%, 0.5),
+      0 0 60px hsla(43, 96%, 56%, 0.3),
+      0 0 90px hsla(43, 96%, 56%, 0.2);
+  }
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-30px) translateX(10px) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-60px) translateX(-10px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes wave-flow {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkle-spin {
+  0% {
+    transform: rotate(0deg) scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+@keyframes footer-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+  75% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+@keyframes link-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes newsletter-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 hsla(43, 96%, 56%, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px hsla(43, 96%, 56%, 0);
+  }
+}
+
+/* Social icon hover states */
+.social-icon-glow {
+  animation: footer-glow 2s ease-in-out infinite;
+}
+
+/* Footer particles */
+.footer-particle {
+  position: absolute;
+  pointer-events: none;
+  animation: particle-float 3s ease-out forwards;
+}
+
+/* Wave effect overlay */
+.footer-wave-effect {
+  animation: wave-flow 1.5s ease-out;
+}
+
+/* Sparkle animation */
+.footer-sparkle {
+  animation: sparkle-spin 2s linear infinite;
+}
+
+/* Floating elements */
+.footer-float {
+  animation: footer-float 4s ease-in-out infinite;
+}
+
+/* Link hover slide */
+.footer-link-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-link-hover:hover {
+  animation: link-slide 0.3s ease-out forwards;
+}
+
+/* Newsletter input focus effect */
+.newsletter-focused {
+  animation: newsletter-pulse 1.5s infinite;
+}
+
+/* Gradient text animation */
+@keyframes gradient-text-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text-animated {
+  background: linear-gradient(
+    90deg,
+    hsl(43, 96%, 56%),
+    hsl(45, 93%, 65%),
+    hsl(43, 96%, 56%)
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text-shift 3s linear infinite;
+}
+
+/* Decorative star rotation */
+@keyframes star-rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.footer-star {
+  animation: star-rotate 20s linear infinite;
+}
+
+/* Divider shimmer effect */
+@keyframes divider-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.footer-divider-shimmer {
+  animation: divider-shimmer 3s linear infinite;
+}
+
+/* Scroll to top button pulse */
+@keyframes scroll-top-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 hsla(43, 96%, 56%, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px hsla(43, 96%, 56%, 0);
+  }
+}
+
+.scroll-top-button {
+  animation: scroll-top-pulse 2s infinite;
+}
+
+/* Footer reveal animation */
+@keyframes footer-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-reveal {
+  animation: footer-reveal 0.8s ease-out;
+}
+
+/* Icon rotation on hover */
+@keyframes icon-360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.footer-icon-rotate {
+  transition: transform 0.5s ease;
+}
+
+.footer-icon-rotate:hover {
+  animation: icon-360 0.5s ease;
+}
+
+/* Breathing animation for CTAs */
+@keyframes cta-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.95;
+  }
+}
+
+.cta-breathe {
+  animation: cta-breathe 3s ease-in-out infinite;
+}
+
+/* Social media ring effect */
+@keyframes social-ring {
+  0% {
+    box-shadow: 0 0 0 0 hsla(43, 96%, 56%, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 20px hsla(43, 96%, 56%, 0);
+  }
+}
+
+.social-ring-effect {
+  animation: social-ring 1s ease-out;
+}
