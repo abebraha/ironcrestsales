@@ -1,211 +1,388 @@
-import { motion } from "framer-motion";
-import { Bus, Settings, Users, TrendingUp, CheckCircle } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Bus, Settings, Users, TrendingUp, Sparkles, Target, Zap, Award } from "lucide-react";
+import ServiceCard3D from "./service-card-3d";
 
 export default function Services() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
+  const [activeStep, setActiveStep] = useState<number | null>(null);
+  
+  const services = [
+    {
+      icon: Bus,
+      title: "Expert Sales Professionals",
+      description: "Seasoned sales experts who integrate directly with your team, bringing proven methodologies and immediate impact to your revenue pipeline.",
+      features: [
+        "Experienced B2B sales professionals",
+        "Industry-specific expertise",
+        "Immediate integration and impact"
+      ],
+      iconBgColor: "bg-primary/10",
+      iconColor: "text-primary",
+      checkColor: "text-primary",
+      testId: "service-professionals"
+    },
+    {
+      icon: Users,
+      title: "Strategic Hiring & Scaling",
+      description: "Build your internal sales team with our proven hiring methodology and ongoing support for sustainable growth.",
+      features: [
+        "Sales team recruitment",
+        "Training and onboarding",
+        "Performance management systems"
+      ],
+      iconBgColor: "bg-yellow-500/10",
+      iconColor: "text-gold-accent",
+      checkColor: "text-gold-accent",
+      testId: "service-hiring"
+    },
+    {
+      icon: Settings,
+      title: "Sales System Development",
+      description: "Build robust, scalable sales processes that grow with your business and create predictable revenue streams.",
+      features: [
+        "Custom CRM implementation",
+        "Lead generation systems",
+        "Performance tracking and analytics"
+      ],
+      iconBgColor: "bg-accent/10",
+      iconColor: "text-accent",
+      checkColor: "text-accent",
+      testId: "service-systems"
+    },
+    {
+      icon: TrendingUp,
+      title: "Revenue Optimization",
+      description: "Maximize your existing sales potential through data-driven insights and proven optimization strategies.",
+      features: [
+        "Sales process audits",
+        "Conversion rate optimization",
+        "Pipeline management improvement"
+      ],
+      iconBgColor: "bg-secondary/10",
+      iconColor: "text-secondary",
+      checkColor: "text-secondary",
+      testId: "service-optimization"
     }
-  };
+  ];
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 }
+  const processSteps = [
+    {
+      icon: Target,
+      title: "Analysis",
+      description: "Comprehensive assessment of your current sales operations and growth goals",
+      color: "bg-primary",
+      glowColor: "shadow-primary/50"
+    },
+    {
+      icon: Zap,
+      title: "Strategy",
+      description: "Custom solution design tailored to your industry and business model",
+      color: "bg-accent",
+      glowColor: "shadow-accent/50"
+    },
+    {
+      icon: Sparkles,
+      title: "Implementation",
+      description: "Deploy expert sales professionals and establish scalable systems",
+      color: "bg-yellow-500",
+      glowColor: "shadow-yellow-500/50"
+    },
+    {
+      icon: Award,
+      title: "Scale",
+      description: "Continuous optimization and strategic team expansion for sustained growth",
+      color: "bg-secondary",
+      glowColor: "shadow-secondary/50"
     }
-  };
+  ];
 
   return (
-    <section id="services" className="py-20 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-20 bg-muted/30 overflow-hidden relative">
+      {/* Background animated elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
+          animate={{
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
+          animate={{
+            x: [0, -50, 0],
+            y: [0, -30, 0],
+            scale: [1, 1.3, 1]
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Animated title section */}
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           viewport={{ once: true }}
         >
+          <motion.div
+            initial={{ scale: 0, rotate: -180 }}
+            whileInView={{ scale: 1, rotate: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="inline-block mb-4"
+          >
+            <div className="relative">
+              <motion.div
+                className="absolute inset-0 bg-primary/20 blur-xl"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.5, 0.8, 0.5]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <Sparkles className="w-12 h-12 text-primary relative z-10" />
+            </div>
+          </motion.div>
+          
           <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-primary mb-6" data-testid="services-title">
-            Comprehensive Sales Solutions
+            <motion.span
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="inline-block"
+            >
+              Comprehensive
+            </motion.span>{" "}
+            <motion.span
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="inline-block"
+            >
+              Sales Solutions
+            </motion.span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          
+          <motion.p 
+            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
             From individual sales experts to complete department buildouts, we provide the talent and systems your business needs to scale effectively.
-          </p>
+          </motion.p>
         </motion.div>
 
+        {/* 3D Service Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          {services.map((service, index) => (
+            <ServiceCard3D
+              key={index}
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+              features={service.features}
+              iconBgColor={service.iconBgColor}
+              iconColor={service.iconColor}
+              checkColor={service.checkColor}
+              index={index}
+              testId={service.testId}
+            />
+          ))}
+        </div>
+
+        {/* Enhanced 3D Process Section */}
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.div 
-            className="bg-card rounded-xl p-8 border border-border shadow-lg h-full flex flex-col"
-            variants={itemVariants}
-            data-testid="service-professionals"
-          >
-            <div className="flex items-start space-x-4 flex-1">
-              <div className="bg-primary/10 p-3 rounded-lg">
-                <Bus className="w-6 h-6 text-primary" />
-              </div>
-              <div className="flex-1 flex flex-col">
-                <h3 className="text-2xl font-montserrat font-bold text-foreground mb-3">Expert Sales Professionals</h3>
-                <p className="text-muted-foreground mb-4 flex-1">
-                  Seasoned sales experts who integrate directly with your team, bringing proven methodologies and immediate impact to your revenue pipeline.
-                </p>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                    Experienced B2B sales professionals
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                    Industry-specific expertise
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
-                    Immediate integration and impact
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            className="bg-card rounded-xl p-8 border border-border shadow-lg h-full flex flex-col"
-            variants={itemVariants}
-            data-testid="service-hiring"
-          >
-            <div className="flex items-start space-x-4 flex-1">
-              <div className="bg-yellow-500/10 p-3 rounded-lg">
-                <Users className="w-6 h-6 text-gold-accent" />
-              </div>
-              <div className="flex-1 flex flex-col">
-                <h3 className="text-2xl font-montserrat font-bold text-foreground mb-3">Strategic Hiring & Scaling</h3>
-                <p className="text-muted-foreground mb-4 flex-1">
-                  Build your internal sales team with our proven hiring methodology and ongoing support for sustainable growth.
-                </p>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-gold-accent mr-2" />
-                    Sales team recruitment
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-gold-accent mr-2" />
-                    Training and onboarding
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-gold-accent mr-2" />
-                    Performance management systems
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            className="bg-card rounded-xl p-8 border border-border shadow-lg h-full flex flex-col"
-            variants={itemVariants}
-            data-testid="service-systems"
-          >
-            <div className="flex items-start space-x-4 flex-1">
-              <div className="bg-accent/10 p-3 rounded-lg">
-                <Settings className="w-6 h-6 text-accent" />
-              </div>
-              <div className="flex-1 flex flex-col">
-                <h3 className="text-2xl font-montserrat font-bold text-foreground mb-3">Sales System Development</h3>
-                <p className="text-muted-foreground mb-4 flex-1">
-                  Build robust, scalable sales processes that grow with your business and create predictable revenue streams.
-                </p>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-accent mr-2" />
-                    Custom CRM implementation
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-accent mr-2" />
-                    Lead generation systems
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-accent mr-2" />
-                    Performance tracking and analytics
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            className="bg-card rounded-xl p-8 border border-border shadow-lg h-full flex flex-col"
-            variants={itemVariants}
-            data-testid="service-optimization"
-          >
-            <div className="flex items-start space-x-4 flex-1">
-              <div className="bg-secondary/10 p-3 rounded-lg">
-                <TrendingUp className="w-6 h-6 text-secondary" />
-              </div>
-              <div className="flex-1 flex flex-col">
-                <h3 className="text-2xl font-montserrat font-bold text-foreground mb-3">Revenue Optimization</h3>
-                <p className="text-muted-foreground mb-4 flex-1">
-                  Maximize your existing sales potential through data-driven insights and proven optimization strategies.
-                </p>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-secondary mr-2" />
-                    Sales process audits
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-secondary mr-2" />
-                    Conversion rate optimization
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-secondary mr-2" />
-                    Pipeline management improvement
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* Process Section */}
-        <motion.div 
-          className="bg-primary/5 rounded-2xl p-8 md:p-12"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          className="relative bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5 rounded-2xl p-8 md:p-12 overflow-hidden"
+          initial={{ opacity: 0, y: 50, rotateX: -15 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+          viewport={{ once: true, margin: "-100px" }}
+          style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
           data-testid="process-section"
         >
-          <h3 className="text-3xl font-montserrat font-bold text-center text-primary mb-12">Our Proven 4-Step Process</h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center" data-testid="process-step-1">
-              <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
-              <h4 className="font-montserrat font-semibold text-lg mb-2">Analysis</h4>
-              <p className="text-sm text-muted-foreground">Comprehensive assessment of your current sales operations and growth goals</p>
-            </div>
-            <div className="text-center" data-testid="process-step-2">
-              <div className="bg-accent text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
-              <h4 className="font-montserrat font-semibold text-lg mb-2">Strategy</h4>
-              <p className="text-sm text-muted-foreground">Custom solution design tailored to your industry and business model</p>
-            </div>
-            <div className="text-center" data-testid="process-step-3">
-              <div className="bg-yellow-500 text-black w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
-              <h4 className="font-montserrat font-semibold text-lg mb-2">Implementation</h4>
-              <p className="text-sm text-muted-foreground">Deploy expert sales professionals and establish scalable systems</p>
-            </div>
-            <div className="text-center" data-testid="process-step-4">
-              <div className="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
-              <h4 className="font-montserrat font-semibold text-lg mb-2">Scale</h4>
-              <p className="text-sm text-muted-foreground">Continuous optimization and strategic team expansion for sustained growth</p>
-            </div>
+          {/* Animated gradient background */}
+          <motion.div
+            className="absolute inset-0 opacity-30"
+            style={{
+              background: "radial-gradient(circle at 50% 50%, var(--primary) 0%, transparent 70%)",
+              filter: "blur(100px)"
+            }}
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.3, 0.5, 0.3]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          
+          <h3 className="text-3xl font-montserrat font-bold text-center text-primary mb-12 relative z-10">
+            Our Proven 4-Step Process
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+            {processSteps.map((step, index) => {
+              const Icon = step.icon;
+              const isActive = activeStep === index;
+              
+              return (
+                <motion.div
+                  key={index}
+                  className="text-center relative"
+                  data-testid={`process-step-${index + 1}`}
+                  initial={{ opacity: 0, y: 50, rotateY: -30 }}
+                  whileInView={{ 
+                    opacity: 1, 
+                    y: 0, 
+                    rotateY: 0
+                  }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: index * 0.15,
+                    ease: [0.23, 1, 0.32, 1]
+                  }}
+                  viewport={{ once: true }}
+                  onMouseEnter={() => setActiveStep(index)}
+                  onMouseLeave={() => setActiveStep(null)}
+                  style={{ transformStyle: "preserve-3d" }}
+                >
+                  {/* Connection line */}
+                  {index < processSteps.length - 1 && (
+                    <motion.div
+                      className="absolute top-8 left-[60%] w-full h-0.5 bg-gradient-to-r from-primary/30 to-primary/10 hidden md:block"
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      transition={{ duration: 0.8, delay: index * 0.2 + 0.5 }}
+                      viewport={{ once: true }}
+                    />
+                  )}
+                  
+                  {/* 3D Step number with icon */}
+                  <motion.div
+                    className={`${step.color} text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 relative`}
+                    animate={{
+                      scale: isActive ? 1.2 : 1,
+                      rotateY: isActive ? 360 : 0,
+                      y: isActive ? -10 : 0
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "easeOut"
+                    }}
+                    style={{
+                      transformStyle: "preserve-3d",
+                      boxShadow: isActive 
+                        ? `0 20px 40px ${step.glowColor}` 
+                        : "0 4px 6px rgba(0,0,0,0.1)"
+                    }}
+                  >
+                    {/* Pulse effect */}
+                    <AnimatePresence>
+                      {isActive && (
+                        <motion.div
+                          className={`absolute inset-0 ${step.color} rounded-full`}
+                          initial={{ scale: 1, opacity: 0.8 }}
+                          animate={{ scale: 1.5, opacity: 0 }}
+                          exit={{ scale: 1, opacity: 0 }}
+                          transition={{
+                            duration: 1,
+                            repeat: Infinity
+                          }}
+                        />
+                      )}
+                    </AnimatePresence>
+                    
+                    {/* Icon with animation */}
+                    <motion.div
+                      animate={{
+                        scale: isActive ? [1, 1.2, 1] : 1
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        repeat: isActive ? Infinity : 0
+                      }}
+                      className="relative z-10"
+                    >
+                      {isActive ? <Icon className="w-8 h-8" /> : (index + 1)}
+                    </motion.div>
+                  </motion.div>
+                  
+                  <motion.h4 
+                    className="font-montserrat font-semibold text-lg mb-2"
+                    animate={{
+                      letterSpacing: isActive ? "0.05em" : "0em",
+                      color: isActive ? "var(--primary)" : "var(--foreground)"
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {step.title}
+                  </motion.h4>
+                  
+                  <motion.p 
+                    className="text-sm text-muted-foreground"
+                    animate={{
+                      scale: isActive ? 1.05 : 1
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {step.description}
+                  </motion.p>
+                  
+                  {/* Floating particles on hover */}
+                  <AnimatePresence>
+                    {isActive && (
+                      <>
+                        {[...Array(3)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            className="absolute w-1 h-1 bg-primary rounded-full"
+                            initial={{ 
+                              opacity: 0,
+                              x: "50%",
+                              y: "50%"
+                            }}
+                            animate={{
+                              opacity: [0, 1, 0],
+                              x: `${50 + (Math.random() - 0.5) * 100}%`,
+                              y: `${50 - Math.random() * 50}%`
+                            }}
+                            exit={{ opacity: 0 }}
+                            transition={{
+                              duration: 1.5,
+                              delay: i * 0.2,
+                              ease: "easeOut"
+                            }}
+                          />
+                        ))}
+                      </>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       </div>
