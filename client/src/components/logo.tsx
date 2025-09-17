@@ -17,8 +17,8 @@ export default function Logo({ size = 'medium', className = '' }: LogoProps) {
       alt="IronCrest Sales Logo"
       className={`${sizeClasses[size]} ${className} object-contain`}
       style={{ 
-        mixBlendMode: 'multiply',
-        filter: 'brightness(1.2) contrast(1.1)'
+        mixBlendMode: 'screen',
+        filter: 'brightness(1.2) contrast(1.2)'
       }}
       data-testid="logo"
     />
