@@ -275,9 +275,9 @@ const FormProgressBar = ({ progress }: { progress: number }) => {
   return (
     <motion.div className="mb-6">
       <div className="flex justify-between items-center mb-2">
-        <span className="text-sm text-foreground/70">Form Completion</span>
+        <span className="text-sm text-white/75">Form Completion</span>
         <motion.span 
-          className="text-sm font-semibold text-primary"
+          className="text-sm font-semibold text-gold-accent"
           key={progress}
           initial={{ scale: 1.2, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -414,10 +414,10 @@ export default function Contact() {
           >
             <Sparkles className="w-8 h-8 text-gold-accent" />
           </motion.div>
-          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-primary mb-6" data-testid="contact-title">
+          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-white mb-6" data-testid="contact-title">
             Ready to Scale Your Sales?
           </h2>
-          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+          <p className="text-xl text-white/85 max-w-3xl mx-auto">
             Schedule a consultation with our sales experts to discuss your growth goals and how we can help you achieve them.
           </p>
         </motion.div>

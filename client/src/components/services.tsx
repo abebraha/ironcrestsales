@@ -102,6 +102,9 @@ export default function Services() {
       {/* Animated background with services variant */}
       <AnimatedBackground variant="services" />
       
+      {/* Dark scrim overlay for better text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60 z-[5]" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Animated title section */}
         <motion.div 
@@ -131,11 +134,11 @@ export default function Services() {
                   ease: "easeInOut"
                 }}
               />
-              <Sparkles className="w-12 h-12 text-primary relative z-10" />
+              <Sparkles className="w-12 h-12 text-gold-accent relative z-10" />
             </div>
           </motion.div>
           
-          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-primary mb-6" data-testid="services-title">
+          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-white mb-6" data-testid="services-title">
             <motion.span
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -157,7 +160,7 @@ export default function Services() {
           </h2>
           
           <motion.p 
-            className="text-xl text-foreground/80 max-w-3xl mx-auto"
+            className="text-xl text-white/85 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
@@ -213,7 +216,7 @@ export default function Services() {
             }}
           />
           
-          <h3 className="text-3xl font-montserrat font-bold text-center text-primary mb-12 relative z-10">
+          <h3 className="text-3xl font-montserrat font-bold text-center text-white mb-12 relative z-10">
             Our Proven 4-Step Process
           </h3>
           
@@ -305,10 +308,10 @@ export default function Services() {
                   </motion.div>
                   
                   <motion.h4 
-                    className="font-montserrat font-semibold text-lg mb-2"
+                    className="font-montserrat font-semibold text-lg mb-2 text-white"
                     animate={{
                       letterSpacing: isActive ? "0.05em" : "0em",
-                      color: isActive ? "var(--primary)" : "var(--foreground)"
+                      color: isActive ? "var(--gold-accent)" : "#ffffff"
                     }}
                     transition={{ duration: 0.3 }}
                   >
@@ -316,7 +319,7 @@ export default function Services() {
                   </motion.h4>
                   
                   <motion.p 
-                    className="text-sm text-foreground/70"
+                    className="text-sm text-white/75"
                     animate={{
                       scale: isActive ? 1.05 : 1
                     }}

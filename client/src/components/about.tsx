@@ -166,7 +166,7 @@ export default function About() {
           <h2 className="text-4xl md:text-6xl font-montserrat font-bold mb-6">
             <HighlightText>Transforming</HighlightText> Sales Teams Into
           </h2>
-          <div className="text-4xl md:text-6xl font-montserrat font-bold text-primary mb-8">
+          <div className="text-4xl md:text-6xl font-montserrat font-bold text-gold-accent mb-8">
             <TypewriterText text="Revenue Machines" />
           </div>
         </TextReveal>
@@ -196,7 +196,7 @@ export default function About() {
                 <prop.icon className="w-10 h-10" />
               </motion.div>
               <h3 className="font-montserrat font-semibold text-lg mb-2">{prop.title}</h3>
-              <p className="text-muted-foreground text-sm">{prop.description}</p>
+              <p className="text-foreground/70 text-sm">{prop.description}</p>
             </motion.div>
           ))}
         </div>
@@ -244,7 +244,7 @@ export default function About() {
                       {milestone.year}
                     </motion.div>
                     <h4 className="font-montserrat font-semibold text-xl mb-2">{milestone.title}</h4>
-                    <p className="text-muted-foreground">{milestone.description}</p>
+                    <p className="text-foreground/70">{milestone.description}</p>
                   </motion.div>
                 </div>
                 
