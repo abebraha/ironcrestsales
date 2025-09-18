@@ -114,29 +114,6 @@ export default function Services() {
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           viewport={{ once: true }}
         >
-          <motion.div
-            initial={{ scale: 0, rotate: -180 }}
-            whileInView={{ scale: 1, rotate: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-block mb-4"
-          >
-            <div className="relative">
-              <motion.div
-                className="absolute inset-0 bg-primary/20 blur-xl"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.5, 0.8, 0.5]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              <Sparkles className="w-12 h-12 text-gold-accent relative z-10" />
-            </div>
-          </motion.div>
           
           <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-white mb-6" data-testid="services-title">
             <motion.span
@@ -198,21 +175,12 @@ export default function Services() {
           style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
           data-testid="process-section"
         >
-          {/* Animated gradient background */}
-          <motion.div
+          {/* Static gradient background */}
+          <div
             className="absolute inset-0 opacity-30"
             style={{
               background: "radial-gradient(circle at 50% 50%, var(--primary) 0%, transparent 70%)",
               filter: "blur(100px)"
-            }}
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.3, 0.5, 0.3]
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut"
             }}
           />
           
@@ -261,12 +229,12 @@ export default function Services() {
                   <motion.div
                     className={`${step.color} text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 relative`}
                     animate={{
-                      scale: isActive ? 1.2 : 1,
-                      rotateY: isActive ? 360 : 0,
-                      y: isActive ? -10 : 0
+                      scale: isActive ? 1.1 : 1,  // Reduced scale
+                      rotateY: isActive ? 10 : 0,  // Max 10 degree rotation instead of 360
+                      y: isActive ? -5 : 0  // Subtle lift
                     }}
                     transition={{
-                      duration: 0.5,
+                      duration: 0.2,  // Faster transition
                       ease: "easeOut"
                     }}
                     style={{
@@ -276,35 +244,11 @@ export default function Services() {
                         : "0 4px 6px rgba(0,0,0,0.1)"
                     }}
                   >
-                    {/* Pulse effect */}
-                    <AnimatePresence>
-                      {isActive && (
-                        <motion.div
-                          className={`absolute inset-0 ${step.color} rounded-full`}
-                          initial={{ scale: 1, opacity: 0.8 }}
-                          animate={{ scale: 1.5, opacity: 0 }}
-                          exit={{ scale: 1, opacity: 0 }}
-                          transition={{
-                            duration: 1,
-                            repeat: Infinity
-                          }}
-                        />
-                      )}
-                    </AnimatePresence>
                     
-                    {/* Icon with animation */}
-                    <motion.div
-                      animate={{
-                        scale: isActive ? [1, 1.2, 1] : 1
-                      }}
-                      transition={{
-                        duration: 0.5,
-                        repeat: isActive ? Infinity : 0
-                      }}
-                      className="relative z-10"
-                    >
+                    {/* Icon display - static */}
+                    <div className="relative z-10">
                       {isActive ? <Icon className="w-8 h-8" /> : (index + 1)}
-                    </motion.div>
+                    </div>
                   </motion.div>
                   
                   <motion.h4 
@@ -328,35 +272,6 @@ export default function Services() {
                     {step.description}
                   </motion.p>
                   
-                  {/* Floating particles on hover */}
-                  <AnimatePresence>
-                    {isActive && (
-                      <>
-                        {[...Array(3)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            className="absolute w-1 h-1 bg-primary rounded-full"
-                            initial={{ 
-                              opacity: 0,
-                              x: "50%",
-                              y: "50%"
-                            }}
-                            animate={{
-                              opacity: [0, 1, 0],
-                              x: `${50 + (Math.random() - 0.5) * 100}%`,
-                              y: `${50 - Math.random() * 50}%`
-                            }}
-                            exit={{ opacity: 0 }}
-                            transition={{
-                              duration: 1.5,
-                              delay: i * 0.2,
-                              ease: "easeOut"
-                            }}
-                          />
-                        ))}
-                      </>
-                    )}
-                  </AnimatePresence>
                 </motion.div>
               );
             })}

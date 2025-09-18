@@ -28,14 +28,13 @@ export default function ServiceCard3D({
 }: ServiceCard3DProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
-  const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number }>>([]);
   
   // Mouse position tracking
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   
-  // Spring animations for smooth transitions
-  const springConfig = { damping: 10, stiffness: 100 };
+  // Spring animations for smooth transitions with increased damping for subtler movement
+  const springConfig = { damping: 20, stiffness: 150 };
   const rotateX = useSpring(0, springConfig);
   const rotateY = useSpring(0, springConfig);
   const scale = useSpring(1, springConfig);
@@ -56,24 +55,13 @@ export default function ServiceCard3D({
     
     mouseX.set(x);
     mouseY.set(y);
-    rotateX.set(y * 10);
-    rotateY.set(x * 10);
+    rotateX.set(y * 5);  // Reduced from 10 to 5 degrees
+    rotateY.set(x * 5);  // Reduced from 10 to 5 degrees
   };
   
   const handleMouseEnter = () => {
     setIsHovered(true);
-    scale.set(1.03);
-    
-    // Generate sparkle particles
-    const newParticles = Array.from({ length: 8 }, (_, i) => ({
-      id: Date.now() + i,
-      x: Math.random() * 100,
-      y: Math.random() * 100
-    }));
-    setParticles(newParticles);
-    
-    // Clear particles after animation
-    setTimeout(() => setParticles([]), 2000);
+    scale.set(1.02);  // Reduced from 1.03 to 1.02 for subtler effect
   };
   
   const handleMouseLeave = () => {
@@ -163,47 +151,17 @@ export default function ServiceCard3D({
         }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
       >
-        {/* Sparkle particles */}
-        <AnimatePresence>
-          {particles.map((particle) => (
-            <motion.div
-              key={particle.id}
-              className="absolute w-1 h-1 bg-white rounded-full pointer-events-none"
-              initial={{ 
-                x: `${particle.x}%`, 
-                y: `${particle.y}%`,
-                scale: 0,
-                opacity: 1
-              }}
-              animate={{
-                x: `${particle.x + (Math.random() - 0.5) * 50}%`,
-                y: `${particle.y - 30}%`,
-                scale: [0, 1.5, 0],
-                opacity: [0, 1, 0]
-              }}
-              exit={{ opacity: 0 }}
-              transition={{
-                duration: 1.5,
-                ease: "easeOut"
-              }}
-              style={{
-                boxShadow: "0 0 6px rgba(255,255,255,0.8)"
-              }}
-            />
-          ))}
-        </AnimatePresence>
-        
         <div className="flex items-start space-x-4 flex-1 relative z-10">
-          {/* Animated icon container */}
+          {/* Animated icon container - simplified rotation */}
           <motion.div 
             className="relative"
             animate={{
-              rotate: isHovered ? 360 : 0,
-              scale: isHovered ? 1.1 : 1
+              rotate: isHovered ? 10 : 0,  // Max 10 degrees rotation instead of 360
+              scale: isHovered ? 1.05 : 1  // Subtle scale effect
             }}
             transition={{
-              rotate: { duration: 0.8, ease: "easeInOut" },
-              scale: { duration: 0.3 }
+              rotate: { duration: 0.2, ease: "easeOut" },  // Faster, smoother transition
+              scale: { duration: 0.15 }  // Quick scale transition
             }}
           >
             <motion.div 
@@ -214,21 +172,6 @@ export default function ServiceCard3D({
                   : "0 0 0px transparent"
               }}
             >
-              {/* Pulse effect */}
-              <motion.div
-                className="absolute inset-0 rounded-lg"
-                style={{ backgroundColor: iconColor }}
-                animate={{
-                  scale: isHovered ? [1, 1.5, 1] : 1,
-                  opacity: isHovered ? [0.3, 0, 0.3] : 0
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              
               <Icon className={`w-6 h-6 ${iconColor} relative z-10`} />
             </motion.div>
           </motion.div>
@@ -248,29 +191,14 @@ export default function ServiceCard3D({
               {description}
             </p>
             
-            {/* Animated progress bar decoration */}
-            <motion.div
-              className="h-1 bg-muted rounded-full overflow-hidden mb-4"
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              transition={{ duration: 1, delay: index * 0.2 + 0.5 }}
-              viewport={{ once: true }}
-            >
-              <motion.div
-                className="h-full rounded-full"
-                style={{
-                  background: `linear-gradient(90deg, ${iconColor}, ${checkColor})`
-                }}
-                animate={{
-                  x: isHovered ? ["0%", "100%", "0%"] : "0%"
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-              />
-            </motion.div>
+            {/* Static accent line */}
+            <div
+              className="h-0.5 rounded-full mb-4 transition-opacity duration-200"
+              style={{
+                background: `linear-gradient(90deg, ${iconColor}, ${checkColor})`,
+                opacity: 0.3
+              }}
+            />
             
             <ul className="space-y-2 text-sm text-muted-foreground">
               {features.map((feature, i) => (
@@ -285,18 +213,7 @@ export default function ServiceCard3D({
                   }}
                   viewport={{ once: true }}
                 >
-                  <motion.div
-                    animate={{
-                      rotate: isHovered ? 360 : 0,
-                      scale: isHovered ? [1, 1.2, 1] : 1
-                    }}
-                    transition={{
-                      rotate: { duration: 0.5, delay: i * 0.1 },
-                      scale: { duration: 0.3 }
-                    }}
-                  >
-                    <CheckCircle className={`w-4 h-4 ${checkColor} mr-2`} />
-                  </motion.div>
+                  <CheckCircle className={`w-4 h-4 ${checkColor} mr-2 transition-colors duration-150`} />
                   {feature}
                 </motion.li>
               ))}
@@ -304,21 +221,13 @@ export default function ServiceCard3D({
           </div>
         </div>
         
-        {/* Corner decoration */}
-        <motion.div
-          className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full"
+        {/* Corner decoration - static with transition */}
+        <div
+          className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full transition-opacity duration-200"
           style={{
             background: `radial-gradient(circle, ${iconColor}20 0%, transparent 70%)`,
-            filter: "blur(20px)"
-          }}
-          animate={{
-            scale: isHovered ? [1, 1.3, 1] : 1,
-            opacity: isHovered ? [0.5, 1, 0.5] : 0.3
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
+            filter: "blur(20px)",
+            opacity: isHovered ? 0.5 : 0.3
           }}
         />
       </motion.div>
