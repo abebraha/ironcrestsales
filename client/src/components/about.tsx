@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useInView, useAnimation, useMotionValue, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Award, Handshake, TrendingUp, Quote, Users, Target, Rocket, Shield, ChevronRight, Star, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,7 @@ function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: number; s
 
   useEffect(() => {
     if (isInView) {
-      const duration = 2000;
+      const duration = 800; // Reduced from 2000ms to 800ms
       const steps = 60;
       const stepValue = value / steps;
       let current = 0;
@@ -38,39 +38,6 @@ function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: number; s
   );
 }
 
-// Typewriter effect component
-function TypewriterText({ text, delay = 50 }: { text: string; delay?: number }) {
-  const [displayText, setDisplayText] = useState("");
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
-  
-  useEffect(() => {
-    if (isInView) {
-      let index = 0;
-      const timer = setInterval(() => {
-        if (index <= text.length) {
-          setDisplayText(text.slice(0, index));
-          index++;
-        } else {
-          clearInterval(timer);
-        }
-      }, delay);
-      
-      return () => clearInterval(timer);
-    }
-  }, [isInView, text, delay]);
-  
-  return (
-    <span ref={ref}>
-      {displayText}
-      <motion.span
-        animate={{ opacity: [1, 0] }}
-        transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
-        className="inline-block w-0.5 h-5 bg-primary ml-0.5"
-      />
-    </span>
-  );
-}
 
 // Text reveal with blur effect
 const TextReveal = ({ children, className }: { children: React.ReactNode; className?: string }) => {
@@ -118,20 +85,7 @@ export default function About() {
     offset: ["start end", "end start"]
   });
   
-  const parallaxY = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const floatingY = useMotionValue(0);
-  const floatingX = useMotionValue(0);
-  const springY = useSpring(floatingY, { stiffness: 100, damping: 10 });
-  const springX = useSpring(floatingX, { stiffness: 100, damping: 10 });
-  
-  // Floating animation for decorative elements
-  useEffect(() => {
-    const interval = setInterval(() => {
-      floatingY.set(Math.sin(Date.now() / 1000) * 10);
-      floatingX.set(Math.cos(Date.now() / 1500) * 5);
-    }, 50);
-    return () => clearInterval(interval);
-  }, [floatingY, floatingX]);
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [20, -20]); // Reduced parallax movement
   
   const teamMembers = [
     { name: "John Anderson", role: "Founder & CEO", expertise: "20+ years in B2B Sales", image: "JA" },
@@ -166,9 +120,14 @@ export default function About() {
           <h2 className="text-4xl md:text-6xl font-montserrat font-bold mb-6 text-foreground">
             <HighlightText>Transforming</HighlightText> Sales Teams Into
           </h2>
-          <div className="text-4xl md:text-6xl font-montserrat font-bold text-gold-accent mb-8">
-            <TypewriterText text="Revenue Machines" />
-          </div>
+          <motion.div 
+            className="text-4xl md:text-6xl font-montserrat font-bold text-gold-accent mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          >
+            Revenue Machines
+          </motion.div>
         </TextReveal>
         
         {/* Value Propositions with animated cards */}
@@ -180,9 +139,9 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               whileHover={{ 
-                scale: 1.05,
-                rotateY: 10,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
+                scale: 1.02,
+                y: -2,
+                boxShadow: "0 10px 20px rgba(0,0,0,0.1)"
               }}
               viewport={{ once: true }}
               className="bg-white dark:bg-card rounded-xl p-6 border border-border hover:border-primary/30 transition-all duration-300 transform-gpu perspective-1000"
@@ -190,8 +149,8 @@ export default function About() {
             >
               <motion.div
                 className={`${prop.color} mb-4`}
-                whileHover={{ rotate: 360, scale: 1.2 }}
-                transition={{ duration: 0.5 }}
+                whileHover={{ rotate: 5, scale: 1.1 }}
+                transition={{ duration: 0.2 }}
               >
                 <prop.icon className="w-10 h-10" />
               </motion.div>
@@ -223,7 +182,7 @@ export default function About() {
               <motion.div
                 key={milestone.year}
                 className={`flex items-center mb-12 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
@@ -257,11 +216,6 @@ export default function About() {
                   viewport={{ once: true }}
                 >
                   <div className="w-6 h-6 bg-primary rounded-full border-4 border-background" />
-                  <motion.div
-                    className="absolute inset-0 rounded-full bg-primary/30"
-                    animate={{ scale: [1, 2, 1], opacity: [0.5, 0, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
                 </motion.div>
                 
                 <div className="flex-1" />
@@ -302,8 +256,8 @@ export default function About() {
                 >
                   <motion.div 
                     className={`${item.color} p-2 rounded-lg mt-1`}
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.5 }}
+                    whileHover={{ rotate: 10, scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
                   >
                     <item.icon className={`w-5 h-5 ${item.iconColor}`} />
                   </motion.div>
@@ -358,13 +312,9 @@ export default function About() {
               data-testid="testimonial"
             >
               <div className="flex items-center space-x-4 mb-4">
-                <motion.div 
-                  className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center"
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                >
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                   <Quote className="w-6 h-6 text-primary" />
-                </motion.div>
+                </div>
                 <div>
                   <div className="font-montserrat font-semibold">Mike Rodriguez</div>
                   <div className="text-sm text-foreground/60">VP Sales, Manufacturing Solutions Inc.</div>
@@ -390,32 +340,27 @@ export default function About() {
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
-                className="relative h-80 transform-gpu preserve-3d"
-                initial={{ opacity: 0, rotateY: 180 }}
-                whileInView={{ opacity: 1, rotateY: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="relative"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                 viewport={{ once: true }}
-                whileHover={{ rotateY: 180 }}
-                style={{ transformStyle: "preserve-3d" }}
                 data-testid={`team-member-${index}`}
               >
-                {/* Front of card */}
-                <div className="absolute inset-0 backface-hidden rounded-xl bg-gradient-to-br from-primary to-accent p-6 flex flex-col items-center justify-center text-white">
+                <motion.div
+                  className="rounded-xl bg-gradient-to-br from-primary to-accent p-6 flex flex-col items-center justify-center text-white h-80"
+                  whileHover={{ 
+                    y: -2,
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.2)"
+                  }}
+                  transition={{ duration: 0.2 }}
+                >
                   <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center text-3xl font-montserrat font-bold mb-4">
                     {member.image}
                   </div>
                   <h4 className="font-montserrat font-semibold text-xl mb-2">{member.name}</h4>
-                  <p className="text-sm opacity-90">{member.role}</p>
-                </div>
-                
-                {/* Back of card */}
-                <div 
-                  className="absolute inset-0 backface-hidden rounded-xl bg-gradient-to-br from-accent to-primary p-6 flex flex-col items-center justify-center text-white"
-                  style={{ transform: "rotateY(180deg)" }}
-                >
-                  <Award className="w-12 h-12 mb-4" />
-                  <h4 className="font-montserrat font-semibold text-xl mb-2">{member.name}</h4>
-                  <p className="text-sm text-center opacity-90">{member.expertise}</p>
+                  <p className="text-sm opacity-90 mb-2">{member.role}</p>
+                  <p className="text-xs text-center opacity-80">{member.expertise}</p>
                   <motion.button
                     className="mt-4 px-4 py-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors flex items-center gap-2"
                     whileHover={{ scale: 1.05 }}
@@ -423,7 +368,7 @@ export default function About() {
                   >
                     Connect <ChevronRight className="w-4 h-4" />
                   </motion.button>
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
@@ -433,12 +378,7 @@ export default function About() {
       {/* Wave divider at bottom */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 120" className="w-full h-24 fill-muted">
-          <motion.path
-            d="M0,64 C480,150 960,-20 1440,64 L1440,120 L0,120 Z"
-            initial={{ d: "M0,64 C480,64 960,64 1440,64 L1440,120 L0,120 Z" }}
-            animate={{ d: "M0,64 C480,150 960,-20 1440,64 L1440,120 L0,120 Z" }}
-            transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
-          />
+          <path d="M0,64 C480,150 960,-20 1440,64 L1440,120 L0,120 Z" />
         </svg>
       </div>
     </section>
