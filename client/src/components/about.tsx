@@ -163,7 +163,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Hero Section with Typewriter */}
         <TextReveal className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-montserrat font-bold mb-6">
+          <h2 className="text-4xl md:text-6xl font-montserrat font-bold mb-6 text-foreground">
             <HighlightText>Transforming</HighlightText> Sales Teams Into
           </h2>
           <div className="text-4xl md:text-6xl font-montserrat font-bold text-gold-accent mb-8">
@@ -204,7 +204,7 @@ export default function About() {
         {/* Timeline Section */}
         <div className="mb-20">
           <TextReveal>
-            <h3 className="text-3xl font-montserrat font-bold text-center mb-12">
+            <h3 className="text-3xl font-montserrat font-bold text-center mb-12 text-foreground">
               Our Roadmap to <HighlightText>Excellence</HighlightText>
             </h3>
           </TextReveal>
@@ -273,13 +273,13 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
             <TextReveal>
-              <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-primary mb-6" data-testid="about-title">
+              <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-foreground mb-6" data-testid="about-title">
                 Built by <HighlightText>Sales Leaders</HighlightText>, <br />For Sales Leaders
               </h2>
             </TextReveal>
             
             <TextReveal>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-xl text-foreground/70 mb-8 leading-relaxed">
                 IronCrest Sales was founded in 2025 by veteran sales executives who understand the challenges of building and scaling high-performance sales organizations. Our team combines decades of experience across industries to deliver results that matter.
               </p>
             </TextReveal>
@@ -309,7 +309,7 @@ export default function About() {
                   </motion.div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-lg text-foreground">{item.title}</h4>
-                    <p className="text-muted-foreground">{item.desc}</p>
+                    <p className="text-foreground/70">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -330,25 +330,25 @@ export default function About() {
                 <div className="text-primary mb-2">
                   <AnimatedCounter value={15} suffix="+" />
                 </div>
-                <div className="text-muted-foreground text-sm">Years Combined Experience</div>
+                <div className="text-foreground/70 text-sm">Years Combined Experience</div>
               </div>
               <div className="text-center" data-testid="stat-companies">
                 <div className="text-accent mb-2">
                   <AnimatedCounter value={3} suffix="x" />
                 </div>
-                <div className="text-muted-foreground text-sm">Average Revenue Growth</div>
+                <div className="text-foreground/70 text-sm">Average Revenue Growth</div>
               </div>
               <div className="text-center" data-testid="stat-industries">
                 <div className="text-gold-accent mb-2">
                   <AnimatedCounter value={24} suffix="/7" />
                 </div>
-                <div className="text-muted-foreground text-sm">Support Availability</div>
+                <div className="text-foreground/70 text-sm">Support Availability</div>
               </div>
               <div className="text-center" data-testid="stat-success">
                 <div className="text-secondary mb-2">
                   <AnimatedCounter value={100} suffix="%" />
                 </div>
-                <div className="text-muted-foreground text-sm">Commitment to Success</div>
+                <div className="text-foreground/70 text-sm">Commitment to Success</div>
               </div>
             </div>
             
@@ -367,10 +367,10 @@ export default function About() {
                 </motion.div>
                 <div>
                   <div className="font-montserrat font-semibold">Mike Rodriguez</div>
-                  <div className="text-sm text-muted-foreground">VP Sales, Manufacturing Solutions Inc.</div>
+                  <div className="text-sm text-foreground/60">VP Sales, Manufacturing Solutions Inc.</div>
                 </div>
               </div>
-              <p className="text-muted-foreground italic">
+              <p className="text-foreground/70 italic">
                 "IronCrest Sales helped us build a systematic approach to our sales process. Their coaching and strategic guidance transformed how our team engages with prospects and closes deals."
               </p>
             </motion.div>
@@ -380,10 +380,10 @@ export default function About() {
         {/* Team Section with Flip Cards */}
         <div className="mt-20">
           <TextReveal className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-montserrat font-bold mb-4">
+            <h3 className="text-3xl md:text-4xl font-montserrat font-bold mb-4 text-foreground">
               Meet the <HighlightText>Experts</HighlightText>
             </h3>
-            <p className="text-xl text-muted-foreground">Leaders who drive your success</p>
+            <p className="text-xl text-foreground/70">Leaders who drive your success</p>
           </TextReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
