@@ -1,147 +1,35 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, useInView, useAnimation, AnimatePresence } from "framer-motion";
-import { Linkedin, Twitter, Mail, Send, ChevronRight, Sparkles, Star, Heart, Youtube, Instagram, Github, Facebook, ArrowUp } from "lucide-react";
+import { Linkedin, Twitter, Mail, Send, Heart, Youtube, Instagram, Github, Facebook, ArrowUp } from "lucide-react";
 import ShieldLogo from "./shield-logo";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 
-// Particle effect component
-const ParticleEffect = ({ x, y }: { x: number; y: number }) => {
-  const particles = Array.from({ length: 8 });
-  
-  return (
-    <div className="pointer-events-none absolute" style={{ left: x, top: y }}>
-      {particles.map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-yellow-300 rounded-full"
-          initial={{ scale: 0, x: 0, y: 0 }}
-          animate={{
-            scale: [1, 0],
-            x: Math.cos((i * Math.PI * 2) / 8) * 30,
-            y: Math.sin((i * Math.PI * 2) / 8) * 30,
-            opacity: [1, 0]
-          }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        />
-      ))}
-    </div>
-  );
-};
-
-// Wave effect component
-const WaveEffect = ({ active }: { active: boolean }) => {
-  if (!active) return null;
-  
-  return (
-    <motion.div
-      className="absolute inset-0 overflow-hidden pointer-events-none"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-300/20 to-transparent"
-        initial={{ x: "-100%" }}
-        animate={{ x: "200%" }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      />
-    </motion.div>
-  );
-};
-
-// Social icon component with advanced effects
+// Social icon component with subtle professional effects
 const SocialIcon = ({ Icon, href, label, delay = 0 }: { Icon: any; href: string; label: string; delay?: number }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [particles, setParticles] = useState<{ x: number; y: number; id: number }[]>([]);
-  const iconRef = useRef<HTMLAnchorElement>(null);
-
-  const handleMouseEnter = (e: React.MouseEvent) => {
-    setIsHovered(true);
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    setParticles(prev => [...prev, { x, y, id: Date.now() }]);
-    setTimeout(() => {
-      setParticles(prev => prev.filter(p => p.id !== Date.now()));
-    }, 600);
-  };
-
   return (
     <motion.a
-      ref={iconRef}
       href={href}
       className="relative group"
       data-testid={`social-${label.toLowerCase()}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.5 }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={() => setIsHovered(false)}
-      whileHover={{ scale: 1.2 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.98 }}
     >
-      <motion.div
-        className="relative p-3 rounded-full bg-gradient-to-br from-yellow-300/10 to-yellow-500/10 backdrop-blur-sm border border-yellow-300/20"
-        animate={{
-          rotate: isHovered ? 360 : 0,
-          boxShadow: isHovered 
-            ? "0 0 30px rgba(251, 191, 36, 0.5), 0 0 60px rgba(251, 191, 36, 0.3)" 
-            : "0 0 10px rgba(251, 191, 36, 0.2)"
-        }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
+      <div
+        className="relative p-3 rounded-full bg-gradient-to-br from-yellow-300/10 to-yellow-500/10 backdrop-blur-sm border border-yellow-300/20 transition-all duration-200 group-hover:border-yellow-300/40 group-hover:bg-yellow-300/20"
       >
-        <Icon className="w-5 h-5 text-yellow-300" />
-        
-        {/* Glow effect */}
-        <motion.div
-          className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-300/0 via-yellow-300/30 to-yellow-300/0"
-          animate={{
-            scale: isHovered ? [1, 1.5, 1] : 1,
-            opacity: isHovered ? [0.5, 1, 0.5] : 0.3,
-          }}
-          transition={{ duration: 1, repeat: Infinity }}
-        />
-        
-        {/* Sparkle effect */}
-        {isHovered && (
-          <motion.div
-            className="absolute -top-1 -right-1"
-            animate={{ rotate: 360, scale: [0.8, 1.2, 0.8] }}
-            transition={{ duration: 1, repeat: Infinity }}
-          >
-            <Sparkles className="w-3 h-3 text-yellow-300" />
-          </motion.div>
-        )}
-      </motion.div>
-      
-      {/* Particles on hover */}
-      {particles.map(particle => (
-        <ParticleEffect key={particle.id} x={particle.x} y={particle.y} />
-      ))}
-      
-      {/* Tooltip */}
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            className="absolute -top-10 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-secondary/90 backdrop-blur-md rounded text-xs text-white whitespace-nowrap"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-          >
-            {label}
-          </motion.div>
-        )}
-      </AnimatePresence>
+        <Icon className="w-5 h-5 text-yellow-300 transition-opacity duration-200 group-hover:opacity-90" />
+      </div>
     </motion.a>
   );
 };
 
-// Footer link with wave effect
+// Footer link with simple hover effect
 const FooterLink = ({ href, children, delay = 0 }: { href: string; children: React.ReactNode; delay?: number }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  
   return (
     <motion.li
       initial={{ opacity: 0, x: -20 }}
@@ -150,36 +38,15 @@ const FooterLink = ({ href, children, delay = 0 }: { href: string; children: Rea
     >
       <a
         href={href}
-        className="relative inline-block group py-1"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        className="relative inline-block group py-1 text-secondary-foreground/90 hover:text-yellow-300 transition-colors duration-200"
         data-testid={`footer-link-${children?.toString().toLowerCase().replace(/\s+/g, '-')}`}
       >
-        <span className="relative z-10 text-secondary-foreground/90 group-hover:text-yellow-300 transition-colors duration-300">
+        <span className="relative z-10">
           {children}
         </span>
         
-        {/* Animated underline */}
-        <motion.div
-          className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-yellow-300 to-yellow-500"
-          initial={{ width: 0 }}
-          animate={{ width: isHovered ? "100%" : 0 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-        />
-        
-        {/* Wave effect */}
-        <AnimatePresence>
-          <WaveEffect active={isHovered} />
-        </AnimatePresence>
-        
-        {/* Chevron indicator */}
-        <motion.span
-          className="inline-block ml-1 text-yellow-300 opacity-0 group-hover:opacity-100"
-          animate={{ x: isHovered ? 5 : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <ChevronRight className="w-3 h-3 inline" />
-        </motion.span>
+        {/* Simple underline on hover */}
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 group-hover:w-full transition-all duration-200" />
       </a>
     </motion.li>
   );
@@ -243,34 +110,11 @@ export default function Footer() {
 
   return (
     <footer ref={footerRef} className="relative bg-secondary text-secondary-foreground py-16 overflow-hidden" data-testid="footer">
-      {/* Animated background gradient */}
+      {/* Simple background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 opacity-50" />
       
-      {/* Animated mesh pattern */}
+      {/* Static mesh pattern */}
       <div className="absolute inset-0 pattern-grid opacity-10" />
-      
-      {/* Floating decorative elements */}
-      <motion.div
-        className="absolute top-10 right-10 text-yellow-300/10"
-        animate={{ 
-          y: [0, -20, 0],
-          rotate: [0, 180, 360]
-        }}
-        transition={{ duration: 20, repeat: Infinity }}
-      >
-        <Star className="w-20 h-20" />
-      </motion.div>
-      
-      <motion.div
-        className="absolute bottom-20 left-20 text-yellow-300/10"
-        animate={{ 
-          y: [0, 20, 0],
-          rotate: [360, 180, 0]
-        }}
-        transition={{ duration: 15, repeat: Infinity }}
-      >
-        <Sparkles className="w-16 h-16" />
-      </motion.div>
 
       <motion.div
         className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10"
@@ -281,27 +125,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Company info with floating logo */}
           <motion.div className="md:col-span-2" variants={itemVariants}>
-            <motion.div 
-              className="flex items-center space-x-3 mb-6"
-              animate={{ 
-                y: [0, -10, 0],
-              }}
-              transition={{ 
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
+            <div className="flex items-center space-x-3 mb-6">
               <motion.div
-                whileHover={{ rotate: 360, scale: 1.1 }}
-                transition={{ duration: 0.8 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
               >
                 <ShieldLogo size="small" />
               </motion.div>
               <span className="text-2xl font-montserrat font-bold bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
                 IronCrest Sales
               </span>
-            </motion.div>
+            </div>
             
             <p className="text-secondary-foreground/90 mb-6 max-w-md leading-relaxed">
               Expert outsourced sales solutions that help businesses build scalable revenue departments through strategic talent and proven systems.
@@ -333,15 +167,13 @@ export default function Footer() {
                     )}
                   </AnimatePresence>
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button 
-                    type="submit"
-                    className="bg-gradient-to-r from-yellow-300 to-yellow-500 hover:from-yellow-400 hover:to-yellow-600 text-secondary"
-                    data-testid="newsletter-submit"
-                  >
-                    <Send className="w-4 h-4" />
-                  </Button>
-                </motion.div>
+                <Button 
+                  type="submit"
+                  className="bg-gradient-to-r from-yellow-300 to-yellow-500 hover:from-yellow-400 hover:to-yellow-600 text-secondary transition-colors duration-200"
+                  data-testid="newsletter-submit"
+                >
+                  <Send className="w-4 h-4" />
+                </Button>
               </form>
               <AnimatePresence>
                 {isSubscribed && (
@@ -409,19 +241,14 @@ export default function Footer() {
           </motion.div>
         </div>
         
-        {/* Animated divider */}
+        {/* Simple divider */}
         <motion.div
-          className="relative mt-12 mb-8"
+          className="mt-12 mb-8"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
         >
           <div className="h-px bg-gradient-to-r from-transparent via-yellow-300/50 to-transparent" />
-          <motion.div
-            className="absolute inset-0 h-px bg-gradient-to-r from-transparent via-yellow-300 to-transparent"
-            animate={{ x: ["-100%", "100%"] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          />
         </motion.div>
         
         {/* Copyright with pulse animation */}
@@ -429,14 +256,9 @@ export default function Footer() {
           className="text-center"
           variants={itemVariants}
         >
-          <motion.p 
-            className="text-secondary-foreground/80 mb-2"
-            animate={{ opacity: [0.6, 1, 0.6] }}
-            transition={{ duration: 3, repeat: Infinity }}
-            data-testid="footer-copyright"
-          >
-            Made with <Heart className="w-4 h-4 inline text-red-400 animate-pulse" /> by IronCrest Sales
-          </motion.p>
+          <p className="text-secondary-foreground/80 mb-2" data-testid="footer-copyright">
+            Made with <Heart className="w-4 h-4 inline text-red-400" /> by IronCrest Sales
+          </p>
           <p className="text-secondary-foreground/80 text-sm">
             &copy; 2024 IronCrest Sales. All rights reserved. | 
             <a href="#" className="hover:text-yellow-300 transition-colors mx-1">Privacy Policy</a> | 
@@ -450,20 +272,13 @@ export default function Footer() {
         {showScrollTop && (
           <motion.button
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-yellow-300 to-yellow-500 text-secondary rounded-full shadow-lg z-50 group"
-            initial={{ scale: 0, rotate: -180 }}
-            animate={{ scale: 1, rotate: 0 }}
-            exit={{ scale: 0, rotate: 180 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-yellow-300 to-yellow-500 text-secondary rounded-full shadow-lg z-50 hover:opacity-90 hover:scale-105 transition-all duration-200"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0 }}
             data-testid="scroll-to-top"
           >
-            <ArrowUp className="w-5 h-5 group-hover:animate-bounce" />
-            <motion.div
-              className="absolute inset-0 rounded-full bg-yellow-300/30"
-              animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
+            <ArrowUp className="w-5 h-5" />
           </motion.button>
         )}
       </AnimatePresence>
