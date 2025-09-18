@@ -141,11 +141,11 @@ export default function About() {
   ];
   
   const milestones = [
-    { year: "2018", title: "Founded", description: "IronCrest Sales established with a vision to transform B2B sales" },
-    { year: "2019", title: "First 10 Clients", description: "Achieved success with initial enterprise partnerships" },
-    { year: "2021", title: "Expansion", description: "Grew team and services to meet increasing demand" },
-    { year: "2023", title: "Industry Leader", description: "Recognized as top sales consultancy in the region" },
-    { year: "2025", title: "Innovation", description: "Launched AI-powered sales intelligence platform" }
+    { year: "Q1 2025", title: "Company Launch", description: "IronCrest Sales founded with a mission to revolutionize B2B sales" },
+    { year: "Q2 2025", title: "First Clients", description: "Partnering with innovative companies to scale their sales" },
+    { year: "Q3 2025", title: "Team Building", description: "Assembling expert sales professionals and strategists" },
+    { year: "Q4 2025", title: "Service Expansion", description: "Launching comprehensive sales system development" },
+    { year: "2026+", title: "Growth Vision", description: "Scaling to serve 100+ companies nationwide" }
   ];
   
   const valueProps = [
@@ -205,7 +205,7 @@ export default function About() {
         <div className="mb-20">
           <TextReveal>
             <h3 className="text-3xl font-montserrat font-bold text-center mb-12">
-              Our Journey to <HighlightText>Excellence</HighlightText>
+              Our Roadmap to <HighlightText>Excellence</HighlightText>
             </h3>
           </TextReveal>
           
@@ -280,7 +280,7 @@ export default function About() {
             
             <TextReveal>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                IronCrest Sales was founded by veteran sales executives who understand the challenges of building and scaling high-performance sales organizations. Our team combines decades of experience across industries to deliver results that matter.
+                IronCrest Sales was founded in 2025 by veteran sales executives who understand the challenges of building and scaling high-performance sales organizations. Our team combines decades of experience across industries to deliver results that matter.
               </p>
             </TextReveal>
             
@@ -328,27 +328,27 @@ export default function About() {
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center" data-testid="stat-experience">
                 <div className="text-primary mb-2">
-                  <AnimatedCounter value={150} suffix="+" />
+                  <AnimatedCounter value={15} suffix="+" />
                 </div>
-                <div className="text-muted-foreground text-sm">Successful Projects</div>
+                <div className="text-muted-foreground text-sm">Years Combined Experience</div>
               </div>
               <div className="text-center" data-testid="stat-companies">
                 <div className="text-accent mb-2">
-                  <AnimatedCounter value={87} suffix="%" />
+                  <AnimatedCounter value={3} suffix="x" />
                 </div>
-                <div className="text-muted-foreground text-sm">Revenue Growth Average</div>
+                <div className="text-muted-foreground text-sm">Average Revenue Growth</div>
               </div>
               <div className="text-center" data-testid="stat-industries">
                 <div className="text-gold-accent mb-2">
-                  <AnimatedCounter value={500} prefix="$" suffix="M+" />
+                  <AnimatedCounter value={24} suffix="/7" />
                 </div>
-                <div className="text-muted-foreground text-sm">Pipeline Generated</div>
+                <div className="text-muted-foreground text-sm">Support Availability</div>
               </div>
               <div className="text-center" data-testid="stat-success">
                 <div className="text-secondary mb-2">
-                  <AnimatedCounter value={98} suffix="%" />
+                  <AnimatedCounter value={100} suffix="%" />
                 </div>
-                <div className="text-muted-foreground text-sm">Client Satisfaction</div>
+                <div className="text-muted-foreground text-sm">Commitment to Success</div>
               </div>
             </div>
             
