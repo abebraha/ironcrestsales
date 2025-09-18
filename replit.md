@@ -2,7 +2,7 @@
 
 ## Overview
 
-IronCrest Sales is a professional business landing page built as a full-stack React application that showcases outsourced sales solutions. The application features a modern design with smooth animations, a contact form system, and comprehensive service information. It's designed to help businesses understand and connect with IronCrest's sales department scaling services.
+IronCrest Sales is a professional business landing page built as a full-stack React application that showcases outsourced sales solutions. The application features a modern design with smooth animations, a contact form system, and comprehensive service information. It's designed to help businesses understand and connect with IronCrest's sales department scaling services. Founded in 2025 by Abe Braha and Shalom Babad, IronCrest Sales brings together expertise in sales strategy and business development.
 
 ## User Preferences
 
@@ -44,6 +44,7 @@ Preferred communication style: Simple, everyday language.
 - **Component Library**: Comprehensive shadcn/ui components including forms, dialogs, navigation, and data display
 - **Responsive Design**: Mobile-first approach with Tailwind CSS breakpoints
 - **Accessibility**: ARIA labels and semantic HTML structure
+- **Team Section**: Features co-founders Abe Braha and Shalom Babad with direct LinkedIn profile links
 
 ## External Dependencies
 

@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Award, Handshake, TrendingUp, Quote, Users, Target, Rocket, Shield, ChevronRight, Star, Sparkles } from "lucide-react";
+import { SiLinkedin } from "react-icons/si";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatedBackground } from "./animated-background";
@@ -88,10 +89,8 @@ export default function About() {
   const parallaxY = useTransform(scrollYProgress, [0, 1], [20, -20]); // Reduced parallax movement
   
   const teamMembers = [
-    { name: "John Anderson", role: "Founder & CEO", expertise: "20+ years in B2B Sales", image: "JA" },
-    { name: "Sarah Mitchell", role: "VP of Strategy", expertise: "15+ years Sales Operations", image: "SM" },
-    { name: "David Chen", role: "Head of Training", expertise: "18+ years Sales Coaching", image: "DC" },
-    { name: "Lisa Thompson", role: "Director of Analytics", expertise: "12+ years Data Strategy", image: "LT" }
+    { name: "Abe Braha", role: "Co-Founder", expertise: "Sales Strategy & Leadership", image: "AB", linkedin: "https://www.linkedin.com/in/abe-braha/" },
+    { name: "Shalom Babad", role: "Co-Founder", expertise: "Business Development & Operations", image: "SB", linkedin: "https://www.linkedin.com/in/shalom-babad/" }
   ];
   
   const milestones = [
@@ -336,7 +335,7 @@ export default function About() {
             <p className="text-xl text-foreground/70">Leaders who drive your success</p>
           </TextReveal>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -361,13 +360,17 @@ export default function About() {
                   <h4 className="font-montserrat font-semibold text-xl mb-2">{member.name}</h4>
                   <p className="text-sm opacity-90 mb-2">{member.role}</p>
                   <p className="text-xs text-center opacity-80">{member.expertise}</p>
-                  <motion.button
+                  <motion.a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-4 px-4 py-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors flex items-center gap-2"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    data-testid={`linkedin-${member.name.toLowerCase().replace(' ', '-')}`}
                   >
-                    Connect <ChevronRight className="w-4 h-4" />
-                  </motion.button>
+                    <SiLinkedin className="w-4 h-4" /> LinkedIn
+                  </motion.a>
                 </motion.div>
               </motion.div>
             ))}
