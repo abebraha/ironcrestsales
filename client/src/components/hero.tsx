@@ -79,12 +79,12 @@ export default function Hero() {
               data-testid="hero-title"
             >
               <TextReveal delay={0.2}>
-                Scale Your Sales Department
+                Your brand. Your offer.
               </TextReveal>
               <br />
               <GlowText className="text-gold-accent">
                 <TextReveal delay={0.4}>
-                  Without the Risk
+                  Our sales engine.
                 </TextReveal>
               </GlowText>
             </h1>
