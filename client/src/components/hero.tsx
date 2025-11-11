@@ -143,7 +143,7 @@ export default function Hero() {
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {[
-            { value: "15+", label: "Years of Experience", testId: "stat-professionals" },
+            { value: "10+", label: "Years of Experience", testId: "stat-professionals" },
             { value: "Multiple", label: "Industries Served", testId: "stat-revenue" },
             { value: "Proven", label: "Track Record", testId: "stat-retention" }
           ].map((stat, i) => (

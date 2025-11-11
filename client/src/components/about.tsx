@@ -5,32 +5,50 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatedBackground } from "./animated-background";
 
-// Counter component for animated numbers
+// Counter component for animated numbers - simplified to always work
 function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: number; suffix?: string; prefix?: string }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(value); // Always show the correct value
+  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
-    if (isInView) {
-      const duration = 800; // Reduced from 2000ms to 800ms
-      const steps = 60;
-      const stepValue = value / steps;
+    // Only animate if we haven't already and we're in view
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true);
+      
+      // Start animation from 0
       let current = 0;
+      setCount(0);
+      
+      const duration = 800;
+      const steps = 40;
+      const stepValue = value / steps;
       
       const timer = setInterval(() => {
         current += stepValue;
         if (current >= value) {
-          setCount(value);
+          setCount(value); // Ensure we always end at the exact value
           clearInterval(timer);
         } else {
           setCount(Math.floor(current));
         }
       }, duration / steps);
       
-      return () => clearInterval(timer);
+      // Fallback: ensure value is shown after animation time
+      const fallback = setTimeout(() => {
+        setCount(value);
+      }, duration + 200);
+      
+      return () => {
+        clearInterval(timer);
+        clearTimeout(fallback);
+      };
+    } else if (!isInView && !hasAnimated) {
+      // If not in view yet and hasn't animated, show the actual value
+      setCount(value);
     }
-  }, [isInView, value]);
+  }, [isInView, value, hasAnimated]);
   
   return (
     <div ref={ref} className="text-4xl font-montserrat font-bold">
@@ -43,7 +61,7 @@ function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: number; s
 // Text reveal with blur effect
 const TextReveal = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
   
   return (
     <motion.div
@@ -61,7 +79,7 @@ const TextReveal = ({ children, className }: { children: React.ReactNode; classN
 // Highlight text animation
 const HighlightText = ({ children }: { children: string }) => {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
   
   return (
     <motion.span
@@ -239,7 +257,7 @@ export default function About() {
             
             <div className="space-y-6">
               {[
-                { icon: Award, title: "Proven Expertise", desc: "Average 15+ years of sales leadership experience across our core team", color: "bg-primary/10", iconColor: "text-primary" },
+                { icon: Award, title: "Proven Expertise", desc: "Average 10+ years of sales leadership experience across our core team", color: "bg-primary/10", iconColor: "text-primary" },
                 { icon: Handshake, title: "Partnership Approach", desc: "We work as an extension of your team, not just another vendor", color: "bg-accent/10", iconColor: "text-accent" },
                 { icon: TrendingUp, title: "Results-Driven", desc: "Our success is measured by your revenue growth and team development", color: "bg-yellow-500/10", iconColor: "text-gold-accent" }
               ].map((item, index) => (
@@ -281,7 +299,7 @@ export default function About() {
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center" data-testid="stat-experience">
                 <div className="text-primary mb-2">
-                  <AnimatedCounter value={15} suffix="+" />
+                  <AnimatedCounter value={10} suffix="+" />
                 </div>
                 <div className="text-foreground/70 text-sm">Years Combined Experience</div>
               </div>
