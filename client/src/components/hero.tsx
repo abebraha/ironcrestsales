@@ -100,7 +100,7 @@ export default function Hero() {
                 data-testid="hero-subtitle"
               >
                 <TextReveal delay={0.8}>
-                  Expert outsourced sales professionals who integrate with your team to build scalable revenue systems and strategic hiring processes.
+                  We build your sales engine hands-on, then scale it with proven reps who deliver results.
                 </TextReveal>
               </p>
             </motion.div>
