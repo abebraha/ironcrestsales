@@ -25,11 +25,11 @@ export default function Services() {
     {
       icon: Bus,
       title: "Expert Sales Professionals",
-      description: "We provide and continuously manage seasoned sales professionals, ensuring they're trained, accountable, and consistently performing to drive your revenue growth.",
+      description: "Seasoned sales experts who integrate directly with your team, bringing proven methodologies and immediate impact to your revenue pipeline.",
       features: [
-        "Ongoing training and development",
-        "Performance monitoring and management",
-        "Continuous coaching and accountability"
+        "Experienced B2B sales professionals",
+        "Industry-specific expertise",
+        "Immediate integration and impact"
       ],
       iconBgColor: "bg-primary/10",
       iconColor: "text-primary",
