@@ -53,7 +53,7 @@ export default function Services() {
     {
       icon: TrendingUp,
       title: "Ongoing Management & Training",
-      description: "We continue to manage and train your sales team, ensuring consistent performance and growth through hands-on coaching and accountability.",
+      description: "We continue to manage and train your sales team long term, ensuring consistent performance and growth through hands-on coaching and accountability.",
       features: [
         "Continuous team management and oversight",
         "Regular training and skill development",
