@@ -25,7 +25,7 @@ export default function Services() {
     {
       icon: Users,
       title: "Strategic Hiring & Scaling",
-      description: "Build your internal sales team with our proven hiring methodology and ongoing support for sustainable growth.",
+      description: "Build your sales team with our proven hiring methodology and ongoing support for sustainable growth.",
       features: [
         "Sales team recruitment",
         "Training and onboarding",
