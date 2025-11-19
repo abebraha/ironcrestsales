@@ -52,12 +52,12 @@ export default function Services() {
     },
     {
       icon: TrendingUp,
-      title: "Revenue Optimization",
-      description: "Maximize your existing sales potential through data-driven insights and proven optimization strategies.",
+      title: "Ongoing Management & Training",
+      description: "We continue to manage and train your sales team, ensuring consistent performance and growth through hands-on coaching and accountability.",
       features: [
-        "Sales process audits",
-        "Conversion rate optimization",
-        "Pipeline management improvement"
+        "Continuous team management and oversight",
+        "Regular training and skill development",
+        "Performance tracking and improvement"
       ],
       iconBgColor: "bg-secondary/10",
       iconColor: "text-secondary",
