@@ -41,11 +41,14 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative overflow-hidden min-h-screen">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-secondary" />
+      
       {/* Animated background layers */}
       <AnimatedBackground />
       
-      {/* Scrim overlay for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/60 z-[5]" />
+      {/* Enhanced gradient overlay for depth and contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/50 via-transparent to-accent/40 z-[5]" />
       
       {/* Main hero content with parallax */}
       <motion.div 
