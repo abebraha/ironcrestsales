@@ -9,18 +9,18 @@ export default function Services() {
   
   const services = [
     {
-      icon: TrendingUp,
-      title: "Revenue Optimization",
-      description: "Maximize your existing sales potential through data-driven insights and proven optimization strategies.",
+      icon: Bus,
+      title: "Expert Sales Professionals",
+      description: "Seasoned sales experts who integrate directly with your team, bringing proven methodologies and immediate impact to your revenue pipeline.",
       features: [
-        "Sales process audits",
-        "Conversion rate optimization",
-        "Pipeline management improvement"
+        "Experienced B2B sales professionals",
+        "Industry-specific expertise",
+        "Immediate integration and impact"
       ],
-      iconBgColor: "bg-secondary/10",
-      iconColor: "text-secondary",
-      checkColor: "text-secondary",
-      testId: "service-optimization"
+      iconBgColor: "bg-primary/10",
+      iconColor: "text-primary",
+      checkColor: "text-primary",
+      testId: "service-professionals"
     },
     {
       icon: Users,
@@ -51,18 +51,18 @@ export default function Services() {
       testId: "service-systems"
     },
     {
-      icon: Bus,
-      title: "Expert Sales Professionals",
-      description: "Seasoned sales experts who integrate directly with your team, bringing proven methodologies and immediate impact to your revenue pipeline.",
+      icon: TrendingUp,
+      title: "Revenue Optimization",
+      description: "Maximize your existing sales potential through data-driven insights and proven optimization strategies.",
       features: [
-        "Experienced B2B sales professionals",
-        "Industry-specific expertise",
-        "Immediate integration and impact"
+        "Sales process audits",
+        "Conversion rate optimization",
+        "Pipeline management improvement"
       ],
-      iconBgColor: "bg-primary/10",
-      iconColor: "text-primary",
-      checkColor: "text-primary",
-      testId: "service-professionals"
+      iconBgColor: "bg-secondary/10",
+      iconColor: "text-secondary",
+      checkColor: "text-secondary",
+      testId: "service-optimization"
     }
   ];
 
