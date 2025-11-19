@@ -123,16 +123,7 @@ export default function Services() {
               viewport={{ once: true }}
               className="inline-block"
             >
-              Comprehensive
-            </motion.span>{" "}
-            <motion.span
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="inline-block"
-            >
-              Sales Solutions
+              Predictable sales engine built by proven sales professionals
             </motion.span>
           </h2>
           
