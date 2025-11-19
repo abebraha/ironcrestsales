@@ -9,18 +9,18 @@ export default function Services() {
   
   const services = [
     {
-      icon: Users,
-      title: "Strategic Hiring & Scaling",
-      description: "Build your sales team with our proven hiring methodology and ongoing support for sustainable growth.",
+      icon: Settings,
+      title: "Sales System Development",
+      description: "Build robust, scalable sales processes that grow with your business and create predictable revenue streams.",
       features: [
-        "Sales team recruitment",
-        "Training and onboarding",
-        "Performance management systems"
+        "Custom CRM implementation",
+        "Lead generation systems",
+        "Performance tracking and analytics"
       ],
-      iconBgColor: "bg-yellow-500/10",
-      iconColor: "text-gold-accent",
-      checkColor: "text-gold-accent",
-      testId: "service-hiring"
+      iconBgColor: "bg-accent/10",
+      iconColor: "text-accent",
+      checkColor: "text-accent",
+      testId: "service-systems"
     },
     {
       icon: Bus,
@@ -37,18 +37,18 @@ export default function Services() {
       testId: "service-professionals"
     },
     {
-      icon: Settings,
-      title: "Sales System Development",
-      description: "Build robust, scalable sales processes that grow with your business and create predictable revenue streams.",
+      icon: Users,
+      title: "Strategic Hiring & Scaling",
+      description: "Build your sales team with our proven hiring methodology and ongoing support for sustainable growth.",
       features: [
-        "Custom CRM implementation",
-        "Lead generation systems",
-        "Performance tracking and analytics"
+        "Sales team recruitment",
+        "Training and onboarding",
+        "Performance management systems"
       ],
-      iconBgColor: "bg-accent/10",
-      iconColor: "text-accent",
-      checkColor: "text-accent",
-      testId: "service-systems"
+      iconBgColor: "bg-yellow-500/10",
+      iconColor: "text-gold-accent",
+      checkColor: "text-gold-accent",
+      testId: "service-hiring"
     },
     {
       icon: TrendingUp,
