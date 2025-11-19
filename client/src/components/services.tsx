@@ -126,6 +126,16 @@ export default function Services() {
               Predictable sales engine built by proven sales professionals
             </motion.span>
           </h2>
+          
+          <motion.h3
+            className="text-2xl md:text-3xl font-montserrat font-semibold text-white/90"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            Our proven 4 step process
+          </motion.h3>
         </motion.div>
 
         {/* 3D Service Cards Grid */}
@@ -164,10 +174,6 @@ export default function Services() {
               filter: "blur(100px)"
             }}
           />
-          
-          <h3 className="text-3xl font-montserrat font-bold text-center text-white mb-12 relative z-10">
-            Our Proven 4-Step Process
-          </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
             {processSteps.map((step, index) => {
