@@ -126,16 +126,6 @@ export default function Services() {
               Predictable sales engine built by proven sales professionals
             </motion.span>
           </h2>
-          
-          <motion.p 
-            className="text-xl text-white/85 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
-            From individual sales experts to complete department buildouts, we provide the talent and systems your business needs to scale effectively.
-          </motion.p>
         </motion.div>
 
         {/* 3D Service Cards Grid */}
