@@ -9,20 +9,6 @@ export default function Services() {
   
   const services = [
     {
-      icon: Bus,
-      title: "Expert Sales Professionals",
-      description: "Seasoned sales experts who integrate directly with your team, bringing proven methodologies and immediate impact to your revenue pipeline.",
-      features: [
-        "Experienced B2B sales professionals",
-        "Industry-specific expertise",
-        "Immediate integration and impact"
-      ],
-      iconBgColor: "bg-primary/10",
-      iconColor: "text-primary",
-      checkColor: "text-primary",
-      testId: "service-professionals"
-    },
-    {
       icon: Users,
       title: "Strategic Hiring & Scaling",
       description: "Build your sales team with our proven hiring methodology and ongoing support for sustainable growth.",
@@ -35,6 +21,20 @@ export default function Services() {
       iconColor: "text-gold-accent",
       checkColor: "text-gold-accent",
       testId: "service-hiring"
+    },
+    {
+      icon: Bus,
+      title: "Expert Sales Professionals",
+      description: "Seasoned sales experts who integrate directly with your team, bringing proven methodologies and immediate impact to your revenue pipeline.",
+      features: [
+        "Experienced B2B sales professionals",
+        "Industry-specific expertise",
+        "Immediate integration and impact"
+      ],
+      iconBgColor: "bg-primary/10",
+      iconColor: "text-primary",
+      checkColor: "text-primary",
+      testId: "service-professionals"
     },
     {
       icon: Settings,
