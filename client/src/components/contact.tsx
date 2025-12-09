@@ -17,9 +17,6 @@ export default function Contact() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-white mb-6" data-testid="contact-title">Scale Your Sales</h2>
-          <p className="text-xl text-white/85 max-w-3xl mx-auto">
-            Schedule a consultation with our sales experts to discuss your growth goals and how we can help you achieve them.
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
