@@ -83,9 +83,7 @@ export default function PainPoints() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-          >
-            Most businesses struggle with the same challenges. If any of these sound like you, you're not alone.
-          </motion.p>
+          >When your sales engine is weak, everything else stalls</motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
