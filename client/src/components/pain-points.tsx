@@ -45,12 +45,10 @@ export default function PainPoints() {
   return (
     <section className="py-20 overflow-hidden relative">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628] via-[#0d1e36] to-[#0a1628]" />
-      
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
       </div>
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
           className="text-center mb-16"
@@ -76,9 +74,7 @@ export default function PainPoints() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               className="inline-block"
-            >
-              Scaling sales shouldn't be this hard
-            </motion.span>
+            >If your sales aren't predictable, your business isn't scalable</motion.span>
           </h2>
           
           <motion.p
