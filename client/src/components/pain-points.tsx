@@ -24,7 +24,7 @@ export default function PainPoints() {
     },
     {
       icon: AlertTriangle,
-      title: "No Sales Process",
+      title: "Inconsistent Sales Process",
       description: "You don't have a proven, repeatable system—just hope that the next hire will figure it out.",
       testId: "pain-process"
     },

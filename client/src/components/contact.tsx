@@ -1,226 +1,9 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
-import { Phone, Mail, MapPin, CheckCircle, Loader2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
-import { insertContactSubmissionSchema, type InsertContactSubmission } from "@shared/schema";
-import { apiRequest } from "@/lib/queryClient";
+import { motion } from "framer-motion";
+import { Phone, Mail, MapPin, CheckCircle } from "lucide-react";
 import { AnimatedBackground } from "./animated-background";
-
-// Floating Label Input Component
-const FloatingLabelInput = ({ 
-  field, 
-  placeholder, 
-  label, 
-  type = "text",
-  testId,
-  isValid = false,
-  hasError = false
-}: any) => {
-  const [isFocused, setIsFocused] = useState(false);
-
-  return (
-    <div className="relative">
-      <Input
-        {...field}
-        type={type}
-        placeholder=" "
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
-        data-testid={testId}
-        className={`peer pt-6 pb-2 transition-colors duration-150 ${
-          hasError ? 'border-red-500' : ''
-        } ${
-          isFocused ? 'border-primary' : ''
-        } ${isValid && field.value ? 'pr-10' : ''}`}
-      />
-      <label
-        className={`absolute left-3 transition-all duration-150 pointer-events-none ${
-          field.value || isFocused 
-            ? 'top-1 text-xs text-primary' 
-            : 'top-4 text-sm text-foreground/70'
-        }`}
-        style={{
-          transform: field.value || isFocused ? 'translateY(-8px) scale(0.9)' : 'none'
-        }}
-      >
-        {label}
-      </label>
-      
-      {/* Success checkmark - simple fade */}
-      {isValid && field.value && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          className="absolute right-3 top-1/2 -translate-y-1/2"
-        >
-          <CheckCircle className="w-5 h-5 text-green-500" />
-        </motion.div>
-      )}
-    </div>
-  );
-};
-
-// Floating Label Textarea Component
-const FloatingLabelTextarea = ({ field, label, testId, isValid = false, hasError = false }: any) => {
-  const [isFocused, setIsFocused] = useState(false);
-
-  return (
-    <div className="relative">
-      <Textarea
-        {...field}
-        placeholder=" "
-        rows={4}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
-        data-testid={testId}
-        className={`peer pt-6 pb-2 transition-colors duration-150 ${
-          hasError ? 'border-red-500' : ''
-        } ${
-          isFocused ? 'border-primary' : ''
-        } ${isValid && field.value ? 'pr-10' : ''}`}
-      />
-      <label
-        className={`absolute left-3 transition-all duration-150 pointer-events-none ${
-          field.value || isFocused 
-            ? 'top-1 text-xs text-primary' 
-            : 'top-4 text-sm text-foreground/70'
-        }`}
-        style={{
-          transform: field.value || isFocused ? 'translateY(-8px) scale(0.9)' : 'none'
-        }}
-      >
-        {label}
-      </label>
-      
-      {/* Success checkmark - simple fade */}
-      {isValid && field.value && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          className="absolute right-3 top-6"
-        >
-          <CheckCircle className="w-5 h-5 text-green-500" />
-        </motion.div>
-      )}
-    </div>
-  );
-};
-
-// Animated Select Component
-const AnimatedSelect = ({ field, testId, children, placeholder }: any) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div>
-      <Select 
-        onValueChange={field.onChange} 
-        defaultValue={field.value}
-        onOpenChange={setIsOpen}
-      >
-        <FormControl>
-          <SelectTrigger 
-            data-testid={testId}
-            className={`transition-colors duration-150 ${
-              isOpen ? 'border-primary' : ''
-            } ${field.value ? 'border-green-500' : ''}`}
-          >
-            <SelectValue placeholder={placeholder} />
-          </SelectTrigger>
-        </FormControl>
-        <SelectContent>
-          {children}
-        </SelectContent>
-      </Select>
-    </div>
-  );
-};
-
-// Progress Bar Component
-const FormProgressBar = ({ progress }: { progress: number }) => {
-  return (
-    <div className="mb-6">
-      <div className="flex justify-between items-center mb-2">
-        <span className="text-sm text-white/75">Form Completion</span>
-        <span className="text-sm font-semibold text-gold-accent">
-          {Math.round(progress)}%
-        </span>
-      </div>
-      <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
-        <motion.div
-          className="h-full bg-gradient-to-r from-primary to-accent rounded-full"
-          initial={{ width: 0 }}
-          animate={{ width: `${progress}%` }}
-          transition={{ duration: 0.25, ease: "easeOut" }}
-        />
-      </div>
-    </div>
-  );
-};
+import { InlineWidget } from "react-calendly";
 
 export default function Contact() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formProgress, setFormProgress] = useState(0);
-  const { toast } = useToast();
-
-  const form = useForm<InsertContactSubmission>({
-    resolver: zodResolver(insertContactSubmissionSchema),
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      company: "",
-      revenueGoal: "",
-      message: "",
-    },
-  });
-
-  // Calculate form progress
-  useEffect(() => {
-    const values = form.watch();
-    const fields = Object.keys(values);
-    const filledFields = fields.filter(key => values[key as keyof typeof values]);
-    const progress = (filledFields.length / fields.length) * 100;
-    setFormProgress(progress);
-  }, [form.watch()]);
-
-  const contactMutation = useMutation({
-    mutationFn: async (data: InsertContactSubmission) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: (data) => {
-      setIsSubmitted(true);
-      form.reset();
-      toast({
-        title: "Thank you for your inquiry!",
-        description: data.message || "We'll be in touch within 24 hours.",
-      });
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Submission failed",
-        description: error.message || "Please try again or contact us directly.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const onSubmit = (data: InsertContactSubmission) => {
-    contactMutation.mutate(data);
-  };
-
   return (
     <section id="contact" className="py-20 relative overflow-hidden noise-texture gpu-accelerated">
       {/* Animated background with contact variant */}
@@ -246,22 +29,18 @@ export default function Contact() {
           {/* Calendly Embed */}
           <motion.div 
             id="contact-form"
-            className="bg-card rounded-2xl p-8 border border-border shadow-lg relative"
+            className="bg-card rounded-2xl p-6 border border-border shadow-lg relative overflow-hidden"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            data-testid="contact-form"
+            data-testid="calendly-widget"
           >
-            <h3 className="text-2xl font-montserrat font-bold text-foreground mb-6">Schedule a Meeting</h3>
-            <div className="w-full" style={{ minHeight: '650px' }}>
-              <iframe
-                src="https://calendly.com/icebreakerbd/new-meeting"
-                width="100%"
-                height="650"
-                frameBorder="0"
-                title="Schedule a meeting"
-                className="rounded-lg"
+            <h3 className="text-2xl font-montserrat font-bold text-foreground mb-4">Schedule a Meeting</h3>
+            <div className="w-full rounded-lg overflow-hidden" style={{ minHeight: '650px' }}>
+              <InlineWidget 
+                url="https://calendly.com/icebreakerbd/new-meeting"
+                styles={{ height: '650px', width: '100%' }}
               />
             </div>
           </motion.div>
