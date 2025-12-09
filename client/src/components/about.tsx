@@ -120,9 +120,8 @@ export default function About() {
         <div>
           <TextReveal className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-montserrat font-bold mb-4 text-foreground">
-              Meet the <HighlightText>Experts</HighlightText>
+              Meet the <HighlightText>Team</HighlightText>
             </h3>
-            <p className="text-xl text-foreground/70">Leaders who drive your success</p>
           </TextReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
