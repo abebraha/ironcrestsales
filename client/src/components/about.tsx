@@ -106,8 +106,8 @@ export default function About() {
   const parallaxY = useTransform(scrollYProgress, [0, 1], [20, -20]); // Reduced parallax movement
   
   const teamMembers = [
-    { name: "Abe Braha", role: "Co-Founder", expertise: "Sales Strategy & Leadership", image: "AB", linkedin: "https://www.linkedin.com/in/abe-braha/" },
-    { name: "Shalom Babad", role: "Co-Founder", expertise: "Business Development & Operations", image: "SB", linkedin: "https://www.linkedin.com/in/shalom-babad/" }
+    { name: "Abe Braha", role: "Co-Founder", image: "AB", linkedin: "https://www.linkedin.com/in/abe-braha/" },
+    { name: "Shalom Babad", role: "Co-Founder", image: "SB", linkedin: "https://www.linkedin.com/in/shalom-babad/" }
   ];
 
   return (
@@ -149,7 +149,6 @@ export default function About() {
                   </div>
                   <h4 className="font-montserrat font-semibold text-xl mb-2">{member.name}</h4>
                   <p className="text-sm opacity-90 mb-2">{member.role}</p>
-                  <p className="text-xs text-center opacity-80">{member.expertise}</p>
                   <motion.a
                     href={member.linkedin}
                     target="_blank"
