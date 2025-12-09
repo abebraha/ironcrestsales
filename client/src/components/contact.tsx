@@ -85,7 +85,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Email</h4>
-                    <p className="text-foreground/80">info@ironcretsales.com</p>
+                    <p className="text-foreground/80">info@ironcrestsales.com</p>
                     <p className="text-sm text-foreground/70">Response within 24 hours</p>
                   </div>
                 </motion.div>
