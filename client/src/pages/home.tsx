@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import Hero from "@/components/hero";
+import PainPoints from "@/components/pain-points";
 import Services from "@/components/services";
 import About from "@/components/about";
 import Contact from "@/components/contact";
@@ -23,6 +24,10 @@ export default function Home() {
       </RevealContent>
       
       <SectionTransition delay={0.1}>
+        <PainPoints />
+      </SectionTransition>
+      
+      <SectionTransition delay={0.15}>
         <Services />
       </SectionTransition>
       
