@@ -8,7 +8,6 @@ export default function Contact() {
     <section id="contact" className="py-20 relative overflow-hidden noise-texture gpu-accelerated">
       {/* Animated background with contact variant */}
       <AnimatedBackground variant="contact" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div 
           className="text-center mb-16"
@@ -17,9 +16,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-white mb-6" data-testid="contact-title">
-            Ready to Scale Your Sales?
-          </h2>
+          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-white mb-6" data-testid="contact-title">Scale Your Sales</h2>
           <p className="text-xl text-white/85 max-w-3xl mx-auto">
             Schedule a consultation with our sales experts to discuss your growth goals and how we can help you achieve them.
           </p>
@@ -166,7 +163,6 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
-      
     </section>
   );
 }
