@@ -43,13 +43,10 @@ export default function Hero() {
     <section id="home" className="relative overflow-hidden min-h-screen">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-secondary" />
-      
       {/* Animated background layers */}
       <AnimatedBackground />
-      
       {/* Enhanced gradient overlay for depth and contrast */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/50 via-transparent to-accent/40 z-[5]" />
-      
       {/* Main hero content with parallax */}
       <motion.div 
         className="relative z-10 pt-24 pb-20"
@@ -121,9 +118,7 @@ export default function Hero() {
                 data-testid="button-apply-today"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-              >
-                Apply Today
-              </motion.button>
+              >Schedule a Consultation</motion.button>
               
               <motion.button 
                 onClick={scrollToServices}
@@ -138,7 +133,6 @@ export default function Hero() {
           </div>
         </div>
       </motion.div>
-      
       {/* Simplified Stats Section */}
       <motion.div 
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 relative z-10"
