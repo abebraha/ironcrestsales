@@ -69,7 +69,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Phone</h4>
-                    <p className="text-foreground/80">+1 (555) 123-4567</p>
+                    <p className="text-foreground/80">+1 (917) 809-6610</p>
                     <p className="text-sm text-foreground/70">Mon-Fri 9AM-6PM EST</p>
                   </div>
                 </motion.div>
