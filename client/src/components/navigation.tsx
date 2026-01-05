@@ -156,7 +156,6 @@ export default function Navigation() {
                   key={section}
                   section={section}
                   activeSection={activeSection}
-                  isScrolled={isScrolled}
                   onClick={(e) => {
                     handleRippleEffect(e);
                     scrollToSection(section);
@@ -311,23 +310,19 @@ function NavItem({
   section, 
   activeSection, 
   onClick, 
-  ripples,
-  isScrolled
+  ripples
 }: { 
   section: string; 
   activeSection: string; 
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   ripples: { id: number; x: number; y: number }[];
-  isScrolled: boolean;
 }) {
   const isActive = activeSection === section;
   
   return (
     <motion.button
       onClick={onClick}
-      className={`relative transition-colors py-2 overflow-hidden ${
-        isScrolled ? 'text-[#2B2E34] hover:text-[#D4AF6A]' : 'text-[#2B2E34] hover:text-[#D4AF6A]'
-      }`}
+      className="relative text-[#2B2E34] hover:text-[#D4AF6A] transition-colors py-2 overflow-hidden"
       data-testid={`nav-${section}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}

@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 
+// Add isScrolled to the props for Logo
 interface LogoProps {
   size?: 'small' | 'medium' | 'large' | 'nav';
   className?: string;
+  isScrolled?: boolean;
 }
 
-export default function Logo({ size = 'medium', className = '' }: LogoProps) {
+export default function Logo({ size = 'medium', className = '', isScrolled = false }: LogoProps) {
   const sizeClasses = {
     small: 'w-12 h-12',
     medium: 'w-24 h-24',
