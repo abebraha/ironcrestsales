@@ -63,8 +63,8 @@ export default function Contact() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <Phone className="w-5 h-5 text-primary" />
+                  <div className="bg-[#0B1F3B]/10 p-3 rounded-lg">
+                    <Phone className="w-5 h-5 text-[#0B1F3B]" />
                   </div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Phone</h4>
@@ -79,8 +79,8 @@ export default function Contact() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <div className="bg-accent/10 p-3 rounded-lg">
-                    <Mail className="w-5 h-5 text-accent" />
+                  <div className="bg-[#C9A24D]/10 p-3 rounded-lg">
+                    <Mail className="w-5 h-5 text-[#C9A24D]" />
                   </div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Email</h4>

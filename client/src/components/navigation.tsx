@@ -145,7 +145,6 @@ export default function Navigation() {
               className="flex items-center"
               animate={isScrolled ? { scale: 0.9 } : { scale: 1 }}
               transition={{ duration: 0.3 }}
-              {...breathingAnimation}
             >
               <Logo size={isScrolled ? "small" : "nav"} />
             </motion.div>
@@ -218,7 +217,7 @@ export default function Navigation() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div 
-              className="md:hidden absolute top-full left-0 w-full bg-primary/95 backdrop-blur-md border-t border-white/20" 
+              className="md:hidden absolute top-full left-0 w-full bg-[#0B1F3B]/95 backdrop-blur-md border-t border-white/20" 
               data-testid="mobile-menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ 
