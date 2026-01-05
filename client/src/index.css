@@ -81,16 +81,18 @@
   }
 }
 
-/* Clean navy background - no gradients */
+/* Light navigation background */
 .nav-background {
-  background-color: #152943;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   position: relative;
 }
 
 .nav-background.scrolled {
-  background-color: #112136;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 @keyframes shimmer {
