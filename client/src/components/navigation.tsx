@@ -111,7 +111,7 @@ export default function Navigation() {
     <>
       <motion.nav 
         ref={navRef}
-        className={`fixed w-full top-0 z-50 transition-all duration-500 ${isScrolled ? 'shadow-lg' : ''}`}
+        className={`fixed w-full top-0 z-50 transition-all duration-500 bg-[#F2F4F7] ${isScrolled ? 'shadow-lg' : ''}`}
         style={{
           height: smoothHeight,
           opacity: smoothOpacity,
@@ -123,7 +123,7 @@ export default function Navigation() {
         data-testid="navigation"
       >
         <motion.div 
-          className={`absolute inset-0 nav-background ${isScrolled ? 'scrolled' : ''}`}
+          className={`absolute inset-0 ${isScrolled ? 'nav-background scrolled' : ''}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
@@ -178,7 +178,7 @@ export default function Navigation() {
             
             {/* Mobile Menu Toggle */}
             <motion.button 
-              className="md:hidden text-white relative z-50"
+              className="md:hidden text-[#2B2E34] relative z-50"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               data-testid="mobile-menu-toggle"
               variants={menuVariants}
@@ -322,7 +322,7 @@ function NavItem({
   return (
     <motion.button
       onClick={onClick}
-      className="relative text-white/90 hover:text-[#D4AF6A] transition-colors py-2 overflow-hidden"
+      className="relative text-[#2B2E34] hover:text-[#D4AF6A] transition-colors py-2 overflow-hidden"
       data-testid={`nav-${section}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
