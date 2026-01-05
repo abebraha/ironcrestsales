@@ -57,9 +57,15 @@ export default function Logo({ size = 'medium', className = '' }: LogoProps) {
     }
   };
 
+  const isNav = size === "nav";
+  const isSmall = size === "small";
+  
+  // Choose appropriate logo based on context
+  const logoSrc = (isNav || isScrolled || isSmall) ? "/ironcrest-logo-navy.png" : "/ironcrest-logo.png";
+
   return (
     <motion.img 
-      src="/ironcrest-logo.png"
+      src={logoSrc}
       alt="IronCrest Sales Logo"
       className={`${sizeClasses[size]} ${className} object-contain transition-all duration-500`}
       data-testid="logo"
@@ -73,4 +79,11 @@ export default function Logo({ size = 'medium', className = '' }: LogoProps) {
       whileTap={{ scale: 0.95 }}
     />
   );
+}
+
+// Add isScrolled to the props for Logo
+interface LogoProps {
+  size?: 'small' | 'medium' | 'large' | 'nav';
+  className?: string;
+  isScrolled?: boolean;
 }
