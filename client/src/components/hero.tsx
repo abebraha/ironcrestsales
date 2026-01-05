@@ -40,8 +40,8 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative overflow-hidden min-h-screen">
-      {/* Flat navy background */}
-      <div className="absolute inset-0 bg-[#0B1F3B]" />
+      {/* Modern blue background */}
+      <div className="absolute inset-0 bg-[#1E3A5F]" />
       {/* Main hero content with parallax */}
       <motion.div 
         className="relative z-10 pt-24 pb-20"
@@ -107,7 +107,7 @@ export default function Hero() {
             >
               <motion.button 
                 onClick={scrollToContact}
-                className="bg-[#C9A24D] text-[#0B1F3B] px-8 py-4 rounded-lg font-montserrat font-bold text-lg shadow-lg transition-all duration-200 hover:bg-[#C9A24D]/90"
+                className="bg-[#D4AF6A] text-[#1E3A5F] px-8 py-4 rounded-lg font-montserrat font-bold text-lg shadow-lg transition-all duration-200 hover:bg-[#D4AF6A]/90"
                 data-testid="button-apply-today"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -149,7 +149,7 @@ export default function Hero() {
                 scale: 1.02,
               }}
             >
-              <div className="text-3xl font-montserrat font-bold text-[#C9A24D] mb-2">
+              <div className="text-3xl font-montserrat font-bold text-[#D4AF6A] mb-2">
                 {stat.value}
               </div>
               <div className="text-white/85">{stat.label}</div>

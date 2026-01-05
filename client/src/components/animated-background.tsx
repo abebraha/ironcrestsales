@@ -39,8 +39,8 @@ export const AnimatedBackground = ({ variant = 'default' }: { variant?: 'default
   
   return (
     <>
-      {/* Flat navy background */}
-      <div className="absolute inset-0 bg-[#0B1F3B]" />
+      {/* Modern blue background */}
+      <div className="absolute inset-0 bg-[#1E3A5F]" />
       
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 pattern-grid opacity-10" />

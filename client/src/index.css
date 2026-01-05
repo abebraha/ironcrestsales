@@ -3,17 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium Sales Agency Color System */
+/* Modern Sales Agency Color System */
 :root {
-  /* Primary - Navy Blue #0B1F3B */
-  --navy: #0B1F3B;
-  --primary: #0B1F3B;
+  /* Primary Blue #1E3A5F */
+  --navy: #1E3A5F;
+  --primary: #1E3A5F;
   --primary-foreground: #FFFFFF;
   
-  /* Accent - Gold #C9A24D (use sparingly ~5%) */
-  --gold-accent: #C9A24D;
-  --accent: #C9A24D;
-  --accent-foreground: #0B1F3B;
+  /* Accent Gold #D4AF6A */
+  --gold-accent: #D4AF6A;
+  --accent: #D4AF6A;
+  --accent-foreground: #1E3A5F;
   
   /* Neutrals */
   --white: #FFFFFF;
@@ -27,7 +27,7 @@
   --card-foreground: #2B2E34;
   --popover: #FFFFFF;
   --popover-foreground: #2B2E34;
-  --secondary: #0B1F3B;
+  --secondary: #1E3A5F;
   --secondary-foreground: #FFFFFF;
   --muted: #F2F4F7;
   --muted-foreground: #2B2E34;
@@ -35,7 +35,7 @@
   --destructive-foreground: #FFFFFF;
   --border: #E5E7EB;
   --input: #E5E7EB;
-  --ring: #0B1F3B;
+  --ring: #1E3A5F;
   --radius: 8px;
   
   /* Typography */
@@ -44,24 +44,24 @@
 }
 
 .dark {
-  --background: #0B1F3B;
+  --background: #1E3A5F;
   --foreground: #FFFFFF;
-  --card: #0B1F3B;
+  --card: #1E3A5F;
   --card-foreground: #FFFFFF;
-  --popover: #0B1F3B;
+  --popover: #1E3A5F;
   --popover-foreground: #FFFFFF;
-  --primary: #0B1F3B;
+  --primary: #1E3A5F;
   --primary-foreground: #FFFFFF;
-  --secondary: #0B1F3B;
+  --secondary: #1E3A5F;
   --secondary-foreground: #FFFFFF;
-  --muted: #1a2d4a;
+  --muted: #2a4a75;
   --muted-foreground: #FFFFFF;
-  --accent: #C9A24D;
-  --accent-foreground: #0B1F3B;
-  --border: #1a2d4a;
-  --input: #1a2d4a;
-  --ring: #C9A24D;
-  --gold-accent: #C9A24D;
+  --accent: #D4AF6A;
+  --accent-foreground: #1E3A5F;
+  --border: #2a4a75;
+  --input: #2a4a75;
+  --ring: #D4AF6A;
+  --gold-accent: #D4AF6A;
 }
 
 @layer base {
@@ -101,7 +101,7 @@
 .shield-icon {
   width: 80px;
   height: 80px;
-  background: #C9A24D;
+  background: #D4AF6A;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   position: relative;
 }
@@ -113,7 +113,7 @@
   left: 3px;
   right: 3px;
   bottom: 3px;
-  background: #0B1F3B;
+  background: #1E3A5F;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
@@ -124,7 +124,7 @@
   left: 8px;
   right: 8px;
   bottom: 8px;
-  background: #C9A24D;
+  background: #D4AF6A;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
@@ -599,7 +599,7 @@ html {
 
 /* Gold text - flat color */
 .gold-text {
-  color: #C9A24D;
+  color: #D4AF6A;
 }
 
 /* Decorative star rotation */

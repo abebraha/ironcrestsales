@@ -17,9 +17,9 @@ const SocialIcon = ({ Icon, href, label, delay = 0 }: { Icon: any; href: string;
       whileTap={{ scale: 0.98 }}
     >
       <div
-        className="relative p-3 rounded-full bg-white/10 border border-white/20 transition-all duration-200 group-hover:border-[#C9A24D]/40 group-hover:bg-white/15"
+        className="relative p-3 rounded-full bg-white/10 border border-white/20 transition-all duration-200 group-hover:border-[#D4AF6A]/40 group-hover:bg-white/15"
       >
-        <Icon className="w-5 h-5 text-white transition-opacity duration-200 group-hover:text-[#C9A24D]" />
+        <Icon className="w-5 h-5 text-white transition-opacity duration-200 group-hover:text-[#D4AF6A]" />
       </div>
     </motion.a>
   );
@@ -35,7 +35,7 @@ const FooterLink = ({ href, children, delay = 0 }: { href: string; children: Rea
     >
       <a
         href={href}
-        className="relative inline-block group py-1 text-white/80 hover:text-[#C9A24D] transition-colors duration-200"
+        className="relative inline-block group py-1 text-white/80 hover:text-[#D4AF6A] transition-colors duration-200"
         data-testid={`footer-link-${children?.toString().toLowerCase().replace(/\s+/g, '-')}`}
       >
         <span className="relative z-10">
@@ -43,7 +43,7 @@ const FooterLink = ({ href, children, delay = 0 }: { href: string; children: Rea
         </span>
         
         {/* Simple underline on hover */}
-        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C9A24D] group-hover:w-full transition-all duration-200" />
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#D4AF6A] group-hover:w-full transition-all duration-200" />
       </a>
     </motion.li>
   );
@@ -95,7 +95,7 @@ export default function Footer() {
   };
 
   return (
-    <footer ref={footerRef} className="relative bg-[#0B1F3B] text-white py-16 overflow-hidden" data-testid="footer">
+    <footer ref={footerRef} className="relative bg-[#1E3A5F] text-white py-16 overflow-hidden" data-testid="footer">
       {/* Flat navy background */}
       
       {/* Static mesh pattern */}

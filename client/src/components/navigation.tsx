@@ -131,7 +131,7 @@ export default function Navigation() {
         
         {/* Progress Indicator */}
         <motion.div 
-          className="absolute bottom-0 left-0 h-0.5 bg-[#C9A24D]"
+          className="absolute bottom-0 left-0 h-0.5 bg-[#D4AF6A]"
           style={{ width: `${scrollProgress}%`, transformOrigin: "left" }}
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
@@ -169,7 +169,7 @@ export default function Navigation() {
                   handleRippleEffect(e);
                   scrollToSection('contact');
                 }}
-                className="bg-[#C9A24D] text-[#0B1F3B] px-6 py-2 rounded-lg hover:bg-[#C9A24D]/90 transition-all duration-300 font-semibold"
+                className="bg-[#D4AF6A] text-[#1E3A5F] px-6 py-2 rounded-lg hover:bg-[#D4AF6A]/90 transition-all duration-300 font-semibold"
                 data-testid="nav-contact"
               >
                 Contact Us
@@ -217,7 +217,7 @@ export default function Navigation() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div 
-              className="md:hidden absolute top-full left-0 w-full bg-[#0B1F3B]/95 backdrop-blur-md border-t border-white/20" 
+              className="md:hidden absolute top-full left-0 w-full bg-[#1E3A5F]/95 backdrop-blur-md border-t border-white/20" 
               data-testid="mobile-menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ 
@@ -259,8 +259,8 @@ export default function Navigation() {
                     }}
                     className={`block w-full text-left px-3 py-2 rounded-lg transition-colors relative overflow-hidden ${
                       section === 'contact' 
-                        ? 'bg-[#C9A24D] text-[#0B1F3B] hover:bg-[#C9A24D]/90 font-semibold' 
-                        : 'text-white/90 hover:text-[#C9A24D] hover:bg-white/5'
+                        ? 'bg-[#D4AF6A] text-[#1E3A5F] hover:bg-[#D4AF6A]/90 font-semibold' 
+                        : 'text-white/90 hover:text-[#D4AF6A] hover:bg-white/5'
                     }`}
                     data-testid={`mobile-nav-${section}`}
                     initial={{ x: -50, opacity: 0 }}
