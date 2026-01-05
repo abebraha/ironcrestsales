@@ -3,69 +3,65 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Premium Sales Agency Color System */
 :root {
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(220, 20%, 10%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(220, 20%, 10%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(220, 20%, 10%);
-  --primary: hsl(220, 60%, 18%); /* Deep navy blue */
-  --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(220, 55%, 14%); /* Darker navy */
-  --secondary-foreground: hsl(0, 0%, 100%);
-  --muted: hsl(220, 15%, 94%);
-  --muted-foreground: hsl(220, 15%, 40%);
-  --accent: hsl(220, 55%, 28%); /* Medium navy blue */
-  --accent-foreground: hsl(0, 0%, 100%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(220, 15%, 90%);
-  --input: hsl(220, 15%, 90%);
-  --ring: hsl(220, 60%, 18%);
+  /* Primary - Navy Blue #0B1F3B */
+  --navy: #0B1F3B;
+  --primary: #0B1F3B;
+  --primary-foreground: #FFFFFF;
+  
+  /* Accent - Gold #C9A24D (use sparingly ~5%) */
+  --gold-accent: #C9A24D;
+  --accent: #C9A24D;
+  --accent-foreground: #0B1F3B;
+  
+  /* Neutrals */
+  --white: #FFFFFF;
+  --light-gray: #F2F4F7;
+  --charcoal: #2B2E34;
+  
+  /* Semantic mappings */
+  --background: #FFFFFF;
+  --foreground: #2B2E34;
+  --card: #FFFFFF;
+  --card-foreground: #2B2E34;
+  --popover: #FFFFFF;
+  --popover-foreground: #2B2E34;
+  --secondary: #0B1F3B;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F2F4F7;
+  --muted-foreground: #2B2E34;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #0B1F3B;
   --radius: 8px;
-  --gold-accent: hsl(46, 70%, 52%); /* Refined metallic gold */
-  --brand-navy: hsl(220, 60%, 18%); /* Primary brand navy */
-  --brand-navy-2: hsl(220, 55%, 12%); /* Deeper navy for surfaces */
-  --brand-gold: hsl(46, 70%, 52%); /* Refined metallic gold */
-  --gold-highlight: hsl(46, 65%, 62%); /* Lighter gold for highlights */
-  --gold-foreground: hsl(220, 30%, 12%); /* Dark text on gold backgrounds */
-  --on-dark-strong: hsl(0, 0%, 100%); /* Primary text on dark */
-  --on-dark-subtle: hsl(220, 15%, 85%); /* Secondary text on dark */
-  --scrim-strong: hsla(220, 60%, 10%, 0.65); /* Text background overlay */
+  
+  /* Typography */
   --font-sans: 'Open Sans', sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
 }
 
 .dark {
-  --background: hsl(220, 25%, 8%);
-  --foreground: hsl(0, 0%, 95%);
-  --card: hsl(220, 25%, 12%);
-  --card-foreground: hsl(0, 0%, 95%);
-  --popover: hsl(220, 25%, 8%);
-  --popover-foreground: hsl(0, 0%, 95%);
-  --primary: hsl(220, 60%, 18%);
-  --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(220, 55%, 14%);
-  --secondary-foreground: hsl(0, 0%, 100%);
-  --muted: hsl(220, 20%, 15%);
-  --muted-foreground: hsl(220, 15%, 60%);
-  --accent: hsl(220, 55%, 28%);
-  --accent-foreground: hsl(0, 0%, 100%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(220, 20%, 20%);
-  --input: hsl(220, 20%, 20%);
-  --ring: hsl(220, 60%, 18%);
-  --gold-accent: hsl(46, 70%, 52%);
-  --brand-navy: hsl(220, 60%, 18%);
-  --brand-navy-2: hsl(220, 55%, 12%);
-  --brand-gold: hsl(46, 70%, 52%);
-  --gold-highlight: hsl(46, 65%, 62%);
-  --gold-foreground: hsl(220, 30%, 12%);
-  --on-dark-strong: hsl(0, 0%, 100%);
-  --on-dark-subtle: hsl(220, 15%, 85%);
-  --scrim-strong: hsla(220, 60%, 10%, 0.65);
+  --background: #0B1F3B;
+  --foreground: #FFFFFF;
+  --card: #0B1F3B;
+  --card-foreground: #FFFFFF;
+  --popover: #0B1F3B;
+  --popover-foreground: #FFFFFF;
+  --primary: #0B1F3B;
+  --primary-foreground: #FFFFFF;
+  --secondary: #0B1F3B;
+  --secondary-foreground: #FFFFFF;
+  --muted: #1a2d4a;
+  --muted-foreground: #FFFFFF;
+  --accent: #C9A24D;
+  --accent-foreground: #0B1F3B;
+  --border: #1a2d4a;
+  --input: #1a2d4a;
+  --ring: #C9A24D;
+  --gold-accent: #C9A24D;
 }
 
 @layer base {
@@ -76,8 +72,7 @@
   body {
     @apply text-foreground;
     font-family: var(--font-sans);
-    background: linear-gradient(135deg, hsl(220, 55%, 10%) 0%, hsl(220, 50%, 15%) 50%, hsl(220, 45%, 18%) 100%);
-    background-attachment: fixed;
+    background-color: var(--white);
     min-height: 100vh;
   }
   
@@ -86,34 +81,16 @@
   }
 }
 
-.hero-gradient {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-}
-
+/* Clean navy background - no gradients */
 .nav-background {
-  background: linear-gradient(135deg, hsla(220, 55%, 14%, 0.95) 0%, hsla(220, 50%, 10%, 0.9) 100%);
-  backdrop-filter: blur(4px);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--navy);
+  transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
-}
-
-.nav-background::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, hsla(46, 70%, 52%, 0.08), transparent);
-  animation: shimmer 8s infinite;
 }
 
 .nav-background.scrolled {
-  background: linear-gradient(135deg, hsla(220, 55%, 14%, 0.98) 0%, hsla(220, 50%, 10%, 0.95) 100%);
-  backdrop-filter: blur(12px) saturate(1.5);
-  border-bottom: 1px solid hsla(46, 70%, 52%, 0.15);
-  box-shadow: 0 4px 30px hsla(220, 50%, 10%, 0.3);
+  background-color: var(--navy);
+  box-shadow: 0 2px 10px rgba(11, 31, 59, 0.3);
 }
 
 @keyframes shimmer {
