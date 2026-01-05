@@ -1,13 +1,11 @@
 import { motion } from "framer-motion";
 
-// Add isScrolled to the props for Logo
 interface LogoProps {
   size?: 'small' | 'medium' | 'large' | 'nav';
   className?: string;
-  isScrolled?: boolean;
 }
 
-export default function Logo({ size = 'medium', className = '', isScrolled = false }: LogoProps) {
+export default function Logo({ size = 'medium', className = '' }: LogoProps) {
   const sizeClasses = {
     small: 'w-12 h-12',
     medium: 'w-24 h-24',
@@ -59,15 +57,9 @@ export default function Logo({ size = 'medium', className = '', isScrolled = fal
     }
   };
 
-  const isNav = size === "nav";
-  const isSmall = size === "small";
-  
-  // Choose appropriate logo based on context
-  const logoSrc = (isNav || isScrolled || isSmall) ? "/ironcrest-logo-navy.png" : "/ironcrest-logo.png";
-
   return (
     <motion.img 
-      src={logoSrc}
+      src="/ironcrest-logo.png"
       alt="IronCrest Sales Logo"
       className={`${sizeClasses[size]} ${className} object-contain transition-all duration-500`}
       data-testid="logo"
@@ -81,11 +73,4 @@ export default function Logo({ size = 'medium', className = '', isScrolled = fal
       whileTap={{ scale: 0.95 }}
     />
   );
-}
-
-// Add isScrolled to the props for Logo
-interface LogoProps {
-  size?: 'small' | 'medium' | 'large' | 'nav';
-  className?: string;
-  isScrolled?: boolean;
 }
