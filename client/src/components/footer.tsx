@@ -1,10 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, useInView, useAnimation, AnimatePresence } from "framer-motion";
-import { Linkedin, Mail, Send, Heart, ArrowUp } from "lucide-react";
+import { Linkedin, Heart, ArrowUp } from "lucide-react";
 import ShieldLogo from "./shield-logo";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { cn } from "@/lib/utils";
 
 // Social icon component with subtle professional effects
 const SocialIcon = ({ Icon, href, label, delay = 0 }: { Icon: any; href: string; label: string; delay?: number }) => {
@@ -56,8 +53,6 @@ export default function Footer() {
   const footerRef = useRef(null);
   const isInView = useInView(footerRef, { once: true, margin: "-100px" });
   const controls = useAnimation();
-  const [email, setEmail] = useState("");
-  const [isSubscribed, setIsSubscribed] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -73,15 +68,6 @@ export default function Footer() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setIsSubscribed(true);
-      setTimeout(() => setIsSubscribed(false), 3000);
-      setEmail("");
-    }
-  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -140,54 +126,6 @@ export default function Footer() {
             <p className="text-secondary-foreground/90 mb-6 max-w-md leading-relaxed">
               Expert outsourced sales solutions that help businesses build scalable revenue departments through strategic talent and proven systems.
             </p>
-            
-            {/* Newsletter signup with animations */}
-            <motion.div className="mb-8">
-              <h4 className="text-sm font-semibold mb-3 text-yellow-300">Subscribe to Our Newsletter</h4>
-              <form onSubmit={handleSubscribe} className="flex gap-2">
-                <motion.div className="relative flex-1">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="bg-secondary-foreground/10 border-yellow-300/30 focus:border-yellow-300 focus:ring-2 focus:ring-yellow-300/20 transition-all"
-                    data-testid="newsletter-input"
-                  />
-                  <AnimatePresence>
-                    {email && (
-                      <motion.div
-                        className="absolute right-2 top-1/2 -translate-y-1/2"
-                        initial={{ scale: 0, rotate: -180 }}
-                        animate={{ scale: 1, rotate: 0 }}
-                        exit={{ scale: 0, rotate: 180 }}
-                      >
-                        <Mail className="w-4 h-4 text-yellow-300" />
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-                <Button 
-                  type="submit"
-                  className="bg-gradient-to-r from-yellow-300 to-yellow-500 hover:from-yellow-400 hover:to-yellow-600 text-secondary transition-colors duration-200"
-                  data-testid="newsletter-submit"
-                >
-                  <Send className="w-4 h-4" />
-                </Button>
-              </form>
-              <AnimatePresence>
-                {isSubscribed && (
-                  <motion.p
-                    className="text-green-400 text-sm mt-2"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                  >
-                    ✨ Successfully subscribed!
-                  </motion.p>
-                )}
-              </AnimatePresence>
-            </motion.div>
             
             {/* Social icons */}
             <div className="flex space-x-4">
