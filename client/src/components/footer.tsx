@@ -17,9 +17,9 @@ const SocialIcon = ({ Icon, href, label, delay = 0 }: { Icon: any; href: string;
       whileTap={{ scale: 0.98 }}
     >
       <div
-        className="relative p-3 rounded-full bg-gradient-to-br from-yellow-300/10 to-yellow-500/10 backdrop-blur-sm border border-yellow-300/20 transition-all duration-200 group-hover:border-yellow-300/40 group-hover:bg-yellow-300/20"
+        className="relative p-3 rounded-full bg-white/10 border border-white/20 transition-all duration-200 group-hover:border-[#C9A24D]/40 group-hover:bg-white/15"
       >
-        <Icon className="w-5 h-5 text-yellow-300 transition-opacity duration-200 group-hover:opacity-90" />
+        <Icon className="w-5 h-5 text-white transition-opacity duration-200 group-hover:text-[#C9A24D]" />
       </div>
     </motion.a>
   );
@@ -35,7 +35,7 @@ const FooterLink = ({ href, children, delay = 0 }: { href: string; children: Rea
     >
       <a
         href={href}
-        className="relative inline-block group py-1 text-secondary-foreground/90 hover:text-yellow-300 transition-colors duration-200"
+        className="relative inline-block group py-1 text-white/80 hover:text-[#C9A24D] transition-colors duration-200"
         data-testid={`footer-link-${children?.toString().toLowerCase().replace(/\s+/g, '-')}`}
       >
         <span className="relative z-10">
@@ -43,7 +43,7 @@ const FooterLink = ({ href, children, delay = 0 }: { href: string; children: Rea
         </span>
         
         {/* Simple underline on hover */}
-        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 group-hover:w-full transition-all duration-200" />
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C9A24D] group-hover:w-full transition-all duration-200" />
       </a>
     </motion.li>
   );
@@ -95,9 +95,8 @@ export default function Footer() {
   };
 
   return (
-    <footer ref={footerRef} className="relative bg-secondary text-secondary-foreground py-16 overflow-hidden" data-testid="footer">
-      {/* Simple background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 opacity-50" />
+    <footer ref={footerRef} className="relative bg-[#0B1F3B] text-white py-16 overflow-hidden" data-testid="footer">
+      {/* Flat navy background */}
       
       {/* Static mesh pattern */}
       <div className="absolute inset-0 pattern-grid opacity-10" />
@@ -118,12 +117,12 @@ export default function Footer() {
               >
                 <ShieldLogo size="small" />
               </motion.div>
-              <span className="text-2xl font-montserrat font-bold bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+              <span className="text-2xl font-montserrat font-bold text-white">
                 IronCrest Sales
               </span>
             </div>
             
-            <p className="text-secondary-foreground/90 mb-6 max-w-md leading-relaxed">
+            <p className="text-white/80 mb-6 max-w-md leading-relaxed">
               Expert outsourced sales solutions that help businesses build scalable revenue departments through strategic talent and proven systems.
             </p>
             
@@ -135,14 +134,9 @@ export default function Footer() {
           
           {/* Services links */}
           <motion.div variants={itemVariants}>
-            <h4 className="font-montserrat font-semibold text-lg mb-6 text-yellow-300 relative">
+            <h4 className="font-montserrat font-semibold text-lg mb-6 text-white relative">
               Services
-              <motion.div
-                className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-yellow-300 to-transparent"
-                initial={{ width: 0 }}
-                animate={{ width: "50%" }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-              />
+              <div className="absolute -bottom-2 left-0 h-0.5 w-8 bg-[#C9A24D]" />
             </h4>
             <ul className="space-y-3">
               <FooterLink href="#" delay={0.1}>Sales Professionals</FooterLink>
@@ -154,14 +148,9 @@ export default function Footer() {
           
           {/* Company links */}
           <motion.div variants={itemVariants}>
-            <h4 className="font-montserrat font-semibold text-lg mb-6 text-yellow-300 relative">
+            <h4 className="font-montserrat font-semibold text-lg mb-6 text-white relative">
               Company
-              <motion.div
-                className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-yellow-300 to-transparent"
-                initial={{ width: 0 }}
-                animate={{ width: "50%" }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-              />
+              <div className="absolute -bottom-2 left-0 h-0.5 w-8 bg-[#C9A24D]" />
             </h4>
             <ul className="space-y-3">
               <FooterLink href="#" delay={0.1}>About Us</FooterLink>
@@ -175,29 +164,21 @@ export default function Footer() {
         </div>
         
         {/* Simple divider */}
-        <motion.div
-          className="mt-12 mb-8"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ delay: 0.8, duration: 1 }}
-        >
-          <div className="h-px bg-gradient-to-r from-transparent via-yellow-300/50 to-transparent" />
-        </motion.div>
+        <div className="mt-12 mb-8">
+          <div className="h-px bg-white/20" />
+        </div>
         
-        {/* Copyright with pulse animation */}
-        <motion.div 
-          className="text-center"
-          variants={itemVariants}
-        >
-          <p className="text-secondary-foreground/80 mb-2" data-testid="footer-copyright">
+        {/* Copyright */}
+        <div className="text-center">
+          <p className="text-white/70 mb-2" data-testid="footer-copyright">
             Made with <Heart className="w-4 h-4 inline text-red-400" /> by IronCrest Sales
           </p>
-          <p className="text-secondary-foreground/80 text-sm">
-            &copy; 2024 IronCrest Sales. All rights reserved. | 
-            <a href="#" className="hover:text-yellow-300 transition-colors mx-1">Privacy Policy</a> | 
-            <a href="#" className="hover:text-yellow-300 transition-colors mx-1">Terms of Service</a>
+          <p className="text-white/60 text-sm">
+            &copy; 2025 IronCrest Sales. All rights reserved. | 
+            <a href="#" className="hover:text-[#C9A24D] transition-colors mx-1">Privacy Policy</a> | 
+            <a href="#" className="hover:text-[#C9A24D] transition-colors mx-1">Terms of Service</a>
           </p>
-        </motion.div>
+        </div>
       </motion.div>
 
       {/* Scroll to top button */}
@@ -205,7 +186,7 @@ export default function Footer() {
         {showScrollTop && (
           <motion.button
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-yellow-300 to-yellow-500 text-secondary rounded-full shadow-lg z-50 hover:opacity-90 hover:scale-105 transition-all duration-200"
+            className="fixed bottom-8 right-8 p-4 bg-[#C9A24D] text-[#0B1F3B] rounded-full shadow-lg z-50 hover:bg-[#C9A24D]/90 hover:scale-105 transition-all duration-200"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}

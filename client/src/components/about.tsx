@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { SiLinkedin } from "react-icons/si";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { AnimatedBackground } from "./animated-background";
 
 // Counter component for animated numbers - simplified to always work
 function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: number; suffix?: string; prefix?: string }) {
@@ -87,7 +86,7 @@ const HighlightText = ({ children }: { children: string }) => {
     >
       {children}
       <motion.span
-        className="absolute inset-0 bg-gradient-to-r from-gold-accent/30 to-primary/30 -z-10 rounded-md"
+        className="absolute inset-0 bg-[#C9A24D]/20 -z-10 rounded-md"
         initial={{ width: "0%" }}
         animate={isInView ? { width: "100%" } : {}}
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
@@ -111,17 +110,15 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden gpu-accelerated" ref={containerRef}>
-      {/* Consistent navy background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,55%,12%)] via-[hsl(220,50%,14%)] to-[hsl(220,55%,12%)]" />
-      {/* Animated background with about variant */}
-      <AnimatedBackground variant="about" />
+    <section id="about" className="py-20 relative overflow-hidden" ref={containerRef}>
+      {/* Light gray background */}
+      <div className="absolute inset-0 bg-[#F2F4F7]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Team Section with Flip Cards */}
         <div>
           <TextReveal className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-montserrat font-bold mb-4 text-white">
+            <h3 className="text-3xl md:text-4xl font-montserrat font-bold mb-4 text-[#2B2E34]">
               Meet the <HighlightText>Team</HighlightText>
             </h3>
           </TextReveal>
@@ -138,10 +135,10 @@ export default function About() {
                 data-testid={`team-member-${index}`}
               >
                 <motion.div
-                  className="rounded-xl bg-gradient-to-br from-primary to-accent p-6 flex flex-col items-center justify-center text-white h-80"
+                  className="rounded-xl bg-[#0B1F3B] p-6 flex flex-col items-center justify-center text-white h-80"
                   whileHover={{ 
                     y: -2,
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.2)"
+                    boxShadow: "0 10px 30px rgba(11,31,59,0.3)"
                   }}
                   transition={{ duration: 0.2 }}
                 >
@@ -154,7 +151,7 @@ export default function About() {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 px-4 py-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors flex items-center gap-2"
+                    className="mt-4 px-4 py-2 bg-[#C9A24D] text-[#0B1F3B] rounded-lg hover:bg-[#C9A24D]/90 transition-colors flex items-center gap-2 font-semibold"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     data-testid={`linkedin-${member.name.toLowerCase().replace(' ', '-')}`}

@@ -76,22 +76,8 @@ interface GlowTextProps {
 
 export const GlowText = ({ children, className = "" }: GlowTextProps) => {
   return (
-    <motion.span
-      className={`relative ${className}`}
-      animate={{
-        textShadow: [
-          "0 0 20px hsla(43, 96%, 56%, 0)",
-          "0 0 30px hsla(43, 96%, 56%, 0.5)",
-          "0 0 20px hsla(43, 96%, 56%, 0)",
-        ],
-      }}
-      transition={{
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    >
+    <span className={`relative text-[#C9A24D] ${className}`}>
       {children}
-    </motion.span>
+    </span>
   );
 };

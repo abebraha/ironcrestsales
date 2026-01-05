@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import ShieldLogo from "./shield-logo";
-import { AnimatedBackground } from "./animated-background";
 import { TextReveal, GlowText } from "./text-reveal";
 
 export default function Hero() {
@@ -41,12 +40,8 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative overflow-hidden min-h-screen">
-      {/* Gradient background - consistent navy */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(220,55%,12%)] via-[hsl(220,50%,16%)] to-[hsl(220,55%,14%)]" />
-      {/* Animated background layers */}
-      <AnimatedBackground />
-      {/* Subtle gradient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[hsl(220,55%,12%)]/50 z-[5]" />
+      {/* Flat navy background */}
+      <div className="absolute inset-0 bg-[#0B1F3B]" />
       {/* Main hero content with parallax */}
       <motion.div 
         className="relative z-10 pt-24 pb-20"
@@ -82,7 +77,7 @@ export default function Hero() {
                 Your brand. Your offer.
               </TextReveal>
               <br />
-              <GlowText className="text-gold-accent">
+              <GlowText>
                 <TextReveal delay={0.4}>
                   Our sales engine.
                 </TextReveal>
@@ -114,7 +109,7 @@ export default function Hero() {
             >
               <motion.button 
                 onClick={scrollToContact}
-                className="bg-gold-accent text-primary px-8 py-4 rounded-lg font-montserrat font-bold text-lg shadow-lg transition-all duration-200 hover:bg-gold-accent/90"
+                className="bg-[#C9A24D] text-[#0B1F3B] px-8 py-4 rounded-lg font-montserrat font-bold text-lg shadow-lg transition-all duration-200 hover:bg-[#C9A24D]/90"
                 data-testid="button-apply-today"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -122,7 +117,7 @@ export default function Hero() {
               
               <motion.button 
                 onClick={scrollToServices}
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-montserrat font-semibold text-lg backdrop-blur-sm transition-all duration-200 hover:bg-white hover:text-primary"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-montserrat font-semibold text-lg transition-all duration-200 hover:bg-white hover:text-[#0B1F3B]"
                 data-testid="button-learn-more"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -146,7 +141,7 @@ export default function Hero() {
           ].map((stat, i) => (
             <motion.div
               key={stat.testId}
-              className="bg-white/10 backdrop-blur-md rounded-xl p-6 transition-all duration-200 hover:bg-white/15"
+              className="bg-white/10 rounded-xl p-6 transition-all duration-200 hover:bg-white/15 border border-white/10"
               data-testid={stat.testId}
               custom={i}
               initial="hidden"
@@ -156,7 +151,7 @@ export default function Hero() {
                 scale: 1.02,
               }}
             >
-              <div className="text-3xl font-montserrat font-bold text-gold-accent mb-2">
+              <div className="text-3xl font-montserrat font-bold text-[#C9A24D] mb-2">
                 {stat.value}
               </div>
               <div className="text-white/85">{stat.label}</div>

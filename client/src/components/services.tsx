@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Bus, Settings, Users, TrendingUp } from "lucide-react";
 import ServiceCard3D from "./service-card-3d";
-import { AnimatedBackground } from "./animated-background";
 
 export default function Services() {
   const services = [
@@ -14,9 +13,9 @@ export default function Services() {
         "Lead generation systems",
         "Performance tracking and analytics"
       ],
-      iconBgColor: "bg-accent/10",
-      iconColor: "text-accent",
-      checkColor: "text-accent",
+      iconBgColor: "bg-[#0B1F3B]/10",
+      iconColor: "text-[#0B1F3B]",
+      checkColor: "text-[#C9A24D]",
       testId: "service-systems"
     },
     {
@@ -28,9 +27,9 @@ export default function Services() {
         "Industry-specific expertise",
         "Immediate integration and impact"
       ],
-      iconBgColor: "bg-primary/10",
-      iconColor: "text-primary",
-      checkColor: "text-primary",
+      iconBgColor: "bg-[#0B1F3B]/10",
+      iconColor: "text-[#0B1F3B]",
+      checkColor: "text-[#C9A24D]",
       testId: "service-professionals"
     },
     {
@@ -42,9 +41,9 @@ export default function Services() {
         "Training and onboarding",
         "Performance management systems"
       ],
-      iconBgColor: "bg-yellow-500/10",
-      iconColor: "text-gold-accent",
-      checkColor: "text-gold-accent",
+      iconBgColor: "bg-[#0B1F3B]/10",
+      iconColor: "text-[#0B1F3B]",
+      checkColor: "text-[#C9A24D]",
       testId: "service-hiring"
     },
     {
@@ -56,19 +55,17 @@ export default function Services() {
         "Regular training and skill development",
         "Performance tracking and improvement"
       ],
-      iconBgColor: "bg-secondary/10",
-      iconColor: "text-secondary",
-      checkColor: "text-secondary",
+      iconBgColor: "bg-[#0B1F3B]/10",
+      iconColor: "text-[#0B1F3B]",
+      checkColor: "text-[#C9A24D]",
       testId: "service-optimization"
     }
   ];
 
   return (
-    <section id="services" className="py-20 overflow-hidden relative gpu-accelerated">
-      {/* Consistent navy background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,55%,12%)] via-[hsl(220,50%,14%)] to-[hsl(220,55%,12%)]" />
-      {/* Animated background with services variant */}
-      <AnimatedBackground variant="services" />
+    <section id="services" className="py-20 overflow-hidden relative">
+      {/* White background */}
+      <div className="absolute inset-0 bg-white" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Animated title section */}
@@ -80,7 +77,7 @@ export default function Services() {
           viewport={{ once: true }}
         >
           
-          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-white mb-6" data-testid="services-title">
+          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-[#2B2E34] mb-6" data-testid="services-title">
             <motion.span
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -91,6 +88,7 @@ export default function Services() {
               Predictable sales engine built by proven sales professionals
             </motion.span>
           </h2>
+          <p className="text-lg text-[#2B2E34]/70 max-w-2xl mx-auto">Our proven 4 step process</p>
         </motion.div>
 
         {/* 3D Service Cards Grid */}

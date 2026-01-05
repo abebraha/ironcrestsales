@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { XCircle, Clock, TrendingDown, Users, AlertTriangle, DollarSign } from "lucide-react";
-import { AnimatedBackground } from "./animated-background";
 
 export default function PainPoints() {
   const painPoints = [
@@ -44,11 +43,8 @@ export default function PainPoints() {
 
   return (
     <section className="py-20 overflow-hidden relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,55%,12%)] via-[hsl(220,50%,15%)] to-[hsl(220,55%,12%)]" />
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[hsl(220,55%,25%)]/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[hsl(46,70%,52%)]/10 rounded-full blur-3xl" />
-      </div>
+      {/* Light gray background for contrast */}
+      <div className="absolute inset-0 bg-[#F2F4F7]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
           className="text-center mb-16"
@@ -57,7 +53,7 @@ export default function PainPoints() {
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-white mb-6" data-testid="pain-points-title">
+          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-[#2B2E34] mb-6" data-testid="pain-points-title">
             <motion.span
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -68,7 +64,7 @@ export default function PainPoints() {
           </h2>
           
           <motion.p
-            className="text-lg text-white/70 max-w-2xl mx-auto"
+            className="text-lg text-[#2B2E34]/70 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -94,16 +90,16 @@ export default function PainPoints() {
                 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full transition-all duration-200 hover:bg-white/10 hover:border-gold-accent/30">
+                <div className="bg-white border border-[#E5E7EB] rounded-xl p-6 h-full transition-all duration-200 hover:border-[#C9A24D]/30 hover:shadow-lg">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gold-accent/10 rounded-lg flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-gold-accent" />
+                    <div className="flex-shrink-0 w-12 h-12 bg-[#C9A24D]/10 rounded-lg flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-[#C9A24D]" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-montserrat font-semibold text-white mb-2">
+                      <h3 className="text-lg font-montserrat font-semibold text-[#2B2E34] mb-2">
                         {point.title}
                       </h3>
-                      <p className="text-white/60 text-sm leading-relaxed">
+                      <p className="text-[#2B2E34]/60 text-sm leading-relaxed">
                         {point.description}
                       </p>
                     </div>
@@ -121,10 +117,10 @@ export default function PainPoints() {
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-xl md:text-2xl font-montserrat text-white/90 mb-2">
+          <p className="text-xl md:text-2xl font-montserrat text-[#2B2E34] mb-2">
             There's a better way.
           </p>
-          <p className="text-gold-accent font-semibold text-lg">
+          <p className="text-[#C9A24D] font-semibold text-lg">
             Let us build and manage your sales engine.
           </p>
         </motion.div>

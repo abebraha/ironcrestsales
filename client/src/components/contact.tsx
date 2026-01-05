@@ -1,15 +1,12 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, CheckCircle } from "lucide-react";
-import { AnimatedBackground } from "./animated-background";
 import { InlineWidget } from "react-calendly";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 relative overflow-hidden gpu-accelerated">
-      {/* Consistent navy background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,55%,12%)] via-[hsl(220,50%,14%)] to-[hsl(220,55%,12%)]" />
-      {/* Animated background with contact variant */}
-      <AnimatedBackground variant="contact" />
+    <section id="contact" className="py-20 relative overflow-hidden">
+      {/* Navy background */}
+      <div className="absolute inset-0 bg-[#0B1F3B]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div 
           className="text-center mb-16"
@@ -98,8 +95,8 @@ export default function Contact() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <div className="bg-yellow-500/10 p-3 rounded-lg">
-                    <MapPin className="w-5 h-5 text-gold-accent" />
+                  <div className="bg-[#C9A24D]/10 p-3 rounded-lg">
+                    <MapPin className="w-5 h-5 text-[#C9A24D]" />
                   </div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Headquarters</h4>
@@ -111,30 +108,14 @@ export default function Contact() {
             </motion.div>
             
             <motion.div 
-              className="bg-gradient-to-br from-primary to-accent rounded-2xl p-8 text-white relative overflow-hidden" 
+              className="bg-white rounded-2xl p-8 text-[#2B2E34] border border-[#E5E7EB] relative overflow-hidden" 
               data-testid="why-choose"
               whileHover={{ 
                 scale: 1.02,
+                boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
               }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <motion.div
-                className="absolute inset-0 bg-white/10"
-                animate={{
-                  backgroundPosition: ['0% 0%', '100% 100%'],
-                }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "linear"
-                }}
-                style={{
-                  backgroundImage: 'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%)',
-                  backgroundSize: '200% 200%',
-                }}
-              />
-              
               <div className="relative">
                 <h3 className="text-2xl font-montserrat font-bold mb-4">Why Choose IronCrest?</h3>
                 <ul className="space-y-3">
@@ -152,7 +133,7 @@ export default function Contact() {
                       transition={{ delay: index * 0.1 }}
                       viewport={{ once: true }}
                     >
-                      <CheckCircle className="w-5 h-5 text-yellow-300 mr-3" />
+                      <CheckCircle className="w-5 h-5 text-[#C9A24D] mr-3" />
                       <span>{item}</span>
                     </motion.li>
                   ))}
