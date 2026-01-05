@@ -217,7 +217,7 @@ export default function Navigation() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div 
-              className="md:hidden absolute top-full left-0 w-full bg-[#1E3A5F]/95 backdrop-blur-md border-t border-white/20" 
+              className="md:hidden absolute top-full left-0 w-full bg-[#152943]/95 backdrop-blur-md border-t border-white/20" 
               data-testid="mobile-menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ 
