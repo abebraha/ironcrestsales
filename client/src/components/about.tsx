@@ -49,7 +49,7 @@ function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: number; s
   }, [isInView, value, hasAnimated]);
   
   return (
-    <div ref={ref} className="text-4xl font-montserrat font-bold">
+    <div ref={ref} className="text-4xl font-montserrat font-bold text-[#0B1F3B]">
       {prefix}{count}{suffix}
     </div>
   );
@@ -102,69 +102,82 @@ export default function About() {
     offset: ["start end", "end start"]
   });
   
-  const parallaxY = useTransform(scrollYProgress, [0, 1], [20, -20]); // Reduced parallax movement
-  
   const teamMembers = [
     { name: "Abe Braha", role: "Co-Founder", image: "AB", linkedin: "https://www.linkedin.com/in/abe-braha/" },
     { name: "Shalom Babad", role: "Co-Founder", image: "SB", linkedin: "https://www.linkedin.com/in/shalom-babad/" }
   ];
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden" ref={containerRef}>
-      {/* Light gray background */}
-      <div className="absolute inset-0 bg-[#F2F4F7]" />
+    <section id="about" className="py-24 relative overflow-hidden" ref={containerRef}>
+      {/* Light warm background */}
+      <div className="absolute inset-0 bg-white" />
+      <div className="absolute inset-0 pattern-dots opacity-5" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Team Section with Flip Cards */}
-        <div>
-          <TextReveal className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-montserrat font-bold mb-4 text-[#2B2E34]">
-              Meet the <HighlightText>Team</HighlightText>
-            </h3>
-          </TextReveal>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-16 mb-20">
+          <div className="max-w-2xl">
+             <span className="text-[#C9A24D] font-montserrat font-bold tracking-widest uppercase text-sm mb-4 block">Our Team</span>
+             <h3 className="text-3xl md:text-5xl font-montserrat font-bold mb-6 text-[#0B1F3B]">
+               Driven by Sales <HighlightText>Excellence</HighlightText>
+             </h3>
+             <p className="text-lg text-[#2B2E34]/70 leading-relaxed">
+               IronCrest Sales was founded on the principle that sales shouldn't be a black box. We bring transparency, systems, and world-class talent to every organization we partner with.
+             </p>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={member.name}
-                className="relative"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                viewport={{ once: true }}
-                data-testid={`team-member-${index}`}
-              >
-                <motion.div
-                  className="rounded-xl bg-[#0B1F3B] p-6 flex flex-col items-center justify-center text-white h-80"
-                  whileHover={{ 
-                    y: -2,
-                    boxShadow: "0 10px 30px rgba(11,31,59,0.3)"
-                  }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center text-3xl font-montserrat font-bold mb-4">
-                    {member.image}
-                  </div>
-                  <h4 className="font-montserrat font-semibold text-xl mb-2">{member.name}</h4>
-                  <p className="text-sm opacity-90 mb-2">{member.role}</p>
-                  <motion.a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 px-4 py-2 bg-[#C9A24D] text-[#0B1F3B] rounded-lg hover:bg-[#C9A24D]/90 transition-colors flex items-center gap-2 font-semibold"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    data-testid={`linkedin-${member.name.toLowerCase().replace(' ', '-')}`}
-                  >
-                    <SiLinkedin className="w-4 h-4" /> LinkedIn
-                  </motion.a>
-                </motion.div>
-              </motion.div>
-            ))}
+          <div className="flex gap-4">
+             <div className="bg-[#F2F4F7] p-8 rounded-2xl border border-[#0B1F3B]/5 text-center">
+                <AnimatedCounter value={10} suffix="+" />
+                <p className="text-[#2B2E34]/60 font-semibold uppercase text-xs tracking-widest mt-2">Combined Exp</p>
+             </div>
+             <div className="bg-[#0B1F3B] p-8 rounded-2xl text-white text-center">
+                <AnimatedCounter value={50} suffix="M+" prefix="$" />
+                <p className="text-white/60 font-semibold uppercase text-xs tracking-widest mt-2">Revenue Managed</p>
+             </div>
           </div>
         </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          {teamMembers.map((member, index) => (
+            <motion.div
+              key={member.name}
+              className="relative"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+              viewport={{ once: true }}
+              data-testid={`team-member-${index}`}
+            >
+              <motion.div
+                className="rounded-xl bg-white p-8 flex flex-col items-center justify-center text-[#2B2E34] h-96 border border-[#0B1F3B]/5 shadow-sm"
+                whileHover={{ 
+                  y: -10,
+                  boxShadow: "0 20px 40px rgba(11,31,59,0.1)",
+                  borderColor: "rgba(11,31,59,0.1)"
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="w-28 h-28 bg-[#0B1F3B]/5 rounded-full flex items-center justify-center text-3xl font-montserrat font-extrabold mb-6 text-[#0B1F3B] border-2 border-[#C9A24D]/20">
+                  {member.image}
+                </div>
+                <h4 className="font-montserrat font-bold text-2xl mb-2 text-[#0B1F3B]">{member.name}</h4>
+                <p className="text-base font-medium text-[#C9A24D] mb-6 tracking-wide uppercase">{member.role}</p>
+                <motion.a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 px-6 py-2.5 bg-[#0B1F3B] text-white rounded-lg hover:bg-[#0B1F3B]/90 transition-all flex items-center gap-2 font-bold shadow-md"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  data-testid={`linkedin-${member.name.toLowerCase().replace(' ', '-')}`}
+                >
+                  <SiLinkedin className="w-5 h-5" /> LinkedIn
+                </motion.a>
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-      
     </section>
   );
 }

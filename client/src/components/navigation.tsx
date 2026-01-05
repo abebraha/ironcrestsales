@@ -123,7 +123,7 @@ export default function Navigation() {
         data-testid="navigation"
       >
         <motion.div 
-          className={`absolute inset-0 nav-background ${isScrolled ? 'scrolled' : ''}`}
+          className={`absolute inset-0 transition-colors duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
@@ -145,7 +145,6 @@ export default function Navigation() {
               className="flex items-center"
               animate={isScrolled ? { scale: 0.9 } : { scale: 1 }}
               transition={{ duration: 0.3 }}
-              {...breathingAnimation}
             >
               <Logo size={isScrolled ? "small" : "nav"} />
             </motion.div>
@@ -162,6 +161,7 @@ export default function Navigation() {
                     scrollToSection(section);
                   }}
                   ripples={ripples}
+                  isScrolled={isScrolled}
                 />
               ))}
               
@@ -170,16 +170,16 @@ export default function Navigation() {
                   handleRippleEffect(e);
                   scrollToSection('contact');
                 }}
-                className="bg-[#C9A24D] text-[#0B1F3B] px-6 py-2 rounded-lg hover:bg-[#C9A24D]/90 transition-all duration-300 font-semibold"
+                className="bg-[#C9A24D] text-white px-6 py-2 rounded-lg hover:bg-[#C9A24D]/90 transition-all duration-300 font-bold shadow-sm"
                 data-testid="nav-contact"
               >
-                Contact Us
+                Let's Talk
               </MagneticButton>
             </div>
             
             {/* Mobile Menu Toggle */}
             <motion.button 
-              className="md:hidden text-white relative z-50"
+              className={`${isScrolled ? 'text-[#0B1F3B]' : 'text-[#0B1F3B]'} md:hidden relative z-50`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               data-testid="mobile-menu-toggle"
               variants={menuVariants}
@@ -311,19 +311,22 @@ function NavItem({
   section, 
   activeSection, 
   onClick, 
-  ripples 
+  ripples,
+  isScrolled
 }: { 
   section: string; 
   activeSection: string; 
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   ripples: { id: number; x: number; y: number }[];
+  isScrolled: boolean;
 }) {
   const isActive = activeSection === section;
+  const textColor = isScrolled ? "text-[#2B2E34]" : "text-[#0B1F3B]";
   
   return (
     <motion.button
       onClick={onClick}
-      className="relative text-white/90 hover:text-[#C9A24D] transition-colors py-2 overflow-hidden"
+      className={`relative ${textColor} hover:text-[#C9A24D] transition-colors py-2 overflow-hidden font-semibold`}
       data-testid={`nav-${section}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
@@ -331,7 +334,7 @@ function NavItem({
       {ripples.map(ripple => (
         <motion.span
           key={ripple.id}
-          className="absolute rounded-full bg-white/20"
+          className={`absolute rounded-full ${isScrolled ? 'bg-[#0B1F3B]/10' : 'bg-[#C9A24D]/20'}`}
           style={{
             left: ripple.x,
             top: ripple.y,
