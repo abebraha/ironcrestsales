@@ -17,9 +17,9 @@ export function CircularSpinner({ size = "md", className, color = "primary" }: S
   };
   
   const colorClasses = {
-    primary: "text-primary",
-    accent: "text-accent",
-    gold: "text-gold-accent",
+    primary: "text-[#0B1F3B]",
+    accent: "text-[#0B1F3B]",
+    gold: "text-[#C9A24D]",
     white: "text-white"
   };
 
@@ -131,7 +131,7 @@ export function ShieldSpinner({ size = "md", className }: SpinnerProps) {
       
       {/* Center pulse */}
       <motion.div
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-gold-accent rounded-full"
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#C9A24D] rounded-full"
         animate={{
           scale: [1, 2, 1],
           opacity: [1, 0.5, 1]
@@ -156,9 +156,9 @@ export function DotsSpinner({ size = "md", className, color = "primary" }: Spinn
   };
 
   const colorClasses = {
-    primary: "bg-primary",
-    accent: "bg-accent",
-    gold: "bg-gold-accent",
+    primary: "bg-[#0B1F3B]",
+    accent: "bg-[#0B1F3B]",
+    gold: "bg-[#C9A24D]",
     white: "bg-white"
   };
 
@@ -205,9 +205,9 @@ export function PulseSpinner({ size = "md", className, color = "gold" }: Spinner
   };
 
   const colorClasses = {
-    primary: "bg-primary",
-    accent: "bg-accent",
-    gold: "bg-gold-accent",
+    primary: "bg-[#0B1F3B]",
+    accent: "bg-[#0B1F3B]",
+    gold: "bg-[#C9A24D]",
     white: "bg-white"
   };
 
@@ -260,9 +260,9 @@ export function WaveSpinner({ size = "md", className, color = "primary" }: Spinn
   };
 
   const colorClasses = {
-    primary: "bg-primary",
-    accent: "bg-accent",
-    gold: "bg-gold-accent",
+    primary: "bg-[#0B1F3B]",
+    accent: "bg-[#0B1F3B]",
+    gold: "bg-[#C9A24D]",
     white: "bg-white"
   };
 

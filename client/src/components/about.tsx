@@ -74,7 +74,7 @@ const TextReveal = ({ children, className }: { children: React.ReactNode; classN
   );
 };
 
-// Highlight text animation
+// Highlight text with gold underline
 const HighlightText = ({ children }: { children: string }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "0px" });
@@ -86,7 +86,7 @@ const HighlightText = ({ children }: { children: string }) => {
     >
       {children}
       <motion.span
-        className="absolute inset-0 bg-[#C9A24D]/20 -z-10 rounded-md"
+        className="absolute bottom-0 left-0 h-1 bg-[#C9A24D]"
         initial={{ width: "0%" }}
         animate={isInView ? { width: "100%" } : {}}
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}

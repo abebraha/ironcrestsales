@@ -36,7 +36,7 @@ export default function PageLoader({ isLoading, progress = 0, onComplete }: Page
     <AnimatePresence>
       {(isLoading || showExit) && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-primary via-accent to-secondary"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0B1F3B]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ 
@@ -50,25 +50,8 @@ export default function PageLoader({ isLoading, progress = 0, onComplete }: Page
           }}
           data-testid="page-loader"
         >
-          {/* Animated background patterns */}
-          <div className="absolute inset-0 overflow-hidden">
-            <motion.div
-              className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] opacity-20"
-              animate={{
-                background: [
-                  "radial-gradient(circle, hsla(43, 96%, 56%, 0.3) 0%, transparent 50%)",
-                  "radial-gradient(circle, hsla(43, 96%, 56%, 0.5) 20%, transparent 60%)",
-                  "radial-gradient(circle, hsla(43, 96%, 56%, 0.3) 0%, transparent 50%)",
-                ],
-                rotate: [0, 180, 360],
-              }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
-          </div>
+          {/* Simple pattern overlay */}
+          <div className="absolute inset-0 pattern-grid opacity-10" />
 
           {/* Floating particles */}
           {[...Array(15)].map((_, i) => (
@@ -185,7 +168,7 @@ export default function PageLoader({ isLoading, progress = 0, onComplete }: Page
                 
                 {/* Progress fill */}
                 <motion.div
-                  className="absolute top-0 left-0 h-full bg-gradient-to-r from-gold-accent to-yellow-400 rounded-full"
+                  className="absolute top-0 left-0 h-full bg-[#C9A24D] rounded-full"
                   style={{ width: `${displayProgress}%` }}
                   initial={{ width: 0 }}
                   transition={{

@@ -98,41 +98,14 @@ export default function ServiceCard3D({
       onMouseLeave={handleMouseLeave}
       data-testid={testId}
     >
-      {/* Animated gradient border */}
+      {/* Subtle hover highlight */}
       <motion.div
-        className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100"
-        style={{
-          background: `radial-gradient(
-            600px circle at ${gradientX.get()}% ${gradientY.get()}%,
-            ${iconColor}40,
-            transparent 40%
-          )`
-        }}
+        className="absolute inset-0 rounded-xl bg-[#0B1F3B]/5"
         animate={{
           opacity: isHovered ? 1 : 0
         }}
         transition={{ duration: 0.3 }}
       />
-      
-      {/* Glowing effect */}
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            className="absolute inset-0 rounded-xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            style={{
-              background: `radial-gradient(
-                circle at ${gradientX.get()}% ${gradientY.get()}%,
-                ${iconColor}20 0%,
-                transparent 50%
-              )`,
-              filter: "blur(40px)"
-            }}
-          />
-        )}
-      </AnimatePresence>
       
       {/* Main card */}
       <motion.div
@@ -193,11 +166,7 @@ export default function ServiceCard3D({
             
             {/* Static accent line */}
             <div
-              className="h-0.5 rounded-full mb-4 transition-opacity duration-200"
-              style={{
-                background: `linear-gradient(90deg, ${iconColor}, ${checkColor})`,
-                opacity: 0.3
-              }}
+              className="h-0.5 rounded-full mb-4 transition-opacity duration-200 bg-[#C9A24D]/30"
             />
             
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -221,12 +190,10 @@ export default function ServiceCard3D({
           </div>
         </div>
         
-        {/* Corner decoration - static with transition */}
+        {/* Corner decoration - static */}
         <div
-          className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full transition-opacity duration-200"
+          className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-[#0B1F3B]/10 blur-xl transition-opacity duration-200"
           style={{
-            background: `radial-gradient(circle, ${iconColor}20 0%, transparent 70%)`,
-            filter: "blur(20px)",
             opacity: isHovered ? 0.5 : 0.3
           }}
         />
