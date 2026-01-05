@@ -313,7 +313,7 @@ export function TestimonialsAndCaseStudies() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full bg-white shadow-lg border-0 hover:shadow-xl transition-shadow duration-300" data-testid={`case-study-${caseStudy.id}`}>
+                <Card className="card-premium h-full bg-white shadow-lg border-0 hover:shadow-xl transition-shadow duration-300" data-testid={`case-study-${caseStudy.id}`}>
                   <CardContent className="p-8">
                     <div className="flex items-center space-x-3 mb-4">
                       <Award className="w-8 h-8 text-primary" />
@@ -400,7 +400,7 @@ export function TestimonialsAndCaseStudies() {
             </p>
             <Button 
               size="lg" 
-              className="bg-white text-primary hover:bg-gray-100 font-semibold px-8"
+              className="btn-premium bg-white text-primary hover:bg-gray-100 font-semibold px-8"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               data-testid="cta-contact-button"
             >

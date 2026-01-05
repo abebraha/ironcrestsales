@@ -63,7 +63,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-20 overflow-hidden relative">
+    <section id="services" className="py-20 overflow-hidden relative reveal-on-scroll">
       {/* White background */}
       <div className="absolute inset-0 bg-white" />
       
