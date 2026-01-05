@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, useInView, useAnimation, AnimatePresence } from "framer-motion";
-import { Linkedin, Twitter, Mail, Send, Heart, Youtube, Instagram, Github, Facebook, ArrowUp } from "lucide-react";
+import { Linkedin, Mail, Send, Heart, ArrowUp } from "lucide-react";
 import ShieldLogo from "./shield-logo";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -189,14 +189,9 @@ export default function Footer() {
               </AnimatePresence>
             </motion.div>
             
-            {/* Social icons with advanced effects */}
+            {/* Social icons */}
             <div className="flex space-x-4">
-              <SocialIcon Icon={Linkedin} href="#" label="LinkedIn" delay={0.1} />
-              <SocialIcon Icon={Twitter} href="#" label="Twitter" delay={0.2} />
-              <SocialIcon Icon={Youtube} href="#" label="YouTube" delay={0.3} />
-              <SocialIcon Icon={Instagram} href="#" label="Instagram" delay={0.4} />
-              <SocialIcon Icon={Github} href="#" label="GitHub" delay={0.5} />
-              <SocialIcon Icon={Facebook} href="#" label="Facebook" delay={0.6} />
+              <SocialIcon Icon={Linkedin} href="https://www.linkedin.com/company/ironcrestsales" label="LinkedIn" delay={0.1} />
             </div>
           </motion.div>
           
