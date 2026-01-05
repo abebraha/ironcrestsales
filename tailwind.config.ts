@@ -62,6 +62,7 @@ export default {
           ring: "var(--sidebar-ring)",
         },
         "gold-accent": "var(--gold-accent)",
+        "gold-highlight": "var(--gold-highlight)",
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
