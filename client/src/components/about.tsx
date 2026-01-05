@@ -64,8 +64,8 @@ const TextReveal = ({ children, className }: { children: React.ReactNode; classN
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
-      animate={isInView ? { opacity: 1, filter: "blur(0px)", y: 0 } : {}}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className={className}
     >

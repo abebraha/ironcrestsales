@@ -41,8 +41,7 @@ export default function PageLoader({ isLoading, progress = 0, onComplete }: Page
           animate={{ opacity: 1 }}
           exit={{ 
             opacity: 0,
-            scale: 1.2,
-            filter: "blur(20px)"
+            scale: 1.1
           }}
           transition={{ 
             duration: 0.8,
@@ -92,22 +91,7 @@ export default function PageLoader({ isLoading, progress = 0, onComplete }: Page
                 y: { duration: 2, repeat: Infinity, ease: "easeInOut" }
               }}
             >
-              <motion.div
-                animate={{
-                  filter: [
-                    "drop-shadow(0 0 20px hsla(43, 96%, 56%, 0.3))",
-                    "drop-shadow(0 0 40px hsla(43, 96%, 56%, 0.6))",
-                    "drop-shadow(0 0 20px hsla(43, 96%, 56%, 0.3))",
-                  ],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <ShieldLogo size="large" />
-              </motion.div>
+              <ShieldLogo size="large" />
             </motion.div>
 
             {/* Company Name with typing effect */}
@@ -175,21 +159,7 @@ export default function PageLoader({ isLoading, progress = 0, onComplete }: Page
                     duration: 0.3,
                     ease: "easeOut"
                   }}
-                >
-                  {/* Glow effect */}
-                  <motion.div
-                    className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full"
-                    animate={{
-                      opacity: [0.5, 1, 0.5],
-                      scale: [1, 1.2, 1],
-                    }}
-                    transition={{
-                      duration: 1,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                </motion.div>
+                />
               </div>
               
               {/* Progress percentage */}
