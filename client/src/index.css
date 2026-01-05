@@ -27,17 +27,15 @@
   --card-foreground: #2B2E34;
   --popover: #FFFFFF;
   --popover-foreground: #2B2E34;
-  --primary: #0B1F3B;
-  --primary-foreground: #FFFFFF;
-  --secondary: #F2F4F7;
-  --secondary-foreground: #2B2E34;
+  --secondary: #0B1F3B;
+  --secondary-foreground: #FFFFFF;
   --muted: #F2F4F7;
-  --muted-foreground: #525252;
+  --muted-foreground: #2B2E34;
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
-  --border: #E2E8F0;
-  --input: #E2E8F0;
-  --ring: #C9A24D;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #0B1F3B;
   --radius: 8px;
   
   /* Typography */

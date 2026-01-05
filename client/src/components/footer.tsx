@@ -95,9 +95,11 @@ export default function Footer() {
   };
 
   return (
-    <footer ref={footerRef} className="relative bg-[#0B1F3B] text-white py-20 overflow-hidden border-t border-[#C9A24D]/10" data-testid="footer">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 pattern-grid opacity-5" />
+    <footer ref={footerRef} className="relative bg-[#0B1F3B] text-white py-16 overflow-hidden" data-testid="footer">
+      {/* Flat navy background */}
+      
+      {/* Static mesh pattern */}
+      <div className="absolute inset-0 pattern-grid opacity-10" />
 
       <motion.div
         className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10"
@@ -105,20 +107,26 @@ export default function Footer() {
         initial="hidden"
         animate={controls}
       >
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          {/* Company info */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          {/* Company info with floating logo */}
           <motion.div className="md:col-span-2" variants={itemVariants}>
-            <div className="flex items-center space-x-3 mb-8">
-              <ShieldLogo size="small" />
-              <span className="text-2xl font-montserrat font-bold text-white tracking-tight">
+            <div className="flex items-center space-x-3 mb-6">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ShieldLogo size="small" />
+              </motion.div>
+              <span className="text-2xl font-montserrat font-bold text-white">
                 IronCrest Sales
               </span>
             </div>
             
-            <p className="text-white/70 mb-8 max-w-md leading-relaxed text-lg">
+            <p className="text-white/80 mb-6 max-w-md leading-relaxed">
               Expert outsourced sales solutions that help businesses build scalable revenue departments through strategic talent and proven systems.
             </p>
             
+            {/* Social icons */}
             <div className="flex space-x-4">
               <SocialIcon Icon={Linkedin} href="https://www.linkedin.com/company/ironcrestsales" label="LinkedIn" delay={0.1} />
             </div>
@@ -126,11 +134,11 @@ export default function Footer() {
           
           {/* Services links */}
           <motion.div variants={itemVariants}>
-            <h4 className="font-montserrat font-bold text-white mb-8 relative inline-block">
-              Expertise
-              <div className="absolute -bottom-2 left-0 h-1 w-6 bg-[#C9A24D] rounded-full" />
+            <h4 className="font-montserrat font-semibold text-lg mb-6 text-white relative">
+              Services
+              <div className="absolute -bottom-2 left-0 h-0.5 w-8 bg-[#C9A24D]" />
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               <FooterLink href="#" delay={0.1}>Sales Professionals</FooterLink>
               <FooterLink href="#" delay={0.2}>System Development</FooterLink>
               <FooterLink href="#" delay={0.3}>Strategic Hiring</FooterLink>
@@ -140,32 +148,36 @@ export default function Footer() {
           
           {/* Company links */}
           <motion.div variants={itemVariants}>
-            <h4 className="font-montserrat font-bold text-white mb-8 relative inline-block">
+            <h4 className="font-montserrat font-semibold text-lg mb-6 text-white relative">
               Company
-              <div className="absolute -bottom-2 left-0 h-1 w-6 bg-[#C9A24D] rounded-full" />
+              <div className="absolute -bottom-2 left-0 h-0.5 w-8 bg-[#C9A24D]" />
             </h4>
-            <ul className="space-y-4">
-              <FooterLink href="#" delay={0.1}>About Our Mission</FooterLink>
-              <FooterLink href="#" delay={0.2}>Success Stories</FooterLink>
-              <FooterLink href="#" delay={0.3}>Join the Team</FooterLink>
-              <FooterLink href="#" delay={0.4}>Contact Us</FooterLink>
+            <ul className="space-y-3">
+              <FooterLink href="#" delay={0.1}>About Us</FooterLink>
+              <FooterLink href="#" delay={0.2}>Case Studies</FooterLink>
+              <FooterLink href="#" delay={0.3}>Careers</FooterLink>
+              <FooterLink href="#" delay={0.4}>Contact</FooterLink>
+              <FooterLink href="#" delay={0.5}>Blog</FooterLink>
+              <FooterLink href="#" delay={0.6}>Partners</FooterLink>
             </ul>
           </motion.div>
         </div>
         
         {/* Simple divider */}
-        <div className="border-t border-white/10 pt-10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-white/50 text-sm font-medium" data-testid="footer-copyright">
-              &copy; 2025 IronCrest Sales. All rights reserved.
-            </p>
-            
-            <div className="flex space-x-8 text-sm text-white/50">
-              <a href="#" className="hover:text-[#C9A24D] transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-[#C9A24D] transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-[#C9A24D] transition-colors">Cookie Policy</a>
-            </div>
-          </div>
+        <div className="mt-12 mb-8">
+          <div className="h-px bg-white/20" />
+        </div>
+        
+        {/* Copyright */}
+        <div className="text-center">
+          <p className="text-white/70 mb-2" data-testid="footer-copyright">
+            Made with <Heart className="w-4 h-4 inline text-red-400" /> by IronCrest Sales
+          </p>
+          <p className="text-white/60 text-sm">
+            &copy; 2025 IronCrest Sales. All rights reserved. | 
+            <a href="#" className="hover:text-[#C9A24D] transition-colors mx-1">Privacy Policy</a> | 
+            <a href="#" className="hover:text-[#C9A24D] transition-colors mx-1">Terms of Service</a>
+          </p>
         </div>
       </motion.div>
 
@@ -174,10 +186,10 @@ export default function Footer() {
         {showScrollTop && (
           <motion.button
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 p-4 bg-[#C9A24D] text-white rounded-full shadow-2xl z-50 hover:bg-[#C9A24D]/90 transition-all duration-300 border border-white/20"
-            initial={{ scale: 0, y: 20 }}
-            animate={{ scale: 1, y: 0 }}
-            exit={{ scale: 0, y: 20 }}
+            className="fixed bottom-8 right-8 p-4 bg-[#C9A24D] text-[#0B1F3B] rounded-full shadow-lg z-50 hover:bg-[#C9A24D]/90 hover:scale-105 transition-all duration-200"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0 }}
             data-testid="scroll-to-top"
           >
             <ArrowUp className="w-5 h-5" />
