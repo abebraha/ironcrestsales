@@ -132,7 +132,7 @@ export default function Navigation() {
         {/* Progress Indicator */}
         <motion.div 
           className="absolute bottom-0 left-0 h-0.5 bg-[#C9A24D]"
-          style={{ width: `${scrollProgress}%` }}
+          style={{ width: `${scrollProgress}%`, transformOrigin: "left" }}
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.2 }}
@@ -348,12 +348,10 @@ function NavItem({
         {section.charAt(0).toUpperCase() + section.slice(1)}
       </span>
       
-      {/* Animated Underline */}
       <motion.div
         className="absolute bottom-0 left-0 h-0.5 bg-[#C9A24D]"
         initial={{ width: 0 }}
         animate={{ width: isActive ? "100%" : 0 }}
-        whileHover={{ width: "100%" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       />
     </motion.button>

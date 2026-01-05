@@ -77,11 +77,9 @@ export default function Hero() {
                 Your brand. Your offer.
               </TextReveal>
               <br />
-              <GlowText>
-                <TextReveal delay={0.4}>
-                  Our sales engine.
-                </TextReveal>
-              </GlowText>
+              <TextReveal delay={0.4}>
+                Our sales engine.
+              </TextReveal>
             </h1>
             
             {/* Animated Subtitle */}
