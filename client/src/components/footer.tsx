@@ -96,10 +96,9 @@ export default function Footer() {
 
   return (
     <footer ref={footerRef} className="relative bg-[#1E3A5F] text-white py-16 overflow-hidden" data-testid="footer">
-      {/* Flat navy background */}
-      
-      {/* Static mesh pattern */}
-      <div className="absolute inset-0 pattern-grid opacity-10" />
+        {/* Static mesh pattern */}
+        <div className="absolute inset-0 bg-[#1E3A5F]" />
+        <div className="absolute inset-0 pattern-grid opacity-10" />
 
       <motion.div
         className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10"

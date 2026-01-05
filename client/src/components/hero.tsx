@@ -48,7 +48,7 @@ export default function Hero() {
         style={{ y: y1, scale, opacity }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+          <div className="text-center reveal-on-scroll">
             {/* Simplified Shield Logo Animation */}
             <motion.div 
               className="flex justify-center mb-8"
@@ -107,7 +107,7 @@ export default function Hero() {
             >
               <motion.button 
                 onClick={scrollToContact}
-                className="bg-[#D4AF6A] text-[#1E3A5F] px-8 py-4 rounded-lg font-montserrat font-bold text-lg shadow-lg transition-all duration-200 hover:bg-[#D4AF6A]/90"
+                className="btn-premium bg-[#D4AF6A] text-[#1E3A5F] px-8 py-4 rounded-lg font-montserrat font-bold text-lg shadow-lg transition-all duration-200 hover:bg-[#D4AF6A]/90"
                 data-testid="button-apply-today"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -115,7 +115,7 @@ export default function Hero() {
               
               <motion.button 
                 onClick={scrollToServices}
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-montserrat font-semibold text-lg transition-all duration-200 hover:bg-white hover:text-[#0B1F3B]"
+                className="btn-premium border-2 border-white text-white px-8 py-4 rounded-lg font-montserrat font-semibold text-lg transition-all duration-200 hover:bg-white hover:text-[#1E3A5F]"
                 data-testid="button-learn-more"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -128,8 +128,8 @@ export default function Hero() {
       </motion.div>
       {/* Simplified Stats Section */}
       <motion.div 
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 relative z-10"
-        style={{ y: y2 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 relative z-10 reveal-on-scroll"
+        style={{ y: y2, transitionDelay: '400ms' }}
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {[

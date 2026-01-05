@@ -111,7 +111,7 @@ export default function Navigation() {
     <>
       <motion.nav 
         ref={navRef}
-        className={`fixed w-full top-0 z-50 transition-all duration-500`}
+        className={`fixed w-full top-0 z-50 transition-all duration-500 ${isScrolled ? 'shadow-lg' : ''}`}
         style={{
           height: smoothHeight,
           opacity: smoothOpacity,
@@ -169,7 +169,7 @@ export default function Navigation() {
                   handleRippleEffect(e);
                   scrollToSection('contact');
                 }}
-                className="bg-[#D4AF6A] text-[#1E3A5F] px-6 py-2 rounded-lg hover:bg-[#D4AF6A]/90 transition-all duration-300 font-semibold"
+                className="btn-premium bg-[#D4AF6A] text-[#1E3A5F] px-6 py-2 rounded-lg hover:bg-[#D4AF6A]/90 transition-all duration-300 font-semibold"
                 data-testid="nav-contact"
               >
                 Contact Us
@@ -322,7 +322,7 @@ function NavItem({
   return (
     <motion.button
       onClick={onClick}
-      className="relative text-white/90 hover:text-[#C9A24D] transition-colors py-2 overflow-hidden"
+      className="relative text-white/90 hover:text-[#D4AF6A] transition-colors py-2 overflow-hidden"
       data-testid={`nav-${section}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
@@ -349,7 +349,7 @@ function NavItem({
       </span>
       
       <motion.div
-        className="absolute bottom-0 left-0 h-0.5 bg-[#C9A24D]"
+        className="absolute bottom-0 left-0 h-0.5 bg-[#D4AF6A]"
         initial={{ width: 0 }}
         animate={{ width: isActive ? "100%" : 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}

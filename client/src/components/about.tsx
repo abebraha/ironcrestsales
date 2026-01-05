@@ -109,6 +109,25 @@ export default function About() {
     { name: "Shalom Babad", role: "Co-Founder", image: "SB", linkedin: "https://www.linkedin.com/in/shalom-babad/" }
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="about" className="py-20 relative overflow-hidden" ref={containerRef}>
       {/* Light gray background */}
@@ -127,21 +146,21 @@ export default function About() {
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
-                className="relative"
+                className="card-premium relative"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                 viewport={{ once: true }}
                 data-testid={`team-member-${index}`}
               >
-                <motion.div
-                  className="rounded-xl bg-[#0B1F3B] p-6 flex flex-col items-center justify-center text-white h-80"
-                  whileHover={{ 
-                    y: -2,
-                    boxShadow: "0 10px 30px rgba(11,31,59,0.3)"
-                  }}
-                  transition={{ duration: 0.2 }}
-                >
+                  <motion.div
+                    className="rounded-xl bg-[#1E3A5F] p-6 flex flex-col items-center justify-center text-white h-80"
+                    whileHover={{ 
+                      y: -4,
+                      boxShadow: "0 20px 40px rgba(0,0,0,0.12)"
+                    }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  >
                   <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center text-3xl font-montserrat font-bold mb-4">
                     {member.image}
                   </div>
@@ -151,7 +170,7 @@ export default function About() {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 px-4 py-2 bg-[#C9A24D] text-[#0B1F3B] rounded-lg hover:bg-[#C9A24D]/90 transition-colors flex items-center gap-2 font-semibold"
+                    className="btn-premium mt-4 px-4 py-2 bg-[#D4AF6A] text-[#1E3A5F] rounded-lg hover:bg-[#D4AF6A]/90 transition-colors flex items-center gap-2 font-semibold"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     data-testid={`linkedin-${member.name.toLowerCase().replace(' ', '-')}`}

@@ -13,9 +13,9 @@ export default function Services() {
         "Lead generation systems",
         "Performance tracking and analytics"
       ],
-      iconBgColor: "bg-[#0B1F3B]/10",
-      iconColor: "text-[#0B1F3B]",
-      checkColor: "text-[#C9A24D]",
+      iconBgColor: "bg-[#1E3A5F]/10",
+      iconColor: "text-[#1E3A5F]",
+      checkColor: "text-[#D4AF6A]",
       testId: "service-systems"
     },
     {
@@ -27,9 +27,9 @@ export default function Services() {
         "Industry-specific expertise",
         "Immediate integration and impact"
       ],
-      iconBgColor: "bg-[#0B1F3B]/10",
-      iconColor: "text-[#0B1F3B]",
-      checkColor: "text-[#C9A24D]",
+      iconBgColor: "bg-[#1E3A5F]/10",
+      iconColor: "text-[#1E3A5F]",
+      checkColor: "text-[#D4AF6A]",
       testId: "service-professionals"
     },
     {
@@ -41,9 +41,9 @@ export default function Services() {
         "Training and onboarding",
         "Performance management systems"
       ],
-      iconBgColor: "bg-[#0B1F3B]/10",
-      iconColor: "text-[#0B1F3B]",
-      checkColor: "text-[#C9A24D]",
+      iconBgColor: "bg-[#1E3A5F]/10",
+      iconColor: "text-[#1E3A5F]",
+      checkColor: "text-[#D4AF6A]",
       testId: "service-hiring"
     },
     {
@@ -55,9 +55,9 @@ export default function Services() {
         "Regular training and skill development",
         "Performance tracking and improvement"
       ],
-      iconBgColor: "bg-[#0B1F3B]/10",
-      iconColor: "text-[#0B1F3B]",
-      checkColor: "text-[#C9A24D]",
+      iconBgColor: "bg-[#1E3A5F]/10",
+      iconColor: "text-[#1E3A5F]",
+      checkColor: "text-[#D4AF6A]",
       testId: "service-optimization"
     }
   ];
@@ -94,18 +94,20 @@ export default function Services() {
         {/* 3D Service Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <ServiceCard3D
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              features={service.features}
-              iconBgColor={service.iconBgColor}
-              iconColor={service.iconColor}
-              checkColor={service.checkColor}
-              index={index}
-              testId={service.testId}
-            />
+            <div className="reveal-on-scroll" key={index} style={{ transitionDelay: `${index * 100}ms` }}>
+              <ServiceCard3D
+                key={index}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                features={service.features}
+                iconBgColor={service.iconBgColor}
+                iconColor={service.iconColor}
+                checkColor={service.checkColor}
+                index={index}
+                testId={service.testId}
+              />
+            </div>
           ))}
         </div>
       </div>

@@ -123,7 +123,7 @@ export function TestimonialsAndCaseStudies() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50" data-testid="testimonials-case-studies-section">
+    <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 reveal-on-scroll" data-testid="testimonials-case-studies-section">
       <div className="container mx-auto px-4">
         {/* Testimonials Section */}
         <motion.div 
@@ -254,7 +254,7 @@ export function TestimonialsAndCaseStudies() {
         </motion.div>
 
         {/* Case Studies Grid */}
-        <div className="grid lg:grid-cols-2 gap-8" data-testid="case-studies-grid">
+        <div className="grid lg:grid-cols-2 gap-8 reveal-on-scroll" data-testid="case-studies-grid" style={{ transitionDelay: '300ms' }}>
           {caseStudiesLoading ? (
             // Loading skeleton for case studies
             [...Array(2)].map((_, index) => (

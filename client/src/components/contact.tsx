@@ -4,9 +4,9 @@ import { InlineWidget } from "react-calendly";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
+    <section id="contact" className="py-20 relative overflow-hidden reveal-on-scroll">
       {/* Navy background */}
-      <div className="absolute inset-0 bg-[#0B1F3B]" />
+      <div className="absolute inset-0 bg-[#1E3A5F]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div 
           className="text-center mb-16"
@@ -18,7 +18,7 @@ export default function Contact() {
           <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-white mb-6" data-testid="contact-title">Turn your sales into a predictable growth machine starting with one conversation</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 reveal-on-scroll" style={{ transitionDelay: '200ms' }}>
           {/* Calendly Embed */}
           <motion.div 
             id="contact-form"
@@ -58,13 +58,13 @@ export default function Contact() {
               <h3 className="text-2xl font-montserrat font-bold text-foreground mb-6">Contact Information</h3>
               <div className="space-y-6">
                 <motion.div 
-                  className="flex items-start space-x-4" 
+                  className="flex items-start space-x-4 btn-premium" 
                   data-testid="contact-phone"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <div className="bg-[#0B1F3B]/10 p-3 rounded-lg">
-                    <Phone className="w-5 h-5 text-[#0B1F3B]" />
+                  <div className="bg-[#1E3A5F]/10 p-3 rounded-lg">
+                    <Phone className="w-5 h-5 text-[#1E3A5F]" />
                   </div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Phone</h4>
@@ -74,13 +74,13 @@ export default function Contact() {
                 </motion.div>
                 
                 <motion.div 
-                  className="flex items-start space-x-4" 
+                  className="flex items-start space-x-4 btn-premium" 
                   data-testid="contact-email"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <div className="bg-[#C9A24D]/10 p-3 rounded-lg">
-                    <Mail className="w-5 h-5 text-[#C9A24D]" />
+                  <div className="bg-[#D4AF6A]/10 p-3 rounded-lg">
+                    <Mail className="w-5 h-5 text-[#D4AF6A]" />
                   </div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Email</h4>
@@ -90,13 +90,13 @@ export default function Contact() {
                 </motion.div>
                 
                 <motion.div 
-                  className="flex items-start space-x-4" 
+                  className="flex items-start space-x-4 btn-premium" 
                   data-testid="contact-location"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <div className="bg-[#C9A24D]/10 p-3 rounded-lg">
-                    <MapPin className="w-5 h-5 text-[#C9A24D]" />
+                  <div className="bg-[#D4AF6A]/10 p-3 rounded-lg">
+                    <MapPin className="w-5 h-5 text-[#D4AF6A]" />
                   </div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Headquarters</h4>
@@ -133,7 +133,7 @@ export default function Contact() {
                       transition={{ delay: index * 0.1 }}
                       viewport={{ once: true }}
                     >
-                      <CheckCircle className="w-5 h-5 text-[#C9A24D] mr-3" />
+                      <CheckCircle className="w-5 h-5 text-[#D4AF6A] mr-3" />
                       <span>{item}</span>
                     </motion.li>
                   ))}
