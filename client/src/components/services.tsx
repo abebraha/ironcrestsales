@@ -64,12 +64,11 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-20 overflow-hidden relative gpu-accelerated gradient-animated">
+    <section id="services" className="py-20 overflow-hidden relative gpu-accelerated">
+      {/* Consistent navy background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,55%,12%)] via-[hsl(220,50%,14%)] to-[hsl(220,55%,12%)]" />
       {/* Animated background with services variant */}
       <AnimatedBackground variant="services" />
-      
-      {/* Dark scrim overlay for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60 z-[5]" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Animated title section */}

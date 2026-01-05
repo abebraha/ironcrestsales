@@ -87,10 +87,10 @@ const AnimatedBlob = ({ index }: { index: number }) => {
   const randomDelay = Math.random() * 10;
   const randomDuration = 20 + Math.random() * 20;
   const colors = [
-    'hsla(240, 59%, 35%, 0.15)',
-    'hsla(43, 96%, 56%, 0.1)',
-    'hsla(240, 45%, 25%, 0.15)',
-    'hsla(217, 91%, 60%, 0.1)'
+    'hsla(220, 55%, 25%, 0.15)',
+    'hsla(46, 70%, 52%, 0.06)',
+    'hsla(220, 50%, 20%, 0.15)',
+    'hsla(220, 55%, 30%, 0.1)'
   ];
   
   return (
@@ -119,14 +119,14 @@ const AnimatedBlob = ({ index }: { index: number }) => {
   );
 };
 
-// Aurora Borealis Effect Component
+// Aurora Borealis Effect Component - Subtle navy/gold version
 const AuroraEffect = () => {
   return (
-    <motion.div className="absolute inset-0 opacity-30 pointer-events-none">
+    <motion.div className="absolute inset-0 opacity-20 pointer-events-none">
       <motion.div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(45deg, transparent, hsla(280, 100%, 60%, 0.3), transparent)',
+          background: 'linear-gradient(45deg, transparent, hsla(220, 55%, 35%, 0.3), transparent)',
           filter: 'blur(100px)',
         }}
         animate={{
@@ -143,7 +143,7 @@ const AuroraEffect = () => {
       <motion.div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(-45deg, transparent, hsla(180, 100%, 50%, 0.3), hsla(120, 100%, 50%, 0.2), transparent)',
+          background: 'linear-gradient(-45deg, transparent, hsla(46, 70%, 52%, 0.15), hsla(220, 50%, 40%, 0.2), transparent)',
           filter: 'blur(80px)',
         }}
         animate={{
@@ -160,12 +160,12 @@ const AuroraEffect = () => {
       <motion.div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(90deg, transparent, hsla(340, 100%, 50%, 0.2), hsla(60, 100%, 50%, 0.2), transparent)',
+          background: 'linear-gradient(90deg, transparent, hsla(220, 55%, 30%, 0.2), hsla(46, 65%, 52%, 0.1), transparent)',
           filter: 'blur(120px)',
         }}
         animate={{
           x: ['-50%', '150%'],
-          opacity: [0.2, 0.5, 0.2],
+          opacity: [0.2, 0.4, 0.2],
         }}
         transition={{
           duration: 25,
@@ -186,7 +186,7 @@ const WavePattern = () => {
           <motion.path
             d="M0,100 Q50,50 100,100 T200,100"
             fill="none"
-            stroke="hsla(43, 96%, 56%, 0.3)"
+            stroke="hsla(46, 70%, 52%, 0.2)"
             strokeWidth="2"
             animate={{
               d: [
@@ -218,7 +218,7 @@ const DotMatrix = () => {
             cx="15"
             cy="15"
             r="2"
-            fill="hsla(240, 59%, 50%, 0.3)"
+            fill="hsla(220, 55%, 40%, 0.3)"
             animate={{
               r: [2, 4, 2],
               opacity: [0.3, 0.6, 0.3],
@@ -253,10 +253,10 @@ const CircuitPattern = () => {
             }}
           >
             <path d="M10,10 L40,10 L40,40 M60,10 L90,10 L90,40 L60,40 L60,60 L90,60 M10,60 L40,60 L40,90 L10,90" 
-                  fill="none" stroke="hsla(217, 91%, 60%, 0.3)" strokeWidth="1"/>
-            <circle cx="10" cy="10" r="3" fill="hsla(43, 96%, 56%, 0.5)"/>
-            <circle cx="40" cy="40" r="3" fill="hsla(43, 96%, 56%, 0.5)"/>
-            <circle cx="90" cy="60" r="3" fill="hsla(43, 96%, 56%, 0.5)"/>
+                  fill="none" stroke="hsla(220, 55%, 45%, 0.3)" strokeWidth="1"/>
+            <circle cx="10" cy="10" r="3" fill="hsla(46, 70%, 52%, 0.4)"/>
+            <circle cx="40" cy="40" r="3" fill="hsla(46, 70%, 52%, 0.4)"/>
+            <circle cx="90" cy="60" r="3" fill="hsla(46, 70%, 52%, 0.4)"/>
           </motion.g>
         </pattern>
       </defs>
@@ -274,7 +274,7 @@ const HexagonPattern = () => {
           <motion.polygon
             points="30,0 45,8.66 45,26 30,34.64 15,26 15,8.66"
             fill="none"
-            stroke="hsla(240, 59%, 35%, 0.3)"
+            stroke="hsla(220, 55%, 30%, 0.3)"
             strokeWidth="1"
             animate={{
               strokeDasharray: ["0, 150", "150, 0", "0, 150"],
@@ -351,28 +351,28 @@ export const AnimatedBackground = ({ variant = 'default' }: { variant?: 'default
     }
   };
   
-  // Gradient variations based on section
+  // Gradient variations based on section - all using consistent navy palette
   const gradientAnimation = useMemo(() => {
     const gradients = {
       default: [
-        'linear-gradient(135deg, hsl(240, 59%, 20%) 0%, hsl(240, 59%, 35%) 50%, hsl(217, 91%, 30%) 100%)',
-        'linear-gradient(135deg, hsl(240, 59%, 25%) 0%, hsl(240, 59%, 40%) 50%, hsl(217, 91%, 35%) 100%)',
-        'linear-gradient(135deg, hsl(240, 59%, 20%) 0%, hsl(240, 59%, 35%) 50%, hsl(217, 91%, 30%) 100%)',
+        'linear-gradient(135deg, hsl(220, 55%, 12%) 0%, hsl(220, 50%, 18%) 50%, hsl(220, 55%, 14%) 100%)',
+        'linear-gradient(135deg, hsl(220, 55%, 14%) 0%, hsl(220, 50%, 20%) 50%, hsl(220, 55%, 16%) 100%)',
+        'linear-gradient(135deg, hsl(220, 55%, 12%) 0%, hsl(220, 50%, 18%) 50%, hsl(220, 55%, 14%) 100%)',
       ],
       services: [
-        'linear-gradient(45deg, hsl(240, 59%, 15%) 0%, hsl(217, 91%, 25%) 50%, hsl(240, 59%, 20%) 100%)',
-        'linear-gradient(45deg, hsl(240, 59%, 20%) 0%, hsl(217, 91%, 30%) 50%, hsl(240, 59%, 25%) 100%)',
-        'linear-gradient(45deg, hsl(240, 59%, 15%) 0%, hsl(217, 91%, 25%) 50%, hsl(240, 59%, 20%) 100%)',
+        'linear-gradient(45deg, hsl(220, 55%, 10%) 0%, hsl(220, 50%, 15%) 50%, hsl(220, 55%, 12%) 100%)',
+        'linear-gradient(45deg, hsl(220, 55%, 12%) 0%, hsl(220, 50%, 17%) 50%, hsl(220, 55%, 14%) 100%)',
+        'linear-gradient(45deg, hsl(220, 55%, 10%) 0%, hsl(220, 50%, 15%) 50%, hsl(220, 55%, 12%) 100%)',
       ],
       about: [
-        'linear-gradient(90deg, hsl(240, 45%, 15%) 0%, hsl(43, 96%, 25%) 50%, hsl(240, 59%, 20%) 100%)',
-        'linear-gradient(90deg, hsl(240, 45%, 20%) 0%, hsl(43, 96%, 30%) 50%, hsl(240, 59%, 25%) 100%)',
-        'linear-gradient(90deg, hsl(240, 45%, 15%) 0%, hsl(43, 96%, 25%) 50%, hsl(240, 59%, 20%) 100%)',
+        'linear-gradient(90deg, hsl(220, 55%, 12%) 0%, hsl(220, 50%, 16%) 50%, hsl(220, 55%, 14%) 100%)',
+        'linear-gradient(90deg, hsl(220, 55%, 14%) 0%, hsl(220, 50%, 18%) 50%, hsl(220, 55%, 16%) 100%)',
+        'linear-gradient(90deg, hsl(220, 55%, 12%) 0%, hsl(220, 50%, 16%) 50%, hsl(220, 55%, 14%) 100%)',
       ],
       contact: [
-        'linear-gradient(180deg, hsl(240, 59%, 20%) 0%, hsl(240, 45%, 25%) 50%, hsl(217, 91%, 30%) 100%)',
-        'linear-gradient(180deg, hsl(240, 59%, 25%) 0%, hsl(240, 45%, 30%) 50%, hsl(217, 91%, 35%) 100%)',
-        'linear-gradient(180deg, hsl(240, 59%, 20%) 0%, hsl(240, 45%, 25%) 50%, hsl(217, 91%, 30%) 100%)',
+        'linear-gradient(180deg, hsl(220, 55%, 12%) 0%, hsl(220, 50%, 16%) 50%, hsl(220, 55%, 14%) 100%)',
+        'linear-gradient(180deg, hsl(220, 55%, 14%) 0%, hsl(220, 50%, 18%) 50%, hsl(220, 55%, 16%) 100%)',
+        'linear-gradient(180deg, hsl(220, 55%, 12%) 0%, hsl(220, 50%, 16%) 50%, hsl(220, 55%, 14%) 100%)',
       ],
     };
     return gradients[variant] || gradients.default;
@@ -395,11 +395,11 @@ export const AnimatedBackground = ({ variant = 'default' }: { variant?: 'default
       
       {/* Mesh gradient overlay */}
       <motion.div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-20"
         style={{
-          background: `radial-gradient(circle at ${50 + springX.get()}% ${50 + springY.get()}%, hsla(43, 96%, 56%, 0.2) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 20%, hsla(217, 91%, 60%, 0.15) 0%, transparent 50%),
-                      radial-gradient(circle at 20% 80%, hsla(240, 59%, 40%, 0.15) 0%, transparent 50%)`,
+          background: `radial-gradient(circle at ${50 + springX.get()}% ${50 + springY.get()}%, hsla(46, 70%, 52%, 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, hsla(220, 55%, 35%, 0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 20% 80%, hsla(220, 50%, 30%, 0.15) 0%, transparent 50%)`,
         }}
       />
       
@@ -463,7 +463,7 @@ export const AnimatedBackground = ({ variant = 'default' }: { variant?: 'default
         <div 
           className="absolute w-96 h-96 rounded-full"
           style={{
-            background: 'radial-gradient(circle, hsla(43, 96%, 56%, 0.1) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, hsla(46, 70%, 52%, 0.06) 0%, transparent 70%)',
             left: mousePosition.x - 192,
             top: mousePosition.y - 192,
             filter: 'blur(40px)',

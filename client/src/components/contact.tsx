@@ -5,7 +5,9 @@ import { InlineWidget } from "react-calendly";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 relative overflow-hidden noise-texture gpu-accelerated">
+    <section id="contact" className="py-20 relative overflow-hidden gpu-accelerated">
+      {/* Consistent navy background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,55%,12%)] via-[hsl(220,50%,14%)] to-[hsl(220,55%,12%)]" />
       {/* Animated background with contact variant */}
       <AnimatedBackground variant="contact" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">

@@ -111,7 +111,9 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden gradient-mesh gpu-accelerated" ref={containerRef}>
+    <section id="about" className="py-20 relative overflow-hidden gpu-accelerated" ref={containerRef}>
+      {/* Consistent navy background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,55%,12%)] via-[hsl(220,50%,14%)] to-[hsl(220,55%,12%)]" />
       {/* Animated background with about variant */}
       <AnimatedBackground variant="about" />
 
@@ -119,7 +121,7 @@ export default function About() {
         {/* Team Section with Flip Cards */}
         <div>
           <TextReveal className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-montserrat font-bold mb-4 text-foreground">
+            <h3 className="text-3xl md:text-4xl font-montserrat font-bold mb-4 text-white">
               Meet the <HighlightText>Team</HighlightText>
             </h3>
           </TextReveal>
@@ -166,12 +168,6 @@ export default function About() {
         </div>
       </div>
       
-      {/* Wave divider at bottom */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" className="w-full h-24 fill-muted">
-          <path d="M0,64 C480,150 960,-20 1440,64 L1440,120 L0,120 Z" />
-        </svg>
-      </div>
     </section>
   );
 }

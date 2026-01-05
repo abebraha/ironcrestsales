@@ -44,10 +44,10 @@ export default function PainPoints() {
 
   return (
     <section className="py-20 overflow-hidden relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628] via-[#0d1e36] to-[#0a1628]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,55%,12%)] via-[hsl(220,50%,15%)] to-[hsl(220,55%,12%)]" />
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[hsl(220,55%,25%)]/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[hsl(46,70%,52%)]/10 rounded-full blur-3xl" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
@@ -94,10 +94,10 @@ export default function PainPoints() {
                 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full transition-all duration-200 hover:bg-white/10 hover:border-red-500/30">
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full transition-all duration-200 hover:bg-white/10 hover:border-gold-accent/30">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-red-500/10 rounded-lg flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-red-400" />
+                    <div className="flex-shrink-0 w-12 h-12 bg-gold-accent/10 rounded-lg flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-gold-accent" />
                     </div>
                     <div>
                       <h3 className="text-lg font-montserrat font-semibold text-white mb-2">
