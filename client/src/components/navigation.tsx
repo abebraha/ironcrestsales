@@ -178,7 +178,7 @@ export default function Navigation() {
             
             {/* Mobile Menu Toggle */}
             <motion.button 
-              className="md:hidden text-[#2B2E34] relative z-50"
+              className="md:hidden text-white relative z-50"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               data-testid="mobile-menu-toggle"
               variants={menuVariants}
@@ -217,7 +217,7 @@ export default function Navigation() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div 
-              className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-t border-black/5" 
+              className="md:hidden absolute top-full left-0 w-full bg-[#1E3A5F]/95 backdrop-blur-md border-t border-white/20" 
               data-testid="mobile-menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ 
@@ -260,7 +260,7 @@ export default function Navigation() {
                     className={`block w-full text-left px-3 py-2 rounded-lg transition-colors relative overflow-hidden ${
                       section === 'contact' 
                         ? 'bg-[#D4AF6A] text-[#1E3A5F] hover:bg-[#D4AF6A]/90 font-semibold' 
-                        : 'text-[#2B2E34] hover:text-[#D4AF6A] hover:bg-black/5'
+                        : 'text-white/90 hover:text-[#D4AF6A] hover:bg-white/5'
                     }`}
                     data-testid={`mobile-nav-${section}`}
                     initial={{ x: -50, opacity: 0 }}
@@ -322,27 +322,27 @@ function NavItem({
   return (
     <motion.button
       onClick={onClick}
-      className="relative text-[#2B2E34] hover:text-[#D4AF6A] transition-colors py-2 overflow-hidden"
+      className="relative text-white/90 hover:text-[#D4AF6A] transition-colors py-2 overflow-hidden"
       data-testid={`nav-${section}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-          {ripples.map(ripple => (
-            <motion.span
-              key={ripple.id}
-              className="absolute rounded-full bg-black/10"
-              style={{
-                left: ripple.x,
-                top: ripple.y,
-                width: 10,
-                height: 10,
-                transform: 'translate(-50%, -50%)'
-              }}
-              initial={{ scale: 0, opacity: 1 }}
-              animate={{ scale: 15, opacity: 0 }}
-              transition={{ duration: 0.6 }}
-            />
-          ))}
+      {ripples.map(ripple => (
+        <motion.span
+          key={ripple.id}
+          className="absolute rounded-full bg-white/20"
+          style={{
+            left: ripple.x,
+            top: ripple.y,
+            width: 10,
+            height: 10,
+            transform: 'translate(-50%, -50%)'
+          }}
+          initial={{ scale: 0, opacity: 1 }}
+          animate={{ scale: 15, opacity: 0 }}
+          transition={{ duration: 0.6 }}
+        />
+      ))}
       
       <span className="relative z-10">
         {section.charAt(0).toUpperCase() + section.slice(1)}
