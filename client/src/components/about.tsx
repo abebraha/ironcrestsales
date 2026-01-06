@@ -129,7 +129,7 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden" ref={containerRef}>
+    <section id="about" className="py-24 relative overflow-hidden" ref={containerRef}>
       {/* Light gray background */}
       <div className="absolute inset-0 bg-[#F2F4F7]" />
 
