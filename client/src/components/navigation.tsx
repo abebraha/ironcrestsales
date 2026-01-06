@@ -141,7 +141,7 @@ export default function Navigation() {
         className={`fixed w-full top-0 z-50 transition-all duration-500 ${
           isOverDarkSection 
             ? 'bg-[#1E3A5F] text-white shadow-lg' 
-            : 'bg-[#EEF0F3] text-[#1E3A5F] shadow-sm border-b border-black/5'
+            : 'bg-[#1E3A5F] text-white shadow-md border-b border-white/10'
         }`}
         style={{
           height: smoothHeight,
@@ -210,7 +210,7 @@ export default function Navigation() {
             
             {/* Mobile Menu Toggle */}
             <motion.button 
-              className={`md:hidden relative z-50 ${isOverDarkSection ? 'text-white' : 'text-[#2B2E34]'}`}
+              className="md:hidden relative z-50 text-white"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               data-testid="mobile-menu-toggle"
               variants={menuVariants}
