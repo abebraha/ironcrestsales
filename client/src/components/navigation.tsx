@@ -352,7 +352,7 @@ function NavItem({
   isOverDarkSection: boolean;
 }) {
   const isActive = activeSection === section;
-  const isDark = isOverDarkSection;
+  const isDark = true; // Force light text since nav is now always dark blue
   
   return (
     <motion.button
