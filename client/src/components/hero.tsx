@@ -70,7 +70,7 @@ export default function Hero() {
             
             {/* Animated Title with Text Reveal */}
             <h1 
-              className="text-4xl md:text-6xl font-montserrat font-bold text-white mb-6 leading-tight"
+              className="text-4xl md:text-6xl font-montserrat font-bold text-white mb-10 leading-tight"
               data-testid="hero-title"
             >
               <TextReveal delay={0.2}>
@@ -89,7 +89,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <p 
-                className="text-xl md:text-2xl text-white/85 mb-8 max-w-3xl mx-auto leading-relaxed"
+                className="text-xl md:text-2xl text-white/85 mb-12 max-w-3xl mx-auto leading-relaxed"
                 data-testid="hero-subtitle"
               >
                 <TextReveal delay={0.8}>

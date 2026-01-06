@@ -77,7 +77,7 @@ export default function Services() {
           viewport={{ once: true }}
         >
           
-          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-[#2B2E34] mb-6" data-testid="services-title">
+          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-[#2B2E34] mb-10" data-testid="services-title">
             <motion.span
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}

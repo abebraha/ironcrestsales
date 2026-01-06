@@ -53,7 +53,7 @@ export default function PainPoints() {
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-[#2B2E34] mb-6" data-testid="pain-points-title">
+          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-[#2B2E34] mb-10" data-testid="pain-points-title">
             <motion.span
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}

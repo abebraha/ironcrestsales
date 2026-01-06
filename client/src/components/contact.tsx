@@ -15,7 +15,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-white mb-6" data-testid="contact-title">Turn your sales into a predictable growth machine starting with one conversation</h2>
+          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-white mb-10" data-testid="contact-title">Turn your sales into a predictable growth machine starting with one conversation</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 reveal-on-scroll" style={{ transitionDelay: '200ms' }}>

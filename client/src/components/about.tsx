@@ -137,7 +137,7 @@ export default function About() {
         {/* Team Section with Flip Cards */}
         <div>
           <TextReveal className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-montserrat font-bold mb-4 text-[#2B2E34]">
+            <h3 className="text-3xl md:text-4xl font-montserrat font-bold mb-8 text-[#2B2E34]">
               Meet the <HighlightText>Team</HighlightText>
             </h3>
           </TextReveal>
