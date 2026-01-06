@@ -113,20 +113,26 @@ export default function PainPoints() {
           })}
         </div>
 
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-xl md:text-2xl font-montserrat text-[#2B2E34] mb-2">
-            There's a better way.
-          </p>
-          <p className="text-[#D4AF6A] font-bold text-xl md:text-2xl">
-            Let us build and manage your sales engine.
-          </p>
-        </motion.div>
+        <div className="mt-20 relative">
+          <div className="absolute inset-0 bg-[#F3F6FA] -mx-4 sm:-mx-6 lg:-mx-8 py-16" />
+          <motion.div 
+            className="relative z-10 text-center py-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="max-w-4xl mx-auto px-4">
+              <p className="text-xl md:text-2xl font-montserrat font-bold text-[#2B2E34] mb-4">
+                There's a better way.
+              </p>
+              <div className="w-12 h-px bg-[#D4AF6A] mx-auto mb-6" />
+              <p className="text-[#D4AF6A] font-extrabold text-xl md:text-3xl">
+                Let us build and manage your sales engine.
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
