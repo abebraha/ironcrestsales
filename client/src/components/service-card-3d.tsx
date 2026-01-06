@@ -109,15 +109,15 @@ export default function ServiceCard3D({
       
       {/* Main card */}
       <motion.div
-        className="relative bg-card rounded-md p-8 border border-border shadow-lg h-full flex flex-col overflow-hidden group"
+        className="relative bg-card rounded-md p-8 border border-border shadow-sm h-full flex flex-col overflow-hidden group"
         style={{
           rotateX,
           rotateY,
           scale,
           transformStyle: "preserve-3d",
           boxShadow: isHovered 
-            ? "0 20px 40px rgba(0,0,0,0.2), 0 0 120px rgba(0,0,0,0.1)" 
-            : "0 4px 6px rgba(0,0,0,0.1)"
+            ? "0 10px 20px rgba(0,0,0,0.1), 0 0 60px rgba(0,0,0,0.05)" 
+            : "0 2px 4px rgba(0,0,0,0.05)"
         }}
         animate={{
           y: isHovered ? -5 : 0

@@ -22,7 +22,7 @@ export default function Contact() {
           {/* Calendly Embed */}
           <motion.div 
             id="contact-form"
-            className="card-premium bg-card rounded-lg p-6 border border-border shadow-lg relative overflow-hidden"
+            className="card-premium bg-card rounded-lg p-6 border border-border shadow-md relative overflow-hidden"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -47,7 +47,7 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <motion.div 
-              className="card-premium bg-card rounded-lg p-8 border border-border shadow-lg" 
+              className="card-premium bg-card rounded-lg p-8 border border-border shadow-md" 
               data-testid="contact-info"
               whileHover={{ 
                 y: -4,
@@ -108,7 +108,7 @@ export default function Contact() {
             </motion.div>
             
             <motion.div 
-              className="card-premium bg-white rounded-lg p-8 text-[#2B2E34] border border-[#E5E7EB] relative overflow-hidden" 
+              className="card-premium bg-white rounded-lg p-8 text-[#2B2E34] border border-[#E5E7EB] shadow-md relative overflow-hidden" 
               data-testid="why-choose"
               whileHover={{ 
                 y: -4,

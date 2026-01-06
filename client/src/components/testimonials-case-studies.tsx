@@ -150,7 +150,7 @@ export function TestimonialsAndCaseStudies() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <Card className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm shadow-xl border-0 rounded-md" data-testid="testimonials-carousel">
+          <Card className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm shadow-md border border-border rounded-md" data-testid="testimonials-carousel">
             <CardContent className="p-8">
               {testimonialsLoading ? (
                 <div className="space-y-4" data-testid="testimonial-loading">
@@ -314,7 +314,7 @@ export function TestimonialsAndCaseStudies() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="card-premium h-full bg-white shadow-lg border-0 hover:shadow-xl transition-shadow duration-300 rounded-md" data-testid={`case-study-${caseStudy.id}`}>
+                <Card className="card-premium h-full bg-white shadow-md border border-border hover:shadow-lg transition-shadow duration-300 rounded-md" data-testid={`case-study-${caseStudy.id}`}>
                   <CardContent className="p-8">
                     <div className="flex items-center space-x-3 mb-4">
                       <Award className="w-8 h-8 text-primary" strokeWidth={2.5} />
