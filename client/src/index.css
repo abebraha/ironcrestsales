@@ -16,12 +16,12 @@
   --accent-foreground: #1E3A5F;
   
   /* Neutrals */
-  --white: #FFFFFF;
+  --white: #F6F7F9;
   --light-gray: #F2F4F7;
   --charcoal: #2B2E34;
   
   /* Semantic mappings */
-  --background: #FFFFFF;
+  --background: #F6F7F9;
   --foreground: #2B2E34;
   --card: #FFFFFF;
   --card-foreground: #2B2E34;
