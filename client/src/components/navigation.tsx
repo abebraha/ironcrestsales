@@ -7,12 +7,48 @@ import { useScrollProgress } from "@/hooks/use-scroll-progress";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOverDarkSection, setIsOverDarkSection] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [ripples, setRipples] = useState<{ id: number; x: number; y: number }[]>([]);
   const scrollProgress = useScrollProgress();
   const navRef = useRef<HTMLElement>(null);
   
+  // Use IntersectionObserver to detect dark sections
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-80px 0px -80% 0px', // Detect when section is near the header
+      threshold: 0
+    };
+
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Check if the section has a dark background
+          // We'll target sections with IDs: hero (dark), contact (dark)
+          const darkSectionIds = ['hero', 'contact'];
+          if (darkSectionIds.includes(entry.target.id)) {
+            setIsOverDarkSection(true);
+          } else {
+            setIsOverDarkSection(false);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+    
+    // Sections to observe
+    const sectionIds = ['hero', 'pain-points', 'services', 'about', 'contact'];
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   // Motion values for smooth animations
   const navHeight = useMotionValue(64);
   const navOpacity = useMotionValue(1);
@@ -111,7 +147,11 @@ export default function Navigation() {
     <>
       <motion.nav 
         ref={navRef}
-        className={`fixed w-full top-0 z-50 transition-all duration-500 bg-[#F2F4F7] ${isScrolled ? 'shadow-md border-b border-gray-200' : ''}`}
+        className={`fixed w-full top-0 z-50 transition-all duration-500 ${
+          isOverDarkSection 
+            ? 'bg-[#1E3A5F] text-white shadow-lg' 
+            : 'bg-white text-[#1E3A5F] shadow-md border-b border-gray-100'
+        }`}
         style={{
           height: smoothHeight,
           opacity: smoothOpacity,
@@ -178,7 +218,7 @@ export default function Navigation() {
             
             {/* Mobile Menu Toggle */}
             <motion.button 
-              className="md:hidden text-[#2B2E34] relative z-50"
+              className={`md:hidden relative z-50 ${isOverDarkSection ? 'text-white' : 'text-[#2B2E34]'}`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               data-testid="mobile-menu-toggle"
               variants={menuVariants}
@@ -318,11 +358,14 @@ function NavItem({
   ripples: { id: number; x: number; y: number }[];
 }) {
   const isActive = activeSection === section;
+  const isDark = (activeSection === 'hero' || activeSection === 'contact');
   
   return (
     <motion.button
       onClick={onClick}
-      className="relative text-[#2B2E34] hover:text-[#D4AF6A] transition-colors py-2 overflow-hidden"
+      className={`relative transition-colors py-2 overflow-hidden ${
+        isDark ? 'text-white hover:text-[#D4AF6A]' : 'text-[#2B2E34] hover:text-[#D4AF6A]'
+      }`}
       data-testid={`nav-${section}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
