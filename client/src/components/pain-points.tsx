@@ -113,31 +113,46 @@ export default function PainPoints() {
           })}
         </div>
 
-        <div className="mt-12 relative flex justify-center px-4">
+        <div className="mt-12 relative flex justify-center px-4" style={{ paddingTop: '48px', paddingBottom: '48px', minHeight: 'auto' }}>
           <motion.div 
-            className="relative z-10 w-full max-w-[720px] mx-auto"
-            style={{ width: "calc(100% - 32px)" }}
+            className="relative z-10 w-full mx-auto"
+            style={{ width: "min(92vw, 760px)", maxWidth: "760px" }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white/85 backdrop-blur-sm border border-gray-200 rounded-[16px] shadow-soft p-8 md:px-12 md:py-10 flex flex-col items-center justify-center text-center">
+            <div 
+              className="text-center"
+              style={{ 
+                backgroundColor: '#ffffff',
+                border: '1px solid rgba(15, 23, 42, 0.10)',
+                borderRadius: '18px',
+                padding: '28px 20px',
+                boxShadow: '0 10px 24px rgba(2, 6, 23, 0.08)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
               <p 
                 className="text-xl md:text-2xl font-montserrat font-bold text-[#1E3A5F] m-0 p-0"
-                style={{ textAlign: 'center', left: 'auto', right: 'auto', transform: 'none', translate: 'none' }}
+                style={{ marginBottom: '8px', textAlign: 'center', left: 'auto', right: 'auto', transform: 'none', translate: 'none' }}
               >
                 There's a better way.
               </p>
               <div 
-                className="block mx-auto my-4 md:my-5" 
+                className="block mx-auto" 
                 style={{ 
-                  width: '110px', 
+                  width: '140px', 
                   height: '3px', 
                   backgroundColor: '#B89355', 
                   display: 'block', 
                   marginLeft: 'auto', 
                   marginRight: 'auto',
+                  marginTop: '10px',
+                  marginBottom: '18px',
                   left: 'auto',
                   right: 'auto',
                   transform: 'none',
@@ -145,8 +160,18 @@ export default function PainPoints() {
                 }} 
               />
               <p 
-                className="text-[#D4AF6A] font-extrabold text-xl md:text-3xl leading-tight m-0 p-0"
-                style={{ textAlign: 'center', fontWeight: 800, left: 'auto', right: 'auto', transform: 'none', translate: 'none' }}
+                className="text-[#D4AF6A] font-extrabold text-xl md:text-3xl m-0 p-0"
+                style={{ 
+                  textAlign: 'center', 
+                  fontWeight: 800, 
+                  lineHeight: '1.25',
+                  maxWidth: '22ch',
+                  margin: '0 auto',
+                  left: 'auto', 
+                  right: 'auto', 
+                  transform: 'none', 
+                  translate: 'none' 
+                }}
               >
                 Let us build and manage your sales engine.
               </p>
