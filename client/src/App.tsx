@@ -29,22 +29,7 @@ function App() {
 
   useEffect(() => {
     // Simulate initial loading
-    let progress = 0;
-    const interval = setInterval(() => {
-      progress += Math.random() * 30;
-      if (progress >= 100) {
-        progress = 100;
-        setLoadProgress(progress);
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 500);
-        clearInterval(interval);
-      } else {
-        setLoadProgress(Math.min(progress, 90));
-      }
-    }, 300);
-
-    return () => clearInterval(interval);
+    setIsLoading(false);
   }, []);
 
   return (

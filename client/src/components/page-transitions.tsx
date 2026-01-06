@@ -14,51 +14,10 @@ export function PageTransition({
   mode = "fade",
   duration = 0.5 
 }: PageTransitionProps) {
-  const [location] = useLocation();
-  
-  const variants = {
-    fade: {
-      initial: { opacity: 0 },
-      animate: { opacity: 1 },
-      exit: { opacity: 0 }
-    },
-    slide: {
-      initial: { opacity: 0, x: 100 },
-      animate: { opacity: 1, x: 0 },
-      exit: { opacity: 0, x: -100 }
-    },
-    scale: {
-      initial: { opacity: 0, scale: 0.8 },
-      animate: { opacity: 1, scale: 1 },
-      exit: { opacity: 0, scale: 1.2 }
-    },
-    blur: {
-      initial: { opacity: 0, filter: "blur(10px)" },
-      animate: { opacity: 1, filter: "blur(0px)" },
-      exit: { opacity: 0, filter: "blur(10px)" }
-    },
-    rotate: {
-      initial: { opacity: 0, rotate: -10, scale: 0.9 },
-      animate: { opacity: 1, rotate: 0, scale: 1 },
-      exit: { opacity: 0, rotate: 10, scale: 0.9 }
-    }
-  };
-  
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={location}
-        initial={variants[mode].initial}
-        animate={variants[mode].animate}
-        exit={variants[mode].exit}
-        transition={{
-          duration,
-          ease: [0.43, 0.13, 0.23, 0.96]
-        }}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <>
+      {children}
+    </>
   );
 }
 
@@ -75,23 +34,9 @@ export function SectionTransition({
   threshold?: number;
 }) {
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
-      whileInView={{ 
-        opacity: 1, 
-        y: 0, 
-        filter: "blur(0px)" 
-      }}
-      transition={{
-        duration: 0.8,
-        delay,
-        ease: [0.43, 0.13, 0.23, 0.96]
-      }}
-      viewport={{ once: true, amount: threshold }}
-    >
+    <div className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -133,11 +78,10 @@ export function StaggerItem({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 30, filter: "blur(5px)" }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{
         opacity: 1,
-        y: 0,
-        filter: "blur(0px)"
+        y: 0
       }}
       transition={{
         duration: 0.6,
@@ -198,8 +142,7 @@ export function ExitAnimation({
     <motion.div
       exit={{
         opacity: 0,
-        scale: 0.95,
-        filter: "blur(5px)"
+        scale: 0.95
       }}
       transition={{
         duration,
@@ -224,42 +167,10 @@ export function RevealContent({
   cascade?: boolean;
   className?: string;
 }) {
-  const directionVariants = {
-    up: { y: 50, x: 0 },
-    down: { y: -50, x: 0 },
-    left: { x: 50, y: 0 },
-    right: { x: -50, y: 0 }
-  };
-  
-  const initial = {
-    opacity: 0,
-    ...directionVariants[direction],
-    filter: "blur(4px)",
-    scale: 0.95
-  };
-  
-  const animate = {
-    opacity: 1,
-    x: 0,
-    y: 0,
-    filter: "blur(0px)",
-    scale: 1
-  };
-  
   return (
-    <motion.div
-      className={className}
-      initial={initial}
-      whileInView={animate}
-      transition={{
-        duration: 0.7,
-        ease: [0.25, 0.1, 0.25, 1],
-        staggerChildren: cascade ? 0.1 : 0
-      }}
-      viewport={{ once: true, amount: 0.3 }}
-    >
+    <div className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -284,8 +195,7 @@ export function MorphTransition({
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        scale: isActive ? 1.05 : 1,
-        filter: isActive ? "brightness(1.1)" : "brightness(1)"
+        scale: isActive ? 1.05 : 1
       }}
       transition={{
         layout: { duration: 0.4, type: "spring", stiffness: 300 },
