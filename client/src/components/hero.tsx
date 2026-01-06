@@ -70,16 +70,31 @@ export default function Hero() {
             
             {/* Animated Title with Text Reveal */}
             <h1 
-              className="text-4xl md:text-6xl font-montserrat font-bold text-white mb-10 leading-tight"
+              className="text-4xl md:text-6xl font-montserrat font-bold text-white mb-10 leading-[1.3]"
               data-testid="hero-title"
             >
-              <TextReveal delay={0.2}>
-                Your brand. Your offer.
-              </TextReveal>
+              <span className="opacity-90">
+                <TextReveal delay={0.2}>
+                  Your brand. Your offer.
+                </TextReveal>
+              </span>
               <br />
-              <TextReveal delay={0.4}>
-                Our sales engine.
-              </TextReveal>
+              <motion.span 
+                className="inline-block mt-2 relative"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
+              >
+                <span className="text-[1.05em] font-extrabold relative inline-block">
+                  Our sales engine.
+                  <motion.span 
+                    className="absolute -bottom-2 left-0 w-full h-1 bg-[#D4AF6A]/80 rounded-full"
+                    initial={{ scaleX: 0, originX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
+                  />
+                </span>
+              </motion.span>
             </h1>
             
             {/* Animated Subtitle */}
@@ -111,6 +126,9 @@ export default function Hero() {
                 data-testid="button-apply-today"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
               >Schedule a Consultation</motion.button>
               
               <motion.button 
@@ -119,6 +137,9 @@ export default function Hero() {
                 data-testid="button-learn-more"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.4 }}
               >
                 Learn More
               </motion.button>
