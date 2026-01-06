@@ -40,13 +40,8 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative overflow-hidden min-h-screen">
-      {/* Greyish white background behind everything */}
-      <div className="absolute inset-0 bg-[#F2F4F7]" />
-      {/* Modern blue background for the hero area */}
-      <motion.div 
-        className="absolute inset-0 bg-[#1E3A5F]"
-        style={{ height: "calc(100% - 250px)" }} // Increased to cover more area
-      />
+      {/* Modern blue background */}
+      <div className="absolute inset-0 bg-[#1E3A5F]" />
       {/* Main hero content with parallax */}
       <motion.div 
         className="relative z-10 pt-24 pb-20"
