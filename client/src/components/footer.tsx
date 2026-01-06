@@ -141,7 +141,7 @@ export default function Footer() {
               <FooterLink href="#services" delay={0.1}>Sales Professionals</FooterLink>
               <FooterLink href="#services" delay={0.2}>System Development</FooterLink>
               <FooterLink href="#services" delay={0.3}>Strategic Hiring</FooterLink>
-              <FooterLink href="#services" delay={0.4}>Revenue Optimization</FooterLink>
+              <FooterLink href="#pain-points" delay={0.4}>Revenue Optimization</FooterLink>
             </ul>
           </motion.div>
           
