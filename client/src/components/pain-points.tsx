@@ -115,18 +115,39 @@ export default function PainPoints() {
 
         <div className="mt-12 relative flex justify-center px-4">
           <motion.div 
-            className="relative z-10 w-full max-w-[700px]"
+            className="relative z-10 w-full max-w-[720px] mx-auto"
+            style={{ width: "calc(100% - 32px)" }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
           >
             <div className="bg-white/85 backdrop-blur-sm border border-gray-200 rounded-[16px] shadow-soft p-8 md:px-12 md:py-10 flex flex-col items-center justify-center text-center">
-              <p className="text-xl md:text-2xl font-montserrat font-bold text-[#1E3A5F] mb-0">
+              <p 
+                className="text-xl md:text-2xl font-montserrat font-bold text-[#1E3A5F] m-0 p-0"
+                style={{ textAlign: 'center', left: 'auto', right: 'auto', transform: 'none', translate: 'none' }}
+              >
                 There's a better way.
               </p>
-              <div className="w-20 h-0.5 bg-[#B89355] block mx-auto my-4 md:my-5" />
-              <p className="text-[#D4AF6A] font-extrabold text-xl md:text-3xl leading-tight m-0">
+              <div 
+                className="block mx-auto my-4 md:my-5" 
+                style={{ 
+                  width: '110px', 
+                  height: '3px', 
+                  backgroundColor: '#B89355', 
+                  display: 'block', 
+                  marginLeft: 'auto', 
+                  marginRight: 'auto',
+                  left: 'auto',
+                  right: 'auto',
+                  transform: 'none',
+                  translate: 'none'
+                }} 
+              />
+              <p 
+                className="text-[#D4AF6A] font-extrabold text-xl md:text-3xl leading-tight m-0 p-0"
+                style={{ textAlign: 'center', fontWeight: 800, left: 'auto', right: 'auto', transform: 'none', translate: 'none' }}
+              >
                 Let us build and manage your sales engine.
               </p>
             </div>
