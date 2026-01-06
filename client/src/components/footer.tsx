@@ -153,9 +153,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <FooterLink href="#" delay={0.1}>About Us</FooterLink>
-              <FooterLink href="#" delay={0.2}>Case Studies</FooterLink>
-              <FooterLink href="#" delay={0.3}>Careers</FooterLink>
-              <FooterLink href="#contact" delay={0.4}>Contact</FooterLink>
+              <FooterLink href="#contact" delay={0.2}>Contact</FooterLink>
             </ul>
           </motion.div>
         </div>
