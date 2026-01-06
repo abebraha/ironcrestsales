@@ -120,7 +120,7 @@ export default function PainPoints() {
           <p className="text-xl md:text-2xl font-montserrat text-[#2B2E34] mb-2">
             There's a better way.
           </p>
-          <p className="text-[#D4AF6A] font-semibold text-lg">
+          <p className="text-[#D4AF6A] font-bold text-xl md:text-2xl">
             Let us build and manage your sales engine.
           </p>
         </motion.div>
