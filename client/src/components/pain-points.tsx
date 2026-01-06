@@ -113,10 +113,10 @@ export default function PainPoints() {
           })}
         </div>
 
-        <div className="mt-12 relative flex justify-center px-4" style={{ paddingTop: '48px', paddingBottom: '48px', minHeight: 'auto' }}>
+        <div className="mt-8 relative flex justify-center px-4" style={{ paddingTop: '32px', paddingBottom: '32px', minHeight: 'auto' }}>
           <motion.div 
             className="relative z-10 w-full mx-auto"
-            style={{ width: "min(92vw, 760px)", maxWidth: "760px" }}
+            style={{ maxWidth: "960px" }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -127,8 +127,8 @@ export default function PainPoints() {
               style={{ 
                 backgroundColor: '#ffffff',
                 border: '1px solid rgba(15, 23, 42, 0.10)',
-                borderRadius: '18px',
-                padding: '28px 20px',
+                borderRadius: '24px',
+                padding: '64px 24px',
                 boxShadow: '0 10px 24px rgba(2, 6, 23, 0.08)',
                 display: 'flex',
                 flexDirection: 'column',
@@ -137,22 +137,22 @@ export default function PainPoints() {
               }}
             >
               <p 
-                className="text-xl md:text-2xl font-montserrat font-bold text-[#1E3A5F] m-0 p-0"
-                style={{ marginBottom: '8px', textAlign: 'center', left: 'auto', right: 'auto', transform: 'none', translate: 'none' }}
+                className="text-3xl md:text-4xl font-montserrat font-bold text-[#1E3A5F] m-0 p-0"
+                style={{ marginBottom: '12px', textAlign: 'center', left: 'auto', right: 'auto', transform: 'none', translate: 'none' }}
               >
                 There's a better way.
               </p>
               <div 
                 className="block mx-auto" 
                 style={{ 
-                  width: '140px', 
+                  width: '160px', 
                   height: '3px', 
                   backgroundColor: '#B89355', 
                   display: 'block', 
                   marginLeft: 'auto', 
                   marginRight: 'auto',
-                  marginTop: '10px',
-                  marginBottom: '18px',
+                  marginTop: '12px',
+                  marginBottom: '20px',
                   left: 'auto',
                   right: 'auto',
                   transform: 'none',
@@ -160,12 +160,12 @@ export default function PainPoints() {
                 }} 
               />
               <p 
-                className="text-[#D4AF6A] font-extrabold text-xl md:text-3xl m-0 p-0"
+                className="text-[#D4AF6A] font-extrabold text-[22px] md:text-[26px] m-0 p-0"
                 style={{ 
                   textAlign: 'center', 
                   fontWeight: 800, 
                   lineHeight: '1.25',
-                  maxWidth: '22ch',
+                  maxWidth: '30ch',
                   margin: '0 auto',
                   left: 'auto', 
                   right: 'auto', 
