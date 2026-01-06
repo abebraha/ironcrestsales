@@ -182,7 +182,7 @@ export default function Navigation() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {['home', 'services', 'about'].map((section) => (
+              {['home', 'services'].map((section) => (
                 <NavItem 
                   key={section}
                   section={section}
@@ -292,7 +292,7 @@ export default function Navigation() {
               }}
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {['home', 'services', 'about', 'contact'].map((section, index) => (
+                {['home', 'services', 'contact'].map((section, index) => (
                   <motion.button
                     key={section}
                     onClick={(e) => {
