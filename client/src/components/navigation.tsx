@@ -64,7 +64,7 @@ export default function Navigation() {
       navOpacity.set(scrollY > 50 ? 0.95 : 1);
       
       // Detect active section
-      const sections = ['home', 'services', 'about', 'contact'];
+      const sections = ['home', 'services', 'contact'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
