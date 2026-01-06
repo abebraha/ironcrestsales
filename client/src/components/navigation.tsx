@@ -292,18 +292,14 @@ export default function Navigation() {
               }}
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {['home', 'services', 'contact'].map((section, index) => (
+                {['home', 'services'].map((section, index) => (
                   <motion.button
                     key={section}
                     onClick={(e) => {
                       handleRippleEffect(e);
                       scrollToSection(section);
                     }}
-                    className={`block w-full text-left px-3 py-2 rounded-md transition-colors relative overflow-hidden ${
-                      section === 'contact' 
-                        ? 'bg-[#D4AF6A] text-black hover:bg-[#D4AF6A]/90 font-semibold' 
-                        : 'text-white/90 hover:text-[#D4AF6A] hover:bg-white/5'
-                    }`}
+                    className="block w-full text-left px-3 py-2 rounded-md transition-colors relative overflow-hidden text-white/90 hover:text-[#D4AF6A] hover:bg-white/5"
                     data-testid={`mobile-nav-${section}`}
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ 
@@ -335,7 +331,6 @@ export default function Navigation() {
                       />
                     ))}
                     {section.charAt(0).toUpperCase() + section.slice(1)}
-                    {section === 'contact' && ' Us'}
                   </motion.button>
                 ))}
               </div>
