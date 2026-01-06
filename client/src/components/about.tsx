@@ -170,7 +170,7 @@ export default function About() {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-premium mt-4 px-4 py-2 bg-[#D4AF6A] text-[#1E3A5F] rounded-lg hover:bg-[#D4AF6A]/90 transition-colors flex items-center gap-2 font-semibold"
+                    className="btn-premium mt-4 px-4 py-2 bg-[#D4AF6A] text-black rounded-lg hover:bg-[#D4AF6A]/90 transition-colors flex items-center gap-2 font-semibold"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     data-testid={`linkedin-${member.name.toLowerCase().replace(' ', '-')}`}

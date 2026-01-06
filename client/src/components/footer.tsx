@@ -135,7 +135,7 @@ export default function Footer() {
           <motion.div variants={itemVariants}>
             <h4 className="font-montserrat font-semibold text-lg mb-6 text-white relative">
               Services
-              <div className="absolute -bottom-2 left-0 h-0.5 w-8 bg-[#C9A24D]" />
+              <div className="absolute -bottom-2 left-0 h-0.5 w-8 bg-[#D4AF6A]" />
             </h4>
             <ul className="space-y-3">
               <FooterLink href="#" delay={0.1}>Sales Professionals</FooterLink>
@@ -149,7 +149,7 @@ export default function Footer() {
           <motion.div variants={itemVariants}>
             <h4 className="font-montserrat font-semibold text-lg mb-6 text-white relative">
               Company
-              <div className="absolute -bottom-2 left-0 h-0.5 w-8 bg-[#C9A24D]" />
+              <div className="absolute -bottom-2 left-0 h-0.5 w-8 bg-[#D4AF6A]" />
             </h4>
             <ul className="space-y-3">
               <FooterLink href="#" delay={0.1}>About Us</FooterLink>
@@ -174,8 +174,8 @@ export default function Footer() {
           </p>
           <p className="text-white/60 text-sm">
             &copy; 2025 IronCrest Sales. All rights reserved. | 
-            <a href="#" className="hover:text-[#C9A24D] transition-colors mx-1">Privacy Policy</a> | 
-            <a href="#" className="hover:text-[#C9A24D] transition-colors mx-1">Terms of Service</a>
+            <a href="#" className="hover:text-[#D4AF6A] transition-colors mx-1">Privacy Policy</a> | 
+            <a href="#" className="hover:text-[#D4AF6A] transition-colors mx-1">Terms of Service</a>
           </p>
         </div>
       </motion.div>
@@ -185,7 +185,7 @@ export default function Footer() {
         {showScrollTop && (
           <motion.button
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 p-4 bg-[#C9A24D] text-[#0B1F3B] rounded-full shadow-lg z-50 hover:bg-[#C9A24D]/90 hover:scale-105 transition-all duration-200"
+            className="fixed bottom-8 right-8 p-4 bg-[#D4AF6A] text-black rounded-full shadow-lg z-50 hover:bg-[#D4AF6A]/90 hover:scale-105 transition-all duration-200"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}

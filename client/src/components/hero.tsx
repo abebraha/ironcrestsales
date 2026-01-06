@@ -107,7 +107,7 @@ export default function Hero() {
             >
               <motion.button 
                 onClick={scrollToContact}
-                className="btn-premium bg-[#D4AF6A] text-[#1E3A5F] px-8 py-4 rounded-lg font-montserrat font-bold text-lg shadow-lg transition-all duration-200 hover:bg-[#D4AF6A]/90"
+                className="btn-premium bg-[#D4AF6A] text-black px-8 py-4 rounded-lg font-montserrat font-bold text-lg shadow-lg transition-all duration-200 hover:bg-[#D4AF6A]/90"
                 data-testid="button-apply-today"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
