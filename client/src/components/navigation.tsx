@@ -14,37 +14,28 @@ export default function Navigation() {
   const scrollProgress = useScrollProgress();
   const navRef = useRef<HTMLElement>(null);
   
-  // Use IntersectionObserver to detect dark sections
+  // Use IntersectionObserver to detect hero section
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: '-80px 0px -80% 0px', // Detect when section is near the header
-      threshold: 0
+      rootMargin: '-80px 0px 0px 0px', // Top threshold
+      threshold: 0.1
     };
 
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Check if the section has a dark background
-          // We'll target sections with IDs: hero (dark), contact (dark)
-          const darkSectionIds = ['hero', 'contact'];
-          if (darkSectionIds.includes(entry.target.id)) {
-            setIsOverDarkSection(true);
-          } else {
-            setIsOverDarkSection(false);
-          }
+        if (entry.target.id === 'home' || entry.target.id === 'hero') {
+          // If hero is in view, use white background (header--light)
+          // If hero is out of view, use blue background (header--dark)
+          setIsOverDarkSection(!entry.isIntersecting);
         }
       });
     };
 
     const observer = new IntersectionObserver(handleIntersection, observerOptions);
     
-    // Sections to observe
-    const sectionIds = ['hero', 'pain-points', 'services', 'about', 'contact'];
-    sectionIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+    const heroEl = document.getElementById('home') || document.getElementById('hero');
+    if (heroEl) observer.observe(heroEl);
 
     return () => observer.disconnect();
   }, []);
@@ -358,7 +349,7 @@ function NavItem({
   ripples: { id: number; x: number; y: number }[];
 }) {
   const isActive = activeSection === section;
-  const isDark = (activeSection === 'hero' || activeSection === 'contact');
+  const isDark = isOverDarkSection;
   
   return (
     <motion.button
