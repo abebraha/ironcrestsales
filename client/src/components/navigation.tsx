@@ -141,7 +141,7 @@ export default function Navigation() {
         className={`fixed w-full top-0 z-50 transition-all duration-500 ${
           isOverDarkSection 
             ? 'bg-[#1E3A5F] text-white shadow-lg' 
-            : 'bg-[#F6F7F9] text-[#1E3A5F] shadow-md border-b border-gray-100'
+            : 'bg-[#EEF0F3] text-[#1E3A5F] shadow-md border-b border-gray-100'
         }`}
         style={{
           height: smoothHeight,
