@@ -156,8 +156,6 @@ export default function Footer() {
               <FooterLink href="#" delay={0.2}>Case Studies</FooterLink>
               <FooterLink href="#" delay={0.3}>Careers</FooterLink>
               <FooterLink href="#" delay={0.4}>Contact</FooterLink>
-              <FooterLink href="#" delay={0.5}>Blog</FooterLink>
-              <FooterLink href="#" delay={0.6}>Partners</FooterLink>
             </ul>
           </motion.div>
         </div>
