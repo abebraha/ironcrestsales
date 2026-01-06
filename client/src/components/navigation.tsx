@@ -60,7 +60,7 @@ export default function Navigation() {
       setIsScrolled(scrollY > 50);
       
       // Update nav height based on scroll
-      navHeight.set(scrollY > 100 ? 56 : 64);
+      navHeight.set(scrollY > 100 ? 48 : 56);
       navOpacity.set(scrollY > 50 ? 0.95 : 1);
       
       // Detect active section
@@ -141,7 +141,7 @@ export default function Navigation() {
         className={`fixed w-full top-0 z-50 transition-all duration-500 ${
           isOverDarkSection 
             ? 'bg-[#1E3A5F] text-white shadow-lg' 
-            : 'bg-[#EEF0F3] text-[#1E3A5F] shadow-md border-b border-gray-100'
+            : 'bg-[#EEF0F3] text-[#1E3A5F] shadow-sm border-b border-black/5'
         }`}
         style={{
           height: smoothHeight,
