@@ -25,9 +25,9 @@ export default function Navigation() {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
         if (entry.target.id === 'home' || entry.target.id === 'hero') {
-          // If hero is in view, use white background (header--light)
-          // If hero is out of view, use blue background (header--dark)
-          setIsOverDarkSection(!entry.isIntersecting);
+          // isOverDarkSection will be true when in the first section (lightish gray)
+          // and false when scrolled out (white)
+          setIsOverDarkSection(entry.isIntersecting);
         }
       });
     };
@@ -140,8 +140,8 @@ export default function Navigation() {
         ref={navRef}
         className={`fixed w-full top-0 z-50 transition-all duration-500 ${
           isOverDarkSection 
-            ? 'bg-[#1E3A5F] text-white shadow-lg' 
-            : 'bg-[#1E3A5F] text-white shadow-md border-b border-white/10'
+            ? 'bg-[#F3F4F6] text-[#2B2E34] shadow-sm' 
+            : 'bg-white text-[#2B2E34] shadow-md'
         }`}
         style={{
           height: smoothHeight,
@@ -211,7 +211,7 @@ export default function Navigation() {
             {/* Mobile Actions */}
             <div className="md:hidden flex items-center space-x-4">
               <button 
-                className="text-white"
+                className={`${isOverDarkSection ? 'text-[#2B2E34]' : 'text-[#2B2E34]'}`}
                 onClick={() => scrollToSection('contact')}
                 data-testid="nav-phone-icon"
               >
@@ -219,7 +219,7 @@ export default function Navigation() {
               </button>
 
               <motion.button 
-                className="relative z-50 text-white"
+                className={`relative z-50 ${isOverDarkSection ? 'text-[#2B2E34]' : 'text-[#2B2E34]'}`}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 data-testid="mobile-menu-toggle"
                 variants={menuVariants}
@@ -357,7 +357,7 @@ function NavItem({
   isOverDarkSection: boolean;
 }) {
   const isActive = activeSection === section;
-  const isDark = true; // Force light text since nav is now always dark blue
+  const isDark = !isOverDarkSection; // Use overDarkSection to determine text color
   
   return (
     <motion.button
