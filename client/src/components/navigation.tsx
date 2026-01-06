@@ -174,7 +174,7 @@ export default function Navigation() {
             {/* Logo with morph animation */}
             <motion.div 
               className="flex items-center"
-              animate={isScrolled ? { scale: 0.9 } : { scale: 1 }}
+              animate={isScrolled ? { scale: 0.95 } : { scale: 1 }}
               transition={{ duration: 0.3 }}
             >
               <Logo size={isScrolled ? "small" : "nav"} />
