@@ -141,7 +141,7 @@ export default function Navigation() {
         className={`fixed w-full top-0 z-50 transition-all duration-500 ${
           isOverDarkSection 
             ? 'bg-[#F3F4F6] text-[#2B2E34] shadow-sm' 
-            : 'bg-[#1E3A5F] text-white shadow-lg'
+            : 'bg-[#F0F2F5] text-[#2B2E34] shadow-md'
         }`}
         style={{
           height: smoothHeight,
@@ -211,7 +211,7 @@ export default function Navigation() {
             {/* Mobile Actions */}
             <div className="md:hidden flex items-center space-x-4">
               <button 
-                className={`${isOverDarkSection ? 'text-[#2B2E34]' : 'text-white'}`}
+                className="text-[#2B2E34]"
                 onClick={() => scrollToSection('contact')}
                 data-testid="nav-phone-icon"
               >
@@ -219,7 +219,7 @@ export default function Navigation() {
               </button>
 
               <motion.button 
-                className={`relative z-50 ${isOverDarkSection ? 'text-[#2B2E34]' : 'text-white'}`}
+                className="relative z-50 text-[#2B2E34]"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 data-testid="mobile-menu-toggle"
                 variants={menuVariants}
@@ -357,7 +357,7 @@ function NavItem({
   isOverDarkSection: boolean;
 }) {
   const isActive = activeSection === section;
-  const isDark = !isOverDarkSection; // isDark=true means navy blue background (white text)
+  const isDark = false; // Always use dark text for light navigation backgrounds
   
   return (
     <motion.button
