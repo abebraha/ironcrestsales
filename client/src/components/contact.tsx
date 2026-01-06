@@ -4,7 +4,7 @@ import { InlineWidget } from "react-calendly";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 relative overflow-hidden reveal-on-scroll">
+    <section id="contact" className="py-24 relative overflow-hidden reveal-on-scroll">
       {/* Navy background */}
       <div className="absolute inset-0 bg-[#1E3A5F]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">

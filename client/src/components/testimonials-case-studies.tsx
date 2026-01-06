@@ -124,7 +124,7 @@ export function TestimonialsAndCaseStudies() {
   };
 
   return (
-    <section className="py-20 bg-[#F2F4F7] reveal-on-scroll" data-testid="testimonials-case-studies-section">
+    <section className="py-24 bg-[#F2F4F7] reveal-on-scroll" data-testid="testimonials-case-studies-section">
       <div className="container mx-auto px-4">
         {/* Testimonials Section */}
         <motion.div 

@@ -63,7 +63,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-20 overflow-hidden relative reveal-on-scroll">
+    <section id="services" className="py-24 overflow-hidden relative reveal-on-scroll">
       {/* Light gray background for contrast */}
       <div className="absolute inset-0 bg-[#F2F4F7]" />
       
