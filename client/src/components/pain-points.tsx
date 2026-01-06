@@ -93,7 +93,7 @@ export default function PainPoints() {
                 <div className="bg-white border border-[#E5E7EB] rounded-md p-6 h-full transition-all duration-200 hover:border-[#D4AF6A]/30 hover:shadow-lg">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-[#D4AF6A]/10 rounded-md flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-[#D4AF6A]" />
+                      <Icon className="w-6 h-6 text-[#D4AF6A]" strokeWidth={2.5} />
                     </div>
                     <div>
                       <h3 className="text-lg font-montserrat font-semibold text-[#2B2E34] mb-2">

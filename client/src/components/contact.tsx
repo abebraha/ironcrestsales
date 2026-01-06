@@ -64,7 +64,7 @@ export default function Contact() {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <div className="bg-[#1E3A5F]/10 p-3 rounded-md">
-                    <Phone className="w-5 h-5 text-[#1E3A5F]" />
+                    <Phone className="w-5 h-5 text-[#1E3A5F]" strokeWidth={2.5} />
                   </div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Phone</h4>
@@ -80,7 +80,7 @@ export default function Contact() {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <div className="bg-[#D4AF6A]/10 p-3 rounded-md">
-                    <Mail className="w-5 h-5 text-[#D4AF6A]" />
+                    <Mail className="w-5 h-5 text-[#D4AF6A]" strokeWidth={2.5} />
                   </div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Email</h4>
@@ -96,7 +96,7 @@ export default function Contact() {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <div className="bg-[#D4AF6A]/10 p-3 rounded-md">
-                    <MapPin className="w-5 h-5 text-[#D4AF6A]" />
+                    <MapPin className="w-5 h-5 text-[#D4AF6A]" strokeWidth={2.5} />
                   </div>
                   <div>
                     <h4 className="font-montserrat font-semibold text-foreground">Headquarters</h4>
@@ -133,7 +133,7 @@ export default function Contact() {
                       transition={{ delay: index * 0.1 }}
                       viewport={{ once: true }}
                     >
-                      <CheckCircle className="w-5 h-5 text-[#D4AF6A] mr-3" />
+                      <CheckCircle className="w-5 h-5 text-[#D4AF6A] mr-3" strokeWidth={2.5} />
                       <span>{item}</span>
                     </motion.li>
                   ))}

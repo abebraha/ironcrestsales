@@ -195,7 +195,7 @@ export default function Navigation() {
                     exit={{ rotate: 180, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <X size={24} />
+                    <X size={24} strokeWidth={2.5} />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -205,7 +205,7 @@ export default function Navigation() {
                     exit={{ rotate: -180, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Menu size={24} />
+                    <Menu size={24} strokeWidth={2.5} />
                   </motion.div>
                 )}
               </AnimatePresence>
