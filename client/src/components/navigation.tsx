@@ -215,7 +215,7 @@ export default function Navigation() {
                 onClick={() => scrollToSection('contact')}
                 data-testid="nav-phone-icon"
               >
-                <Phone size={24} strokeWidth={2.5} />
+                <Phone size={20} strokeWidth={2.5} />
               </button>
 
               <motion.button 
