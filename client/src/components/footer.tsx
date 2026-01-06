@@ -17,9 +17,9 @@ const SocialIcon = ({ Icon, href, label, delay = 0 }: { Icon: any; href: string;
       whileTap={{ scale: 0.98 }}
     >
       <div
-        className="relative p-3 rounded-full bg-white/10 border border-white/20 transition-all duration-200 group-hover:border-[#D4AF6A]/40 group-hover:bg-white/15"
+        className="relative p-3 rounded-full bg-[#1E3A5F]/10 border border-[#1E3A5F]/20 transition-all duration-200 group-hover:border-[#D4AF6A]/40 group-hover:bg-[#1E3A5F]/15"
       >
-        <Icon className="w-5 h-5 text-white transition-opacity duration-200 group-hover:text-[#D4AF6A]" />
+        <Icon className="w-5 h-5 text-[#1E3A5F] transition-opacity duration-200 group-hover:text-[#D4AF6A]" />
       </div>
     </motion.a>
   );
@@ -35,7 +35,7 @@ const FooterLink = ({ href, children, delay = 0 }: { href: string; children: Rea
     >
       <a
         href={href}
-        className="relative inline-block group py-1 text-white/80 hover:text-[#D4AF6A] transition-colors duration-200"
+        className="relative inline-block group py-1 text-[#1E3A5F]/80 hover:text-[#D4AF6A] transition-colors duration-200"
         data-testid={`footer-link-${children?.toString().toLowerCase().replace(/\s+/g, '-')}`}
       >
         <span className="relative z-10">
@@ -95,10 +95,10 @@ export default function Footer() {
   };
 
   return (
-    <footer ref={footerRef} className="relative bg-[#1E3A5F] text-white py-16 overflow-hidden" data-testid="footer">
+    <footer ref={footerRef} className="relative bg-[#F2F4F7] text-[#1E3A5F] py-16 overflow-hidden" data-testid="footer">
         {/* Static mesh pattern */}
-        <div className="absolute inset-0 bg-[#1E3A5F]" />
-        <div className="absolute inset-0 pattern-grid opacity-10" />
+        <div className="absolute inset-0 bg-[#F2F4F7]" />
+        <div className="absolute inset-0 pattern-grid opacity-5" />
 
       <motion.div
         className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10"
@@ -116,12 +116,12 @@ export default function Footer() {
               >
                 <ShieldLogo size="small" />
               </motion.div>
-              <span className="text-2xl font-montserrat font-bold text-white">
+              <span className="text-2xl font-montserrat font-bold text-[#1E3A5F]">
                 IronCrest Sales
               </span>
             </div>
             
-            <p className="text-white/80 mb-6 max-w-md leading-relaxed">
+            <p className="text-[#1E3A5F]/80 mb-6 max-w-md leading-relaxed">
               Expert outsourced sales solutions that help businesses build scalable revenue departments through strategic talent and proven systems.
             </p>
             
@@ -133,7 +133,7 @@ export default function Footer() {
           
           {/* Services links */}
           <motion.div variants={itemVariants}>
-            <h4 className="font-montserrat font-semibold text-lg mb-6 text-white relative">
+            <h4 className="font-montserrat font-semibold text-lg mb-6 text-[#1E3A5F] relative">
               Services
               <div className="absolute -bottom-2 left-0 h-0.5 w-8 bg-[#D4AF6A]" />
             </h4>
@@ -147,7 +147,7 @@ export default function Footer() {
           
           {/* Company links */}
           <motion.div variants={itemVariants}>
-            <h4 className="font-montserrat font-semibold text-lg mb-6 text-white relative">
+            <h4 className="font-montserrat font-semibold text-lg mb-6 text-[#1E3A5F] relative">
               Company
               <div className="absolute -bottom-2 left-0 h-0.5 w-8 bg-[#D4AF6A]" />
             </h4>
@@ -164,15 +164,15 @@ export default function Footer() {
         
         {/* Simple divider */}
         <div className="mt-12 mb-8">
-          <div className="h-px bg-white/20" />
+          <div className="h-px bg-[#1E3A5F]/20" />
         </div>
         
         {/* Copyright */}
         <div className="text-center">
-          <p className="text-white/70 mb-2" data-testid="footer-copyright">
+          <p className="text-[#1E3A5F]/70 mb-2" data-testid="footer-copyright">
             Made with <Heart className="w-4 h-4 inline text-red-400" /> by IronCrest Sales
           </p>
-          <p className="text-white/60 text-sm">
+          <p className="text-[#1E3A5F]/60 text-sm">
             &copy; 2025 IronCrest Sales. All rights reserved. | 
             <a href="#" className="hover:text-[#D4AF6A] transition-colors mx-1">Privacy Policy</a> | 
             <a href="#" className="hover:text-[#D4AF6A] transition-colors mx-1">Terms of Service</a>
