@@ -49,7 +49,7 @@ function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: number; s
   }, [isInView, value, hasAnimated]);
   
   return (
-    <div ref={ref} className="text-4xl font-montserrat font-bold">
+    <div ref={ref} className="text-5xl font-montserrat font-bold text-[#1E3A5F]">
       {prefix}{count}{suffix}
     </div>
   );

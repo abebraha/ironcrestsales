@@ -366,8 +366,8 @@ export function TestimonialsAndCaseStudies() {
                           <div className="grid grid-cols-2 gap-3">
                             {Object.entries(metrics).map(([key, value]) => (
                               <div key={key} className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-md p-3 text-center">
-                                <div className="text-lg font-bold text-primary">{value as string}</div>
-                                <div className="text-xs text-muted-foreground">{key}</div>
+                                <div className="text-2xl font-bold text-primary">{value as string}</div>
+                                <div className="text-[10px] uppercase tracking-wider text-muted-foreground/70 font-medium">{key}</div>
                               </div>
                             ))}
                           </div>
