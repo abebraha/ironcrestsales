@@ -138,10 +138,10 @@ export default function Footer() {
               <div className="absolute -bottom-2 left-0 h-0.5 w-8 bg-[#D4AF6A]" />
             </h4>
             <ul className="space-y-3">
-              <FooterLink href="#" delay={0.1}>Sales Professionals</FooterLink>
-              <FooterLink href="#" delay={0.2}>System Development</FooterLink>
-              <FooterLink href="#" delay={0.3}>Strategic Hiring</FooterLink>
-              <FooterLink href="#" delay={0.4}>Revenue Optimization</FooterLink>
+              <FooterLink href="#services" delay={0.1}>Sales Professionals</FooterLink>
+              <FooterLink href="#services" delay={0.2}>System Development</FooterLink>
+              <FooterLink href="#services" delay={0.3}>Strategic Hiring</FooterLink>
+              <FooterLink href="#services" delay={0.4}>Revenue Optimization</FooterLink>
             </ul>
           </motion.div>
           
