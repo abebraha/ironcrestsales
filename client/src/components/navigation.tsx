@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import Logo from "./logo";
 import { useMagneticHover } from "@/hooks/use-magnetic-hover";
 import { useScrollProgress } from "@/hooks/use-scroll-progress";
@@ -208,16 +208,25 @@ export default function Navigation() {
               </MagneticButton>
             </div>
             
-            {/* Mobile Menu Toggle */}
-            <motion.button 
-              className="md:hidden relative z-50 text-white"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              data-testid="mobile-menu-toggle"
-              variants={menuVariants}
-              initial="closed"
-              animate={isMobileMenuOpen ? "open" : "closed"}
-              whileTap={{ scale: 0.95 }}
-            >
+            {/* Mobile Actions */}
+            <div className="md:hidden flex items-center space-x-4">
+              <button 
+                className="text-white"
+                onClick={() => scrollToSection('contact')}
+                data-testid="nav-phone-icon"
+              >
+                <Phone size={24} strokeWidth={2.5} />
+              </button>
+
+              <motion.button 
+                className="relative z-50 text-white"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                data-testid="mobile-menu-toggle"
+                variants={menuVariants}
+                initial="closed"
+                animate={isMobileMenuOpen ? "open" : "closed"}
+                whileTap={{ scale: 0.95 }}
+              >
               <AnimatePresence mode="wait">
                 {isMobileMenuOpen ? (
                   <motion.div
