@@ -113,37 +113,23 @@ export default function PainPoints() {
           })}
         </div>
 
-        <div className="mt-8 relative flex justify-center px-4" style={{ paddingTop: '32px', paddingBottom: '32px', minHeight: 'auto' }}>
+        <div className="mt-16 relative w-full overflow-hidden border-y border-black/[0.08]" style={{ backgroundColor: '#F3F6FB' }}>
           <motion.div 
-            className="relative z-10 w-full mx-auto"
-            style={{ maxWidth: "960px" }}
+            className="relative z-10 w-full max-w-[900px] mx-auto py-14 md:py-[72px] px-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <div 
-              className="text-center"
-              style={{ 
-                backgroundColor: '#ffffff',
-                border: '1px solid rgba(15, 23, 42, 0.10)',
-                borderRadius: '24px',
-                padding: '64px 24px',
-                boxShadow: '0 10px 24px rgba(2, 6, 23, 0.08)',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
-            >
+            <div className="text-center flex flex-col items-center justify-center">
               <p 
-                className="text-3xl md:text-4xl font-montserrat font-bold text-[#1E3A5F] m-0 p-0"
-                style={{ marginBottom: '12px', textAlign: 'center', left: 'auto', right: 'auto', transform: 'none', translate: 'none' }}
+                className="text-[34px] md:text-[44px] font-montserrat font-bold text-[#1E3A5F] m-0 p-0 leading-tight"
+                style={{ textAlign: 'center', left: 'auto', right: 'auto', transform: 'none', translate: 'none' }}
               >
                 There's a better way.
               </p>
               <div 
-                className="block mx-auto" 
+                className="block mx-auto my-[18px]" 
                 style={{ 
                   width: '160px', 
                   height: '3px', 
@@ -151,8 +137,6 @@ export default function PainPoints() {
                   display: 'block', 
                   marginLeft: 'auto', 
                   marginRight: 'auto',
-                  marginTop: '12px',
-                  marginBottom: '20px',
                   left: 'auto',
                   right: 'auto',
                   transform: 'none',
@@ -160,18 +144,8 @@ export default function PainPoints() {
                 }} 
               />
               <p 
-                className="text-[#D4AF6A] font-extrabold text-[22px] md:text-[26px] m-0 p-0"
-                style={{ 
-                  textAlign: 'center', 
-                  fontWeight: 800, 
-                  lineHeight: '1.25',
-                  maxWidth: '30ch',
-                  margin: '0 auto',
-                  left: 'auto', 
-                  right: 'auto', 
-                  transform: 'none', 
-                  translate: 'none' 
-                }}
+                className="text-[#D4AF6A] font-semibold text-[22px] md:text-[28px] m-0 p-0 leading-tight"
+                style={{ textAlign: 'center', left: 'auto', right: 'auto', transform: 'none', translate: 'none' }}
               >
                 Let us build and manage your sales engine.
               </p>
