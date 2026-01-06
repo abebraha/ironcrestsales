@@ -100,7 +100,7 @@ export default function ServiceCard3D({
     >
       {/* Subtle hover highlight */}
       <motion.div
-        className="absolute inset-0 rounded-xl bg-[#0B1F3B]/5"
+        className="absolute inset-0 rounded-xl bg-[#1E3A5F]/5"
         animate={{
           opacity: isHovered ? 1 : 0
         }}
@@ -166,7 +166,7 @@ export default function ServiceCard3D({
             
             {/* Static accent line */}
             <div
-              className="h-0.5 rounded-full mb-4 transition-opacity duration-200 bg-[#C9A24D]/30"
+              className="h-0.5 rounded-full mb-4 transition-opacity duration-200 bg-[#D4AF6A]/30"
             />
             
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -192,7 +192,7 @@ export default function ServiceCard3D({
         
         {/* Corner decoration - static */}
         <div
-          className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-[#0B1F3B]/10 blur-xl transition-opacity duration-200"
+          className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-[#1E3A5F]/10 blur-xl transition-opacity duration-200"
           style={{
             opacity: isHovered ? 0.5 : 0.3
           }}

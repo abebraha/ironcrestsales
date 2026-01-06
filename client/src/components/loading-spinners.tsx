@@ -17,9 +17,9 @@ export function CircularSpinner({ size = "md", className, color = "primary" }: S
   };
   
   const colorClasses = {
-    primary: "text-[#0B1F3B]",
-    accent: "text-[#0B1F3B]",
-    gold: "text-[#C9A24D]",
+    primary: "text-[#1E3A5F]",
+    accent: "text-[#1E3A5F]",
+    gold: "text-[#D4AF6A]",
     white: "text-white"
   };
 
@@ -122,16 +122,16 @@ export function ShieldSpinner({ size = "md", className }: SpinnerProps) {
         />
         <defs>
           <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="hsl(43, 96%, 56%)" />
-            <stop offset="50%" stopColor="hsl(240, 59%, 20%)" />
-            <stop offset="100%" stopColor="hsl(43, 96%, 56%)" />
+            <stop offset="0%" stopColor="#D4AF6A" />
+            <stop offset="50%" stopColor="#1E3A5F" />
+            <stop offset="100%" stopColor="#D4AF6A" />
           </linearGradient>
         </defs>
       </motion.svg>
       
       {/* Center pulse */}
       <motion.div
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#C9A24D] rounded-full"
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#D4AF6A] rounded-full"
         animate={{
           scale: [1, 2, 1],
           opacity: [1, 0.5, 1]
@@ -156,9 +156,9 @@ export function DotsSpinner({ size = "md", className, color = "primary" }: Spinn
   };
 
   const colorClasses = {
-    primary: "bg-[#0B1F3B]",
-    accent: "bg-[#0B1F3B]",
-    gold: "bg-[#C9A24D]",
+    primary: "bg-[#1E3A5F]",
+    accent: "bg-[#1E3A5F]",
+    gold: "bg-[#D4AF6A]",
     white: "bg-white"
   };
 
@@ -205,9 +205,9 @@ export function PulseSpinner({ size = "md", className, color = "gold" }: Spinner
   };
 
   const colorClasses = {
-    primary: "bg-[#0B1F3B]",
-    accent: "bg-[#0B1F3B]",
-    gold: "bg-[#C9A24D]",
+    primary: "bg-[#1E3A5F]",
+    accent: "bg-[#1E3A5F]",
+    gold: "bg-[#D4AF6A]",
     white: "bg-white"
   };
 
@@ -260,9 +260,9 @@ export function WaveSpinner({ size = "md", className, color = "primary" }: Spinn
   };
 
   const colorClasses = {
-    primary: "bg-[#0B1F3B]",
-    accent: "bg-[#0B1F3B]",
-    gold: "bg-[#C9A24D]",
+    primary: "bg-[#1E3A5F]",
+    accent: "bg-[#1E3A5F]",
+    gold: "bg-[#D4AF6A]",
     white: "bg-white"
   };
 
@@ -351,9 +351,9 @@ export function HelixSpinner({ size = "md", className }: SpinnerProps) {
         </motion.g>
         <defs>
           <linearGradient id="helixGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="hsl(240, 59%, 20%)" />
-            <stop offset="50%" stopColor="hsl(43, 96%, 56%)" />
-            <stop offset="100%" stopColor="hsl(240, 59%, 20%)" />
+            <stop offset="0%" stopColor="#1E3A5F" />
+            <stop offset="50%" stopColor="#D4AF6A" />
+            <stop offset="100%" stopColor="#1E3A5F" />
           </linearGradient>
         </defs>
       </svg>

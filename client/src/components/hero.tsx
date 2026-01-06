@@ -149,7 +149,7 @@ export default function Hero() {
                 y: -5,
               }}
             >
-              <div className="text-3xl font-montserrat font-bold text-[#1E3A5F] mb-2">
+              <div className="text-3xl font-montserrat font-bold text-black mb-2">
                 {stat.value}
               </div>
               <div className="text-black font-medium">{stat.label}</div>

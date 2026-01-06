@@ -36,7 +36,7 @@ export default function PageLoader({ isLoading, progress = 0, onComplete }: Page
     <AnimatePresence>
       {(isLoading || showExit) && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0B1F3B]"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#1E3A5F]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ 
@@ -152,7 +152,7 @@ export default function PageLoader({ isLoading, progress = 0, onComplete }: Page
                 
                 {/* Progress fill */}
                 <motion.div
-                  className="absolute top-0 left-0 h-full bg-[#C9A24D] rounded-full"
+                  className="absolute top-0 left-0 h-full bg-[#D4AF6A] rounded-full"
                   style={{ width: `${displayProgress}%` }}
                   initial={{ width: 0 }}
                   transition={{
