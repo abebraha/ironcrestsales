@@ -146,7 +146,7 @@ export default function About() {
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
-                className="card-premium relative"
+                className="card-premium relative rounded-md"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
@@ -154,7 +154,7 @@ export default function About() {
                 data-testid={`team-member-${index}`}
               >
                   <motion.div
-                    className="rounded-xl bg-[#1E3A5F] p-6 flex flex-col items-center justify-center text-white h-80"
+                    className="rounded-md bg-[#1E3A5F] p-6 flex flex-col items-center justify-center text-white h-80"
                     whileHover={{ 
                       y: -4,
                       boxShadow: "0 20px 40px rgba(0,0,0,0.12)"
@@ -170,7 +170,7 @@ export default function About() {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-premium mt-4 px-4 py-2 bg-[#D4AF6A] text-black rounded-lg hover:bg-[#D4AF6A]/90 transition-colors flex items-center gap-2 font-semibold"
+                    className="btn-premium mt-4 px-4 py-2 bg-[#D4AF6A] text-black rounded-sm hover:bg-[#D4AF6A]/90 transition-colors flex items-center gap-2 font-semibold"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     data-testid={`linkedin-${member.name.toLowerCase().replace(' ', '-')}`}

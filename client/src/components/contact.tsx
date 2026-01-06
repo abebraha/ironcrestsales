@@ -22,7 +22,7 @@ export default function Contact() {
           {/* Calendly Embed */}
           <motion.div 
             id="contact-form"
-            className="card-premium bg-card rounded-2xl p-6 border border-border shadow-lg relative overflow-hidden"
+            className="card-premium bg-card rounded-lg p-6 border border-border shadow-lg relative overflow-hidden"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -47,7 +47,7 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <motion.div 
-              className="card-premium bg-card rounded-2xl p-8 border border-border shadow-lg" 
+              className="card-premium bg-card rounded-lg p-8 border border-border shadow-lg" 
               data-testid="contact-info"
               whileHover={{ 
                 y: -4,
@@ -63,7 +63,7 @@ export default function Contact() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <div className="bg-[#1E3A5F]/10 p-3 rounded-lg">
+                  <div className="bg-[#1E3A5F]/10 p-3 rounded-md">
                     <Phone className="w-5 h-5 text-[#1E3A5F]" />
                   </div>
                   <div>
@@ -79,7 +79,7 @@ export default function Contact() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <div className="bg-[#D4AF6A]/10 p-3 rounded-lg">
+                  <div className="bg-[#D4AF6A]/10 p-3 rounded-md">
                     <Mail className="w-5 h-5 text-[#D4AF6A]" />
                   </div>
                   <div>
@@ -95,7 +95,7 @@ export default function Contact() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <div className="bg-[#D4AF6A]/10 p-3 rounded-lg">
+                  <div className="bg-[#D4AF6A]/10 p-3 rounded-md">
                     <MapPin className="w-5 h-5 text-[#D4AF6A]" />
                   </div>
                   <div>
@@ -108,7 +108,7 @@ export default function Contact() {
             </motion.div>
             
             <motion.div 
-              className="card-premium bg-white rounded-2xl p-8 text-[#2B2E34] border border-[#E5E7EB] relative overflow-hidden" 
+              className="card-premium bg-white rounded-lg p-8 text-[#2B2E34] border border-[#E5E7EB] relative overflow-hidden" 
               data-testid="why-choose"
               whileHover={{ 
                 y: -4,

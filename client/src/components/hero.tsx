@@ -107,7 +107,7 @@ export default function Hero() {
             >
               <motion.button 
                 onClick={scrollToContact}
-                className="btn-premium bg-[#D4AF6A] text-black px-8 py-4 rounded-lg font-montserrat font-bold text-lg shadow-lg transition-all duration-200 hover:bg-[#D4AF6A]/90"
+                className="btn-premium bg-[#D4AF6A] text-black px-8 py-4 rounded-sm font-montserrat font-bold text-lg shadow-lg transition-all duration-200 hover:bg-[#D4AF6A]/90"
                 data-testid="button-apply-today"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -115,7 +115,7 @@ export default function Hero() {
               
               <motion.button 
                 onClick={scrollToServices}
-                className="btn-premium border-2 border-white text-white px-8 py-4 rounded-lg font-montserrat font-semibold text-lg transition-all duration-200 hover:bg-white hover:text-[#1E3A5F]"
+                className="btn-premium border-2 border-white text-white px-8 py-4 rounded-sm font-montserrat font-semibold text-lg transition-all duration-200 hover:bg-white hover:text-[#1E3A5F]"
                 data-testid="button-learn-more"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -139,7 +139,7 @@ export default function Hero() {
           ].map((stat, i) => (
             <motion.div
               key={stat.testId}
-              className="bg-white rounded-xl p-6 transition-all duration-200 hover:shadow-xl border border-gray-100"
+              className="bg-white rounded-md p-6 transition-all duration-200 hover:shadow-xl border border-gray-100"
               data-testid={stat.testId}
               custom={i}
               initial="hidden"

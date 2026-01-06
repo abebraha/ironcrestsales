@@ -100,7 +100,7 @@ export default function ServiceCard3D({
     >
       {/* Subtle hover highlight */}
       <motion.div
-        className="absolute inset-0 rounded-xl bg-[#1E3A5F]/5"
+        className="absolute inset-0 rounded-md bg-[#1E3A5F]/5"
         animate={{
           opacity: isHovered ? 1 : 0
         }}
@@ -109,7 +109,7 @@ export default function ServiceCard3D({
       
       {/* Main card */}
       <motion.div
-        className="relative bg-card rounded-xl p-8 border border-border shadow-lg h-full flex flex-col overflow-hidden group"
+        className="relative bg-card rounded-md p-8 border border-border shadow-lg h-full flex flex-col overflow-hidden group"
         style={{
           rotateX,
           rotateY,
@@ -138,7 +138,7 @@ export default function ServiceCard3D({
             }}
           >
             <motion.div 
-              className={`${iconBgColor} p-3 rounded-lg relative overflow-hidden`}
+              className={`${iconBgColor} p-3 rounded-md relative overflow-hidden`}
               animate={{
                 boxShadow: isHovered 
                   ? `0 0 30px ${iconColor}60` 
