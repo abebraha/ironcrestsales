@@ -192,6 +192,7 @@ export default function Navigation() {
                     scrollToSection(section);
                   }}
                   ripples={ripples}
+                  isOverDarkSection={isOverDarkSection}
                 />
               ))}
               
@@ -341,12 +342,14 @@ function NavItem({
   section, 
   activeSection, 
   onClick, 
-  ripples 
+  ripples,
+  isOverDarkSection
 }: { 
   section: string; 
   activeSection: string; 
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   ripples: { id: number; x: number; y: number }[];
+  isOverDarkSection: boolean;
 }) {
   const isActive = activeSection === section;
   const isDark = isOverDarkSection;
