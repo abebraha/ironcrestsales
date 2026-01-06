@@ -134,10 +134,11 @@ export function TestimonialsAndCaseStudies() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-montserrat font-bold text-foreground mb-4">
+          <h2 className="text-4xl font-montserrat font-bold text-foreground mb-4 relative inline-block">
             Client Success Stories
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-1 w-24 bg-[#D4AF6A]" />
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mt-6">
             Discover how we've helped businesses achieve remarkable growth through strategic sales partnerships
           </p>
         </motion.div>
@@ -246,10 +247,11 @@ export function TestimonialsAndCaseStudies() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-montserrat font-bold text-foreground mb-4">
+          <h2 className="text-4xl font-montserrat font-bold text-foreground mb-4 relative inline-block">
             Proven Results
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-1 w-24 bg-[#D4AF6A]" />
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mt-6">
             Real transformations from companies that trusted us to scale their sales operations
           </p>
         </motion.div>

@@ -53,18 +53,21 @@ export default function PainPoints() {
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-[#2B2E34] mb-10" data-testid="pain-points-title">
+          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-[#2B2E34] mb-4" data-testid="pain-points-title">
             <motion.span
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-block"
-            >If your sales aren't predictable, your business isn't scalable</motion.span>
+              className="inline-block relative"
+            >
+              If your sales aren't predictable, your business isn't scalable
+              <div className="absolute -bottom-2 left-0 h-1 w-24 bg-[#D4AF6A]" />
+            </motion.span>
           </h2>
           
           <motion.p
-            className="text-lg text-[#2B2E34]/70 max-w-2xl mx-auto"
+            className="text-lg text-[#2B2E34]/70 max-w-2xl mx-auto mt-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}

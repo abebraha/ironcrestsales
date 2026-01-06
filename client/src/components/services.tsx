@@ -77,18 +77,19 @@ export default function Services() {
           viewport={{ once: true }}
         >
           
-          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-[#2B2E34] mb-10" data-testid="services-title">
+          <h2 className="text-3xl md:text-5xl font-montserrat font-bold text-[#2B2E34] mb-4" data-testid="services-title">
             <motion.span
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="inline-block"
+              className="inline-block relative"
             >
               Predictable sales engine built by proven sales professionals
+              <div className="absolute -bottom-2 left-0 h-1 w-24 bg-[#D4AF6A]" />
             </motion.span>
           </h2>
-          <p className="text-lg text-[#2B2E34]/70 max-w-2xl mx-auto">Our proven 4 step process</p>
+          <p className="text-lg text-[#2B2E34]/70 max-w-2xl mx-auto mt-6">Our proven 4 step process</p>
         </motion.div>
 
         {/* 3D Service Cards Grid */}
