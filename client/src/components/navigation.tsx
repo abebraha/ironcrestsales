@@ -59,8 +59,8 @@ export default function Navigation() {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 50);
       
-      // Keep nav height constant to prevent layout shifts
-      navHeight.set(64);
+      // Update nav height based on scroll
+      navHeight.set(scrollY > 100 ? 56 : 64);
       navOpacity.set(scrollY > 50 ? 0.95 : 1);
       
       // Detect active section
@@ -171,10 +171,14 @@ export default function Navigation() {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex justify-between items-center h-full">
-            {/* Logo with fixed size */}
-            <div className="flex items-center">
-              <Logo size="nav" />
-            </div>
+            {/* Logo with morph animation */}
+            <motion.div 
+              className="flex items-center"
+              animate={{ scale: isScrolled ? 0.92 : 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Logo size={isScrolled ? "small" : "nav"} />
+            </motion.div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
