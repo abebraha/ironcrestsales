@@ -113,21 +113,20 @@ export default function PainPoints() {
           })}
         </div>
 
-        <div className="mt-20 relative">
-          <div className="absolute inset-0 bg-[#F3F6FA] -mx-4 sm:-mx-6 lg:-mx-8 py-16" />
+        <div className="mt-12 relative flex justify-center">
           <motion.div 
-            className="relative z-10 text-center py-16"
+            className="relative z-10 text-center w-full max-w-[700px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="max-w-4xl mx-auto px-4">
-              <p className="text-xl md:text-2xl font-montserrat font-bold text-[#2B2E34] mb-4">
+            <div className="bg-white/85 backdrop-blur-sm border border-gray-200 rounded-[16px] shadow-soft p-8 md:px-12 md:py-10">
+              <p className="text-xl md:text-2xl font-montserrat font-bold text-[#1E3A5F] mb-4">
                 There's a better way.
               </p>
-              <div className="w-12 h-px bg-[#D4AF6A] mx-auto mb-6" />
-              <p className="text-[#D4AF6A] font-extrabold text-xl md:text-3xl">
+              <div className="w-12 h-0.5 bg-[#B89355] mx-auto mb-6" />
+              <p className="text-[#D4AF6A] font-extrabold text-xl md:text-3xl leading-tight">
                 Let us build and manage your sales engine.
               </p>
             </div>

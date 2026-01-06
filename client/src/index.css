@@ -37,6 +37,7 @@
   --input: #E5E7EB;
   --ring: #1E3A5F;
   --radius: 8px;
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
   
   /* Typography */
   --font-sans: 'Open Sans', sans-serif;
