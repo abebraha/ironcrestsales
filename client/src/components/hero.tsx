@@ -26,14 +26,14 @@ export default function Hero() {
   };
 
   const statsVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 16 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
         delay: 0.6 + i * 0.1,
-        duration: 0.6,
-        ease: "easeOut",
+        duration: 0.8,
+        ease: [0.21, 0.47, 0.32, 0.98],
       }
     })
   };
@@ -63,7 +63,7 @@ export default function Hero() {
                 transition: { duration: 0.2 }
               }}
             >
-              <div className="filter drop-shadow-lg">
+              <div className="filter drop-shadow-lg logo-premium">
                 <ShieldLogo size="large" />
               </div>
             </motion.div>
@@ -139,20 +139,20 @@ export default function Hero() {
           ].map((stat, i) => (
             <motion.div
               key={stat.testId}
-              className="bg-white/10 rounded-xl p-6 transition-all duration-200 hover:bg-white/15 border border-white/10"
+              className="bg-white rounded-xl p-6 transition-all duration-200 hover:shadow-xl border border-gray-100"
               data-testid={stat.testId}
               custom={i}
               initial="hidden"
               animate="visible"
               variants={statsVariants}
               whileHover={{ 
-                scale: 1.02,
+                y: -5,
               }}
             >
-              <div className="text-3xl font-montserrat font-bold text-[#D4AF6A] mb-2">
+              <div className="text-3xl font-montserrat font-bold text-[#1E3A5F] mb-2">
                 {stat.value}
               </div>
-              <div className="text-white/85">{stat.label}</div>
+              <div className="text-black font-medium">{stat.label}</div>
             </motion.div>
           ))}
         </div>

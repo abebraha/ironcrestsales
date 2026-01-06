@@ -111,7 +111,7 @@ export default function Navigation() {
     <>
       <motion.nav 
         ref={navRef}
-        className={`fixed w-full top-0 z-50 transition-all duration-500 bg-[#F2F4F7] ${isScrolled ? 'shadow-lg' : ''}`}
+        className={`fixed w-full top-0 z-50 transition-all duration-500 bg-[#F2F4F7] ${isScrolled ? 'shadow-md border-b border-gray-200' : ''}`}
         style={{
           height: smoothHeight,
           opacity: smoothOpacity,
