@@ -104,7 +104,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <p 
-                className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed font-medium"
+                className="text-lg md:text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-[1.8] font-medium"
                 data-testid="hero-subtitle"
               >
                 <TextReveal delay={0.8}>
@@ -122,7 +122,7 @@ export default function Hero() {
             >
               <motion.button 
                 onClick={scrollToContact}
-                className="btn-premium bg-[#B89355] text-black px-8 py-4 rounded-sm font-montserrat font-black text-lg shadow-md transition-all duration-300 hover:bg-[#A68244] hover:shadow-lg active:scale-[0.98]"
+                className="btn-premium bg-[#B89355] text-black px-8 py-4 rounded-sm font-montserrat font-black text-lg shadow-[inset_0_-2px_4px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] transition-all duration-300 hover:bg-[#A68244] hover:shadow-lg active:scale-[0.98]"
                 data-testid="button-apply-today"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -133,7 +133,7 @@ export default function Hero() {
               
               <motion.button 
                 onClick={scrollToServices}
-                className="btn-premium border-2 border-white text-white px-8 py-4 rounded-sm font-montserrat font-semibold text-lg transition-all duration-200 hover:bg-white hover:text-[#1E3A5F]"
+                className="btn-premium border-2 border-white/40 text-white/80 px-8 py-4 rounded-sm font-montserrat font-medium text-lg transition-all duration-200 hover:bg-white hover:text-[#1E3A5F] hover:border-white hover:text-white"
                 data-testid="button-learn-more"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
