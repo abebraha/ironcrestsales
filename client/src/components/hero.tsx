@@ -154,9 +154,9 @@ export default function Hero() {
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {[
-            { value: "10+", label: "Years of Experience", testId: "stat-professionals" },
-            { value: "Multiple", label: "Industries Served", testId: "stat-revenue" },
-            { value: "Proven", label: "Track Record", testId: "stat-retention" }
+            { value: "Experienced", label: "Sales Leadership", testId: "stat-professionals" },
+            { value: "Across", label: "Multiple Industries", testId: "stat-revenue" },
+            { value: "Focused On", label: "Long-Term Results", testId: "stat-retention" }
           ].map((stat, i) => (
             <motion.div
               key={stat.testId}
@@ -170,10 +170,10 @@ export default function Hero() {
                 y: -5,
               }}
             >
-              <div className="text-3xl font-montserrat font-bold text-black mb-2">
+              <div className="text-xl font-montserrat font-bold text-black mb-2 uppercase tracking-wide">
                 {stat.value}
               </div>
-              <div className="text-black font-medium">{stat.label}</div>
+              <div className="text-[#B89355] font-montserrat font-semibold text-lg">{stat.label}</div>
             </motion.div>
           ))}
         </div>
