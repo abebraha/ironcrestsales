@@ -115,7 +115,7 @@ export default function PainPoints() {
 
         <div className="mt-16 relative w-full overflow-hidden border-y border-black/[0.08]" style={{ backgroundColor: '#F3F6FB' }}>
           <motion.div 
-            className="relative z-10 w-full max-w-[900px] mx-auto py-14 md:py-[72px] px-6"
+            className="relative z-10 w-full max-w-[900px] mx-auto py-10 md:py-[58px] px-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -129,7 +129,7 @@ export default function PainPoints() {
                 There's a better way.
               </p>
               <div 
-                className="block mx-auto my-[18px]" 
+                className="block mx-auto" 
                 style={{ 
                   width: '160px', 
                   height: '3px', 
@@ -137,6 +137,8 @@ export default function PainPoints() {
                   display: 'block', 
                   marginLeft: 'auto', 
                   marginRight: 'auto',
+                  marginTop: '12px',
+                  marginBottom: '14px',
                   left: 'auto',
                   right: 'auto',
                   transform: 'none',
