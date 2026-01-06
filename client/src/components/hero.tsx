@@ -131,7 +131,8 @@ export default function Hero() {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 relative z-10 reveal-on-scroll"
         style={{ y: y2, transitionDelay: '400ms' }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="absolute inset-0 bg-[#F2F4F7] -mx-4 sm:-mx-6 lg:-mx-8 rounded-3xl" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center relative z-10 py-12">
           {[
             { value: "10+", label: "Years of Experience", testId: "stat-professionals" },
             { value: "Multiple", label: "Industries Served", testId: "stat-revenue" },
