@@ -118,6 +118,7 @@ export function TestimonialsAndCaseStudies() {
       <Star
         key={i}
         className={`w-4 h-4 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+        strokeWidth={2.5}
       />
     ));
   };
@@ -207,7 +208,7 @@ export function TestimonialsAndCaseStudies() {
 
                   <div className="text-center">
                     <div className="flex justify-center mb-4">
-                      <Quote className="w-12 h-12 text-primary/30" />
+                      <Quote className="w-12 h-12 text-primary/30" strokeWidth={2.5} />
                     </div>
                     
                     <blockquote className="text-xl italic text-muted-foreground mb-6 leading-relaxed">
@@ -316,7 +317,7 @@ export function TestimonialsAndCaseStudies() {
                 <Card className="card-premium h-full bg-white shadow-lg border-0 hover:shadow-xl transition-shadow duration-300 rounded-md" data-testid={`case-study-${caseStudy.id}`}>
                   <CardContent className="p-8">
                     <div className="flex items-center space-x-3 mb-4">
-                      <Award className="w-8 h-8 text-primary" />
+                      <Award className="w-8 h-8 text-primary" strokeWidth={2.5} />
                       <div>
                         <h3 className="text-xl font-montserrat font-bold text-foreground">
                           {caseStudy.title}
@@ -332,7 +333,7 @@ export function TestimonialsAndCaseStudies() {
                     <div className="space-y-4 mb-6">
                       <div>
                         <h4 className="font-semibold text-foreground mb-2 flex items-center">
-                          <Users className="w-4 h-4 mr-2 text-orange-500" />
+                          <Users className="w-4 h-4 mr-2 text-orange-500" strokeWidth={2.5} />
                           Challenge
                         </h4>
                         <p className="text-muted-foreground text-sm leading-relaxed">
@@ -342,7 +343,7 @@ export function TestimonialsAndCaseStudies() {
 
                       <div>
                         <h4 className="font-semibold text-foreground mb-2 flex items-center">
-                          <TrendingUp className="w-4 h-4 mr-2 text-blue-500" />
+                          <TrendingUp className="w-4 h-4 mr-2 text-blue-500" strokeWidth={2.5} />
                           Solution
                         </h4>
                         <p className="text-muted-foreground text-sm leading-relaxed">
@@ -352,7 +353,7 @@ export function TestimonialsAndCaseStudies() {
 
                       <div>
                         <h4 className="font-semibold text-foreground mb-2 flex items-center">
-                          <Award className="w-4 h-4 mr-2 text-green-500" />
+                          <Award className="w-4 h-4 mr-2 text-green-500" strokeWidth={2.5} />
                           Results
                         </h4>
                         <p className="text-muted-foreground text-sm leading-relaxed mb-3">

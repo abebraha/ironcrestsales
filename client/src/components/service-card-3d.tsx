@@ -145,7 +145,7 @@ export default function ServiceCard3D({
                   : "0 0 0px transparent"
               }}
             >
-              <Icon className={`w-6 h-6 ${iconColor} relative z-10`} />
+              <Icon className={`w-6 h-6 ${iconColor} relative z-10`} strokeWidth={2.5} />
             </motion.div>
           </motion.div>
           
@@ -182,7 +182,7 @@ export default function ServiceCard3D({
                   }}
                   viewport={{ once: true }}
                 >
-                  <CheckCircle className={`w-4 h-4 ${checkColor} mr-2 transition-colors duration-150`} />
+                  <CheckCircle className={`w-4 h-4 ${checkColor} mr-2 transition-colors duration-150`} strokeWidth={2.5} />
                   {feature}
                 </motion.li>
               ))}
