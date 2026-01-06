@@ -122,12 +122,14 @@ export default function PainPoints() {
             viewport={{ once: true }}
           >
             <div className="text-center flex flex-col items-center justify-center">
-              <p 
-                className="text-[34px] md:text-[44px] font-montserrat font-bold text-[#1E3A5F] m-0 p-0 leading-tight"
-                style={{ textAlign: 'center', left: 'auto', right: 'auto', transform: 'none', translate: 'none' }}
-              >
-                There's a better way.
-              </p>
+              <div className="bg-[#1E3A5F] px-8 py-4 mb-4 rounded-sm shadow-lg">
+                <p 
+                  className="text-[34px] md:text-[44px] font-montserrat font-bold text-white m-0 p-0 leading-tight"
+                  style={{ textAlign: 'center', left: 'auto', right: 'auto', transform: 'none', translate: 'none' }}
+                >
+                  There's a better way.
+                </p>
+              </div>
               <div 
                 className="block mx-auto" 
                 style={{ 
