@@ -88,7 +88,7 @@ export default function Hero() {
                 <span className="text-[1.05em] font-extrabold relative inline-block">
                   Our sales engine.
                   <motion.span 
-                    className="absolute -bottom-2 left-0 w-full h-1 bg-[#D4AF6A]/80 rounded-full"
+                    className="absolute -bottom-2 left-[5%] w-[90%] h-1 bg-[#D4AF6A]/80 rounded-full"
                     initial={{ scaleX: 0, originX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
@@ -104,7 +104,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <p 
-                className="text-xl md:text-2xl text-white/85 mb-12 max-w-3xl mx-auto leading-relaxed"
+                className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed font-medium"
                 data-testid="hero-subtitle"
               >
                 <TextReveal delay={0.8}>
