@@ -76,6 +76,7 @@ export default function ServiceCard3D({
   return (
     <motion.div
       ref={cardRef}
+      id={testId}
       className="relative h-full"
       initial={{ opacity: 0, y: 50, rotateX: -30 }}
       whileInView={{ 
