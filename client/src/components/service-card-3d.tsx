@@ -109,7 +109,7 @@ export default function ServiceCard3D({
       
       {/* Main card */}
       <motion.div
-        className="relative bg-card rounded-md p-8 border border-border shadow-sm h-full flex flex-col group"
+        className="relative bg-card rounded-md p-8 border border-border shadow-sm h-full flex flex-col overflow-hidden group"
         style={{
           rotateX,
           rotateY,
