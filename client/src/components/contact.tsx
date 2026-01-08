@@ -32,7 +32,7 @@ export default function Contact() {
             viewport={{ once: true }}
             data-testid="calendly-widget"
           >
-            <h3 className="text-2xl font-montserrat font-bold text-foreground mb-4">Book a Strategy Call</h3>
+            <h3 className="text-2xl font-montserrat font-bold text-foreground mb-4">See if this fits</h3>
             <div className="w-full rounded-lg overflow-hidden" style={{ minHeight: '650px' }}>
               <InlineWidget 
                 url="https://calendly.com/icebreakerbd/new-meeting"
