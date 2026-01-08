@@ -108,7 +108,7 @@ export default function Hero() {
                 data-testid="hero-subtitle"
               >
                 <TextReveal delay={0.8}>
-                  Built for B2B companies with a strong offer but inconsistent sales. We sell first to prove what works, then build and manage your sales team around it.
+                  We sell first to prove what works, then build and manage your sales team around it. Built for B2B companies with a strong offer but inconsistent sales.
                 </TextReveal>
               </p>
             </motion.div>
