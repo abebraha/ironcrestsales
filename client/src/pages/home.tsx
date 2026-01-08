@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation";
 import Hero from "@/components/hero";
 import PainPoints from "@/components/pain-points";
 import Services from "@/components/services";
+import Audience from "@/components/audience";
 import About from "@/components/about";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
@@ -29,6 +30,10 @@ export default function Home() {
       
       <SectionTransition delay={0.15}>
         <Services />
+      </SectionTransition>
+
+      <SectionTransition delay={0.18}>
+        <Audience />
       </SectionTransition>
       
       <SectionTransition delay={0.2}>
