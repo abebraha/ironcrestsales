@@ -129,7 +129,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
-              >Book a Sales Validation Call</motion.button>
+              >Book a Strategy Call</motion.button>
               
               <motion.button 
                 onClick={scrollToServices}
