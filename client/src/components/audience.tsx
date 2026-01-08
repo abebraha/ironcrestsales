@@ -82,7 +82,7 @@ export default function Audience() {
               {notForList.map((item, i) => (
                 <motion.li key={i} variants={itemVariants} className="flex items-start">
                   <XCircle className="w-6 h-6 text-gray-400 mr-4 shrink-0 mt-0.5" />
-                  <span className="text-lg text-gray-500">{item}</span>
+                  <span className="text-lg text-gray-500 leading-relaxed">{item}</span>
                 </motion.li>
               ))}
             </ul>
