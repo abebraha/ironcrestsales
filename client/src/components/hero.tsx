@@ -112,6 +112,21 @@ export default function Hero() {
                 </TextReveal>
               </p>
             </motion.div>
+
+            {/* Credibility Marker */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+              className="mb-12 text-center"
+            >
+              <h4 className="text-[#D4AF6A] text-xs font-montserrat font-bold uppercase tracking-[0.2em] mb-1">
+                Built with Icebreaker Sales Development
+              </h4>
+              <p className="text-white/60 text-sm font-sans">
+                IronCrest Sales is built by leadership from Icebreaker Sales Development.
+              </p>
+            </motion.div>
             
             {/* Simplified CTA Buttons */}
             <motion.div 
