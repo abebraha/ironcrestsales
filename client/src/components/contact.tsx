@@ -23,23 +23,28 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 reveal-on-scroll" style={{ transitionDelay: '200ms' }}>
           {/* Calendly Embed */}
-          <motion.div 
-            id="contact-form"
-            className="card-premium bg-card rounded-lg p-6 border border-border shadow-md relative overflow-hidden"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            data-testid="calendly-widget"
-          >
-            <h3 className="text-2xl font-montserrat font-bold text-foreground mb-4">Book a Strategy Call</h3>
-            <div className="w-full rounded-lg overflow-hidden" style={{ minHeight: '650px' }}>
-              <InlineWidget 
-                url="https://calendly.com/icebreakerbd/new-meeting"
-                styles={{ height: '650px', width: '100%' }}
-              />
-            </div>
-          </motion.div>
+          <div className="flex flex-col space-y-6">
+            <p className="text-white/60 text-sm font-sans text-center">
+              IronCrest Sales is built by leadership from Icebreaker Sales Development.
+            </p>
+            <motion.div 
+              id="contact-form"
+              className="card-premium bg-card rounded-lg p-6 border border-border shadow-md relative overflow-hidden"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              data-testid="calendly-widget"
+            >
+              <h3 className="text-2xl font-montserrat font-bold text-foreground mb-4">Book a Strategy Call</h3>
+              <div className="w-full rounded-lg overflow-hidden" style={{ minHeight: '650px' }}>
+                <InlineWidget 
+                  url="https://calendly.com/icebreakerbd/new-meeting"
+                  styles={{ height: '650px', width: '100%' }}
+                />
+              </div>
+            </motion.div>
+          </div>
 
           {/* Contact Information */}
           <motion.div 
