@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import Hero from "@/components/hero";
+import QualifyingSection from "@/components/qualifying-section";
 import PainPoints from "@/components/pain-points";
 import Services from "@/components/services";
 import About from "@/components/about";
@@ -22,6 +23,10 @@ export default function Home() {
       <RevealContent direction="up" className="w-full">
         <Hero />
       </RevealContent>
+
+      <SectionTransition delay={0.05}>
+        <QualifyingSection />
+      </SectionTransition>
       
       <SectionTransition delay={0.1}>
         <PainPoints />
