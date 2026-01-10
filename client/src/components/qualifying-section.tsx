@@ -13,7 +13,7 @@ export default function QualifyingSection() {
     "Pre revenue ideas or unvalidated products",
     "Founders looking for passive income",
     "Businesses without a clear offer",
-    "Anyone who wants leads without accountability"
+    "Businesses unwilling to commit to a real sales process."
   ];
 
   return (
