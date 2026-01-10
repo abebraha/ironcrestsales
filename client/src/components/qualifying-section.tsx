@@ -5,7 +5,7 @@ export default function QualifyingSection() {
   const workWith = [
     "Companies with a proven offer that is already selling",
     "Founders who are actively involved in their business",
-    "Teams ready to scale once a sales motion is proven",
+    "Founders who move fast and are ready to scale",
     "Businesses with the budget to invest in execution"
   ];
 
