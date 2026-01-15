@@ -13,7 +13,7 @@ export default function Logo({ size = 'medium', className = '', isOverHero = fal
   if (isNav) {
     return (
       <motion.div 
-        className={`flex items-center space-x-3 ${className}`}
+        className={`flex items-center gap-3 ${className}`}
         whileHover={{
           scale: 1.02,
           transition: { duration: 0.3 }
