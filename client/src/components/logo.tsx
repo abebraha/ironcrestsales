@@ -4,16 +4,15 @@ import ShieldLogo from "./shield-logo";
 interface LogoProps {
   size?: 'small' | 'medium' | 'large' | 'nav';
   className?: string;
-  isOverHero?: boolean;
 }
 
-export default function Logo({ size = 'medium', className = '', isOverHero = false }: LogoProps) {
+export default function Logo({ size = 'medium', className = '' }: LogoProps) {
   const isNav = size === 'nav' || size === 'small';
   
   if (isNav) {
     return (
       <motion.div 
-        className={`flex items-center gap-3 ${className}`}
+        className={`flex items-center space-x-3 ${className}`}
         whileHover={{
           scale: 1.02,
           transition: { duration: 0.3 }
@@ -26,7 +25,7 @@ export default function Logo({ size = 'medium', className = '', isOverHero = fal
           alt="IronCrest Sales Shield"
           className="w-14 h-14 object-contain"
         />
-        <span className={`font-montserrat font-bold text-xl tracking-tight whitespace-nowrap ${isOverHero ? 'text-[#1E3A5F]' : 'text-[#D4AF6A]'}`}>
+        <span className="font-montserrat font-bold text-xl tracking-tight whitespace-nowrap text-[#D4AF6A]">
           IRONCREST SALES
         </span>
       </motion.div>

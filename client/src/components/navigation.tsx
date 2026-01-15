@@ -169,15 +169,15 @@ export default function Navigation() {
           transition={{ duration: 0.2 }}
         />
         
-        <div className="relative max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 h-full">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex justify-between items-center h-full">
             {/* Logo with morph animation */}
             <motion.div 
-              className="flex items-center -ml-2"
+              className="flex items-center"
               animate={{ scale: isScrolled ? 0.92 : 1 }}
               transition={{ duration: 0.3 }}
             >
-              <Logo size={isScrolled ? "small" : "nav"} isOverHero={isOverDarkSection} />
+              <Logo size={isScrolled ? "small" : "nav"} />
             </motion.div>
             
             {/* Desktop Navigation */}
