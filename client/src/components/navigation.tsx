@@ -41,7 +41,7 @@ export default function Navigation() {
   }, []);
 
   // Motion values for smooth animations
-  const navHeight = useMotionValue(80);
+  const navHeight = useMotionValue(64);
   const navOpacity = useMotionValue(1);
   const springConfig = { damping: 25, stiffness: 300 };
   const smoothHeight = useSpring(navHeight, springConfig);
@@ -59,8 +59,8 @@ export default function Navigation() {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 50);
       
-      // Update nav height based on scroll (taller to accommodate stacked logo)
-      navHeight.set(scrollY > 100 ? 64 : 80);
+      // Update nav height based on scroll
+      navHeight.set(scrollY > 100 ? 48 : 56);
       navOpacity.set(scrollY > 50 ? 0.95 : 1);
       
       // Detect active section
@@ -171,21 +171,13 @@ export default function Navigation() {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex justify-between items-center h-full">
-            {/* Logo with morph animation - stacked vertically */}
+            {/* Logo with morph animation */}
             <motion.div 
-              className="flex flex-col items-center justify-center"
-              animate={{ scale: isScrolled ? 0.85 : 1 }}
+              className="flex items-center"
+              animate={{ scale: isScrolled ? 0.92 : 1 }}
               transition={{ duration: 0.3 }}
             >
-              <Logo size={isScrolled ? "small" : "nav"} className="mb-0.5" />
-              <div className="flex flex-col items-center leading-none">
-                <span className={`font-montserrat font-bold text-sm leading-tight ${isOverDarkSection ? 'text-[#1E3A5F]' : 'text-white'}`}>
-                  IronCrest
-                </span>
-                <span className={`font-montserrat text-[10px] tracking-widest ${isOverDarkSection ? 'text-[#B89355]' : 'text-[#D4AF6A]'}`}>
-                  SALES
-                </span>
-              </div>
+              <Logo size={isScrolled ? "small" : "nav"} />
             </motion.div>
             
             {/* Desktop Navigation */}
