@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ShieldLogo from "./shield-logo";
 
 interface LogoProps {
   size?: 'small' | 'medium' | 'large' | 'nav';
@@ -6,6 +7,31 @@ interface LogoProps {
 }
 
 export default function Logo({ size = 'medium', className = '' }: LogoProps) {
+  const isNav = size === 'nav' || size === 'small';
+  
+  if (isNav) {
+    return (
+      <motion.div 
+        className={`flex items-center space-x-3 ${className}`}
+        whileHover={{
+          scale: 1.02,
+          transition: { duration: 0.3 }
+        }}
+        whileTap={{ scale: 0.98 }}
+        data-testid="logo"
+      >
+        <img 
+          src="/shield-logo.png"
+          alt="IronCrest Sales Shield"
+          className="w-10 h-10 object-contain"
+        />
+        <span className="font-montserrat font-bold text-xl tracking-tight whitespace-nowrap">
+          IRONCREST SALES
+        </span>
+      </motion.div>
+    );
+  }
+
   const sizeClasses = {
     small: 'w-12 h-12',
     medium: 'w-24 h-24',
@@ -13,7 +39,6 @@ export default function Logo({ size = 'medium', className = '' }: LogoProps) {
     nav: 'w-32 h-20'
   };
 
-  // Morph animation based on size
   const morphVariants = {
     small: {
       scale: 0.8,
