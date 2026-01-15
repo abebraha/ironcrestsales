@@ -177,7 +177,7 @@ export default function Navigation() {
               animate={{ scale: isScrolled ? 0.92 : 1 }}
               transition={{ duration: 0.3 }}
             >
-              <Logo size={isScrolled ? "small" : "nav"} />
+              <Logo size={isScrolled ? "small" : "nav"} isOverHero={isOverDarkSection} />
             </motion.div>
             
             {/* Desktop Navigation */}
