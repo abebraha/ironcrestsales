@@ -23,9 +23,9 @@ export default function Logo({ size = 'medium', className = '' }: LogoProps) {
         <img 
           src="/shield-logo.png"
           alt="IronCrest Sales Shield"
-          className="w-10 h-10 object-contain"
+          className="w-14 h-14 object-contain"
         />
-        <span className="font-montserrat font-bold text-xl tracking-tight whitespace-nowrap">
+        <span className="font-montserrat font-bold text-xl tracking-tight whitespace-nowrap text-[#D4AF6A]">
           IRONCREST SALES
         </span>
       </motion.div>
