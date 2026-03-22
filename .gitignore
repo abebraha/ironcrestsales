@@ -4,3 +4,9 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+.local
+*.bin
+hero_section_mobile.png
+homepage_final_nav_check.png
+homepage_final_visual_check.png
+process_section.png

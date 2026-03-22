@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { SiLinkedin } from "react-icons/si";
+import { FaLinkedin as SiLinkedin } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
