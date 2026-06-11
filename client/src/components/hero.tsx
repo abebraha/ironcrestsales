@@ -108,7 +108,7 @@ export default function Hero() {
                 data-testid="hero-subtitle"
               >
                 <TextReveal delay={0.8}>
-                  We sell first to prove what works, then build and run the sales team that scales it.
+                  We perfect your sales system, then build and run the team that scales it.
                 </TextReveal>
               </p>
             </motion.div>

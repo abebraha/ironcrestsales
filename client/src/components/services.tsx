@@ -7,7 +7,7 @@ export default function Services() {
     {
       icon: Settings,
       title: "Sales System Development",
-      description: "Build scalable sales systems shaped and proven by a founding salesperson who actually sells for you before your first long-term rep is hired",
+      description: "Build scalable sales systems shaped and proven by a founding salesperson who actually tests and perfects them before your first long-term rep is hired",
       features: [
         "Custom CRM implementation",
         "Lead generation systems",
